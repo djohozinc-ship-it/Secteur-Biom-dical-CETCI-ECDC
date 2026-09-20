@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://VOTRE-COMPTE.github.io/VOTRE-DEPOT/sitemap.xml
+Sitemap: https://djohozinc-ship-it.github.io/Secteur-Biom-dical-CETCI-ECDC/sitemap.xml
