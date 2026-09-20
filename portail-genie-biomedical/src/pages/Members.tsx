@@ -10,11 +10,11 @@ export default function Members() {
   const shown = membres.filter((m) => !pole || m.pole === pole);
   return (
     <>
-      <PageHeader title="Membres" intro="Les personnes qui font vivre la communauté. Seuls les membres ayant donné leur accord sont présentés." crumbs={[{ label: 'Membres' }]} />
+      <PageHeader title="Membres" eyebrow="Le portail" intro="Les personnes qui font vivre la communauté. Seuls les membres ayant donné leur accord sont présentés." crumbs={[{ label: 'Membres' }]} />
       <div className="container page-body">
-        <div className="chips" role="group" aria-label="Filtrer par pôle">
-          <button className={`chip${pole === '' ? ' is-on' : ''}`} aria-pressed={pole === ''} onClick={() => setPole('')}>Tous</button>
-          {poles.map((p) => <button key={p} className={`chip${pole === p ? ' is-on' : ''}`} aria-pressed={pole === p} onClick={() => setPole(p)}>{p}</button>)}
+        <div className="tabs" role="group" aria-label="Filtrer par pôle">
+          <button className={pole === '' ? 'is-on' : ''} aria-pressed={pole === ''} onClick={() => setPole('')}>Tous</button>
+          {poles.map((p) => <button key={p} className={pole === p ? 'is-on' : ''} aria-pressed={pole === p} onClick={() => setPole(p)}>{p}</button>)}
         </div>
         {shown.length === 0 ? <EmptyState title="Contenu à venir">La présentation des membres sera publiée avec leur accord.</EmptyState> : (
           <ul className="member-grid">

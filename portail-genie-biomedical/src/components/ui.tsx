@@ -6,31 +6,34 @@ import { site } from '../config/site';
 
 export function Logo() {
   if (site.logo) return <img src={asset(site.logo)} alt="" width="44" height="44" className="logo-img" />;
+  // Logo provisoire : à remplacer via site.logo dans src/config/site.ts
   return (
-    <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true" focusable="false">
-      <rect width="64" height="64" rx="12" fill="var(--blue)" />
-      <path d="M27 14h10v13h13v10H37v13H27V37H14V27h13z" fill="#fff" />
-      <circle cx="32" cy="32" r="4" fill="var(--teal)" />
+    <svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true" focusable="false">
+      <rect width="64" height="64" rx="10" fill="var(--petrol)" />
+      <path d="M27 13h10v14h14v10H37v14H27V37H13V27h14z" fill="#fff" />
+      <rect x="13" y="55" width="38" height="3" rx="1.5" fill="var(--accent-light)" />
     </svg>
   );
 }
 
-export function DemoBadge() {
-  return <span className="badge badge-demo">Démonstration</span>;
+export function Badge({ children, tone = 'green' }: { children: ReactNode; tone?: 'green' | 'line' | 'ochre' | 'demo' | 'dark' }) {
+  return <span className={`badge badge-${tone}`}>{children}</span>;
 }
+export const DemoBadge = () => <Badge tone="demo">Démonstration</Badge>;
 
-export function PageHeader({ title, intro, crumbs }: { title: string; intro?: string; crumbs?: { label: string; to?: string }[] }) {
+export function PageHeader({ title, intro, crumbs, eyebrow }: { title: string; intro?: string; eyebrow?: string; crumbs?: { label: string; to?: string }[] }) {
   return (
     <header className="page-header">
       <div className="container">
         {crumbs && (
           <nav aria-label="Fil d'Ariane" className="crumbs">
-            <Link to="/">Accueil</Link>
-            {crumbs.map((c) => (
-              <span key={c.label}>{c.to ? <Link to={c.to}>{c.label}</Link> : c.label}</span>
-            ))}
+            <ol>
+              <li><Link to="/">Accueil</Link></li>
+              {crumbs.map((c) => <li key={c.label}>{c.to ? <Link to={c.to}>{c.label}</Link> : <span aria-current="page">{c.label}</span>}</li>)}
+            </ol>
           </nav>
         )}
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
         <h1>{title}</h1>
         {intro && <p className="lead">{intro}</p>}
       </div>
@@ -38,13 +41,19 @@ export function PageHeader({ title, intro, crumbs }: { title: string; intro?: st
   );
 }
 
-export function Section({ title, to, linkLabel, children, tone }: { title: string; to?: string; linkLabel?: string; children: ReactNode; tone?: 'mist' }) {
+export function Section({ title, eyebrow, to, linkLabel, children, tone = 'white', id }: {
+  title: string; eyebrow?: string; to?: string; linkLabel?: string; children: ReactNode; tone?: 'white' | 'paper' | 'mist' | 'dark'; id?: string;
+}) {
+  const hid = `s-${id ?? title}`;
   return (
-    <section className={`section${tone ? ` section-${tone}` : ''}`} aria-labelledby={`s-${title}`}>
+    <section className={`section section-${tone}`} aria-labelledby={hid}>
       <div className="container">
         <div className="section-head">
-          <h2 id={`s-${title}`}>{title}</h2>
-          {to && <Link className="text-link" to={to}>{linkLabel ?? 'Voir tout'}</Link>}
+          <div>
+            {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+            <h2 id={hid}>{title}</h2>
+          </div>
+          {to && <Link className="more-link" to={to}>{linkLabel ?? 'Voir tout'} <span aria-hidden="true">→</span></Link>}
         </div>
         {children}
       </div>
@@ -61,56 +70,57 @@ export function EmptyState({ title, children }: { title: string; children?: Reac
   );
 }
 
-export function Card({ to, image, tag, date, title, summary, demo, footer }: {
-  to?: string; image?: string; tag?: string; date?: string; title: string; summary?: string; demo?: boolean; footer?: ReactNode;
+// Ligne éditoriale : date | contenu
+export function DocRow({ to, date, tag, title, summary, meta, demo, aside }: {
+  to?: string; date?: string; tag?: string; title: string; summary?: string; meta?: ReactNode; demo?: boolean; aside?: ReactNode;
 }) {
-  const body = (
-    <>
-      {image && <img className="card-img" src={asset(image)} alt="" loading="lazy" />}
-      <div className="card-body">
-        <div className="card-meta">
-          {tag && <span className="badge">{tag}</span>}
-          {demo && <DemoBadge />}
-          {date && <time dateTime={date}>{formatDate(date)}</time>}
-        </div>
-        <h3>{title}</h3>
+  return (
+    <article className="docrow">
+      <div className="docrow-date">{date ? <time dateTime={date}>{formatDate(date)}</time> : <span aria-hidden="true">—</span>}</div>
+      <div className="docrow-main">
+        <div className="tags">{tag && <Badge>{tag}</Badge>}{demo && <DemoBadge />}</div>
+        <h3>{to ? <Link to={to}>{title}</Link> : title}</h3>
         {summary && <p>{summary}</p>}
-        {footer}
+        {meta && <div className="meta">{meta}</div>}
       </div>
-    </>
+      {aside && <div className="docrow-aside">{aside}</div>}
+    </article>
   );
-  return <article className="card">{to ? <Link to={to} className="card-link">{body}</Link> : body}</article>;
 }
 
-export function ArchiveTabs({ archives, setArchives, labelLive = 'En cours' }: { archives: boolean; setArchives: (v: boolean) => void; labelLive?: string }) {
+export function Placeholder({ title, children, glyph }: { title: string; children: ReactNode; glyph?: ReactNode }) {
   return (
-    <div className="chips" role="group" aria-label="Affichage">
-      <button className={`chip${!archives ? ' is-on' : ''}`} aria-pressed={!archives} onClick={() => setArchives(false)}>{labelLive}</button>
-      <button className={`chip${archives ? ' is-on' : ''}`} aria-pressed={archives} onClick={() => setArchives(true)}>Archives</button>
+    <div className="placeholder">
+      {glyph}
+      <div><p className="placeholder-title">{title}</p><p>{children}</p></div>
     </div>
   );
 }
 
-export function Grid({ children, cols = 3 }: { children: ReactNode; cols?: 2 | 3 | 4 }) {
-  return <div className={`grid grid-${cols}`}>{children}</div>;
-}
-
-export function FilterBar({ q, setQ, cat, setCat, categories, label = 'Toutes les catégories' }: {
-  q: string; setQ: (v: string) => void; cat: string; setCat: (v: string) => void; categories: string[]; label?: string;
+export function SideFilter({ q, setQ, cat, setCat, categories, counts, catLabel = 'Catégories' }: {
+  q: string; setQ: (v: string) => void; cat: string; setCat: (v: string) => void; categories: string[]; counts?: Record<string, number>; catLabel?: string;
 }) {
   return (
-    <div className="filter" role="search">
-      <label className="field">
-        <span>Rechercher</span>
+    <aside className="side-filter" aria-label="Filtres">
+      <label className="field"><span>Rechercher</span>
         <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Mots-clés" />
       </label>
-      <label className="field">
-        <span>Catégorie</span>
-        <select value={cat} onChange={(e) => setCat(e.target.value)}>
-          <option value="">{label}</option>
-          {categories.map((c) => <option key={c} value={c}>{c}</option>)}
-        </select>
-      </label>
+      <p className="side-title" id="cat-title">{catLabel}</p>
+      <ul className="cat-list" aria-labelledby="cat-title">
+        <li><button className={!cat ? 'is-on' : ''} aria-pressed={!cat} onClick={() => setCat('')}>Toutes</button></li>
+        {categories.map((c) => (
+          <li key={c}><button className={cat === c ? 'is-on' : ''} aria-pressed={cat === c} onClick={() => setCat(c)}>{c}{counts && <span className="count">{counts[c] ?? 0}</span>}</button></li>
+        ))}
+      </ul>
+    </aside>
+  );
+}
+
+export function ArchiveTabs({ archives, setArchives, labelLive = 'En cours' }: { archives: boolean; setArchives: (v: boolean) => void; labelLive?: string }) {
+  return (
+    <div className="tabs" role="group" aria-label="Affichage">
+      <button className={!archives ? 'is-on' : ''} aria-pressed={!archives} onClick={() => setArchives(false)}>{labelLive}</button>
+      <button className={archives ? 'is-on' : ''} aria-pressed={archives} onClick={() => setArchives(true)}>Archives</button>
     </div>
   );
 }
@@ -147,9 +157,12 @@ export function ShareLinks({ title }: { title: string }) {
     { label: 'X', href: `https://twitter.com/intent/tweet?text=${t}&url=${url}` },
   ];
   return (
-    <div className="share">
-      <span>Partager :</span>
-      {links.map((l) => <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>)}
-    </div>
+    <div className="share"><span>Partager :</span>{links.map((l) => <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>)}</div>
   );
+}
+
+export function FactList({ items }: { items: { label: string; value: ReactNode | undefined }[] }) {
+  const shown = items.filter((i) => i.value);
+  if (!shown.length) return null;
+  return <dl className="facts">{shown.map((i) => <div key={i.label}><dt>{i.label}</dt><dd>{i.value}</dd></div>)}</dl>;
 }

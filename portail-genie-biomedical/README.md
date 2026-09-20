@@ -38,3 +38,9 @@ La section « Indicateurs du secteur » n'apparaît que si `indicateurs` contien
 ## SEO
 Balises de base, Open Graph et Twitter dans `index.html` (adresse GitHub Pages actuelle). Le sitemap ne liste que la page d'accueil : avec `HashRouter`, les sous-pages ne sont pas des URL indexables séparément.
 Si l'adresse du site change, mettre à jour `index.html`, `public/robots.txt`, `public/sitemap.xml` et `siteUrl`.
+
+## Images et logo
+- Aucune photo n'est fournie : l'accueil utilise une illustration originale provisoire (`src/components/illustrations.tsx`).
+- Pour une photo réelle : la placer dans `public/images/`, puis renseigner `heroImage` et `heroImageAlt` dans `src/config/site.ts`.
+- Logo : `logo` dans `src/config/site.ts` (fichier dans `public/`). Le logo générique reste en secours.
+- N'utilisez que des images dont vous détenez les droits ; pour une photo d'une personne, obtenez son accord.

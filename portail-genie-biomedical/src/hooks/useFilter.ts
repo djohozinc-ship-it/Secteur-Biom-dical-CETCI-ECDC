@@ -3,9 +3,9 @@ import { matchScore } from '../utils/search';
 
 interface Fields { title: string; text: string; category: string; }
 
-export function useFilter<T>(items: T[], fields: (item: T) => Fields) {
-  const [q, setQ] = useState('');
-  const [cat, setCat] = useState('');
+export function useFilter<T>(items: T[], fields: (item: T) => Fields, initial?: { cat?: string; q?: string }) {
+  const [q, setQ] = useState(initial?.q ?? '');
+  const [cat, setCat] = useState(initial?.cat ?? '');
   const categories = useMemo(
     () => Array.from(new Set(items.map((i) => fields(i).category))).sort(),
     // eslint-disable-next-line react-hooks/exhaustive-deps

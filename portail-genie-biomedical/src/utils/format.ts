@@ -17,3 +17,16 @@ export const initials = (name: string): string =>
 
 export const isExpired = (deadline?: string): boolean =>
   !!deadline && new Date(deadline).getTime() < new Date().setHours(0, 0, 0, 0);
+
+export const daysUntil = (d?: string): number | null => {
+  if (!d) return null;
+  const t = new Date(d).getTime();
+  if (Number.isNaN(t)) return null;
+  return Math.ceil((t - new Date().setHours(0, 0, 0, 0)) / 86400000);
+};
+
+export const dayMonth = (d?: string): { day: string; month: string } => {
+  const date = d ? new Date(d) : null;
+  if (!date || Number.isNaN(date.getTime())) return { day: '–', month: '' };
+  return { day: String(date.getDate()), month: date.toLocaleDateString('fr-FR', { month: 'short' }).replace('.', '') };
+};
