@@ -1,0 +1,5 @@
+[
+  { "id": "demo-guide-maintenance", "title": "Guide de maintenance préventive (exemple)", "description": "Modèle de fiche de maintenance préventive à adapter à votre établissement. Contenu de démonstration.", "category": "Guides de maintenance", "fileType": "PDF", "source": "Démonstration", "rubrique": "maintenance-biomedicale", "demo": true },
+  { "id": "demo-fiche-technique", "title": "Fiche technique type d'un équipement (exemple)", "description": "Structure d'une fiche technique : identification, caractéristiques, consignes de sécurité.", "category": "Fiches techniques", "fileType": "PDF", "source": "Démonstration", "rubrique": "dispositifs-medicaux", "demo": true },
+  { "id": "demo-tuto-arduino", "title": "Tutoriel : premiers pas en instrumentation (exemple)", "description": "Exemple d'entrée de type tutoriel avec lien externe. Remplacez par un lien vérifié.", "category": "Tutoriels", "fileType": "Lien", "source": "Démonstration", "rubrique": "instrumentation-biomedicale", "demo": true }
+]

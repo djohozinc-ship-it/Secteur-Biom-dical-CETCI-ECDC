@@ -1,0 +1,3 @@
+[
+  { "id": "a1", "name": "Établissement fictif (démo)", "type": "Établissement", "description": "Entrée de démonstration. L'annuaire est désactivé dans src/config/site.ts.", "consentement": true, "demo": true }
+]

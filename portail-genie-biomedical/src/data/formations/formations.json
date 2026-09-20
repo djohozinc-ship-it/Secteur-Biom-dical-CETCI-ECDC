@@ -1,0 +1,5 @@
+[
+  { "id": "demo-licence", "name": "Licence en maintenance biomédicale (exemple)", "kind": "Formation", "description": "Fiche de démonstration. Vérifiez les intitulés, les durées et les conditions d'admission auprès de l'établissement avant publication.", "demo": true },
+  { "id": "demo-etablissement", "name": "Établissement d'enseignement (exemple)", "kind": "Établissement", "description": "Fiche de démonstration d'un établissement : ajoutez le lien officiel et les coordonnées vérifiées.", "contact": "À renseigner", "demo": true },
+  { "id": "demo-complementaire", "name": "Formation en ligne complémentaire (exemple)", "kind": "Formation complémentaire", "description": "Exemple de ressource d'apprentissage : électronique, données ou IA appliquée à la santé.", "demo": true }
+]

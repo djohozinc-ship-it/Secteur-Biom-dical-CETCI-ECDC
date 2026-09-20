@@ -1,0 +1,9 @@
+[
+  { "id": "m1", "name": "Aïcha Dossou", "role": "Coordinatrice du portail", "pole": "Coordination", "bio": "Profil fictif de démonstration. Remplacez ce texte par une courte présentation réelle.", "consentement": true, "demo": true },
+  { "id": "m2", "name": "Koffi Adjovi", "role": "Responsable maintenance", "pole": "Maintenance", "bio": "Profil fictif de démonstration. Ajoutez la formation, les domaines d'intérêt et le parcours.", "consentement": true, "demo": true },
+  { "id": "m3", "name": "Marius Hounkpatin", "role": "Chargé de l'innovation", "pole": "Innovation", "bio": "Profil fictif de démonstration. Un lien professionnel peut être ajouté dans le champ links.", "links": [{ "label": "Profil professionnel", "url": "https://example.org" }], "consentement": true, "demo": true },
+  { "id": "m4", "name": "Sènami Agbo", "role": "Rédactrice scientifique", "pole": "Communication", "bio": "Profil fictif de démonstration.", "consentement": true, "demo": true },
+  { "id": "m5", "name": "Rodrigue Tossou", "role": "Technicien biomédical", "pole": "Maintenance", "bio": "Profil fictif de démonstration.", "consentement": true, "demo": true },
+  { "id": "m6", "name": "Nadège Kpadonou", "role": "Chargée des formations", "pole": "Innovation", "bio": "Profil fictif de démonstration.", "consentement": true, "demo": true },
+  { "id": "m7", "name": "Membre sans autorisation", "role": "Non publié", "pole": "Coordination", "bio": "Ce membre a consentement = false : il n'apparaît pas sur le site.", "consentement": false, "demo": true }
+]

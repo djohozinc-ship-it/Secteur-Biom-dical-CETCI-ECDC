@@ -1,0 +1,12 @@
+[
+  { "slug": "ingenierie-biomedicale", "title": "Ingénierie biomédicale", "intro": "Application des principes de l'ingénierie à la conception, à l'évaluation et à l'amélioration des technologies de santé." },
+  { "slug": "maintenance-biomedicale", "title": "Maintenance biomédicale et hospitalière", "intro": "Maintenance préventive et corrective des équipements médicaux, gestion du parc et sécurité des patients et des utilisateurs." },
+  { "slug": "dispositifs-medicaux", "title": "Dispositifs médicaux", "intro": "Classification, fonctionnement, utilisation et cycle de vie des dispositifs médicaux." },
+  { "slug": "ingenierie-clinique", "title": "Ingénierie clinique", "intro": "Interface entre les équipes soignantes et les équipes techniques : choix, mise en service et bon usage des équipements." },
+  { "slug": "instrumentation-biomedicale", "title": "Instrumentation biomédicale", "intro": "Capteurs, mesures physiologiques, acquisition et traitement du signal appliqués à la santé." },
+  { "slug": "imagerie-medicale", "title": "Imagerie médicale", "intro": "Radiologie, échographie, scanner, IRM : principes physiques, maintenance et radioprotection." },
+  { "slug": "equipements-laboratoire", "title": "Équipements de laboratoire", "intro": "Analyseurs, centrifugeuses, microscopes, autoclaves : fonctionnement, étalonnage et entretien." },
+  { "slug": "technologies-intelligentes", "title": "Technologies médicales intelligentes", "intro": "Objets connectés, IoT médical et systèmes de surveillance à distance des équipements et des patients." },
+  { "slug": "robotique-medicale", "title": "Robotique médicale", "intro": "Robots d'assistance, d'automatisation et de chirurgie : principes, usages et enjeux pour les établissements." },
+  { "slug": "ia-sante", "title": "Intelligence artificielle appliquée à la santé", "intro": "Aide au diagnostic, maintenance prédictive et outils d'analyse de données de santé, avec leurs limites et leurs précautions éthiques." }
+]

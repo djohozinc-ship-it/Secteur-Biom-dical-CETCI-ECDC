@@ -1,0 +1,5 @@
+[
+  { "id": "demo-lancement", "title": "Lancement du portail (communiqué de démonstration)", "date": "2026-09-01", "summary": "Exemple de communiqué institutionnel. À remplacer par un texte réel.", "content": "Ceci est un **contenu de démonstration**. Remplacez-le par un vrai communiqué dans le fichier `src/data/communiques/communiques.json`.", "category": "Institutionnel", "statut": "publie", "demo": true },
+  { "id": "demo-appel", "title": "Appel à contributions (communiqué de démonstration)", "date": "2026-09-10", "summary": "Exemple d'appel invitant les membres à proposer des articles et des projets.", "content": "Contenu de démonstration. Un document PDF peut être associé via le champ `pdf` (ex. `documents/communique.pdf`).", "category": "Appel", "statut": "publie", "demo": true },
+  { "id": "demo-brouillon", "title": "Communiqué non publié", "date": "2026-09-15", "summary": "Ce communiqué a le statut « brouillon » : il n'apparaît pas sur le site.", "content": "Non affiché.", "category": "Institutionnel", "statut": "brouillon", "demo": true }
+]

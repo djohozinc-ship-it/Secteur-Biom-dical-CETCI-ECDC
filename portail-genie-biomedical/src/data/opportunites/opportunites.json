@@ -1,0 +1,5 @@
+[
+  { "id": "demo-bourse", "title": "Bourse d'études (exemple)", "type": "Bourses", "description": "Exemple d'opportunité avec date limite. Vérifiez toujours la source officielle.", "deadline": "2027-03-31", "source": "À renseigner", "demo": true },
+  { "id": "demo-stage", "title": "Stage en maintenance hospitalière (exemple)", "type": "Stages", "description": "Exemple de stage. Ajoutez la structure d'accueil et un lien vérifié.", "source": "À renseigner", "demo": true },
+  { "id": "demo-conference", "title": "Conférence passée (exemple archivé)", "type": "Conférences", "description": "Exemple d'opportunité expirée : elle passe automatiquement en archives.", "deadline": "2025-01-15", "source": "À renseigner", "demo": true }
+]
