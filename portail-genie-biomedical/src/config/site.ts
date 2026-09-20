@@ -13,8 +13,14 @@ export const site = {
     "Portail sectoriel consacré au génie biomédical au Bénin : actualités, communiqués, ressources techniques, projets, formations et opportunités.",
   organisme: 'CETCI / ECDC', // communauté porteuse du portail
   statutMention: "Initiative communautaire — ce portail n'est pas un site gouvernemental.",
-  heroImage: '', // ex. 'images/accueil.jpg' (photo réelle dans public/). Vide = illustration originale provisoire
-  heroImageAlt: '',
+  // Photographies éditoriales (fichiers dans public/images/, voir public/images/README.txt).
+  // Tant que 'src' est vide, un emplacement neutre « Photographie à venir » s'affiche.
+  images: {
+    hero: { src: '', alt: '', caption: '', credit: '' },
+    presentation: { src: '', alt: '', caption: '', credit: '' },
+    innovation: { src: '', alt: '', caption: '', credit: '' },
+    formation: { src: '', alt: '', caption: '', credit: '' },
+  } as Record<'hero' | 'presentation' | 'innovation' | 'formation', { src: string; alt: string; caption: string; credit: string }>,
   logo: '', // ex. 'images/logo.svg' (fichier dans public/). Vide = logo générique
   siteUrl: 'https://djohozinc-ship-it.github.io/Secteur-Biom-dical-CETCI-ECDC/',
 

@@ -2,7 +2,9 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { site } from '../config/site';
 import { rubriques } from '../utils/content';
-import { Logo } from './ui';
+import { Logo, Mark3 } from './ui';
+import { useReveal } from '../hooks/useReveal';
+import { resourceCategories } from '../utils/taxonomy';
 
 interface Item { to: string; label: string }
 interface Group { label: string; to?: string; items?: Item[]; mega?: boolean }
@@ -50,62 +52,64 @@ function Header() {
   const groupes = Array.from(new Set(rubriques.map((r) => r.groupe)));
 
   return (
-    <header className="site-header">
+    <>
       <div className="topbar">
         <div className="container topbar-row">
           <span>{site.statutMention}</span>
           <Link to="/contact">Contact</Link>
         </div>
       </div>
-      <div className="container header-row">
-        <Link to="/" className="brand" aria-label={`${site.name} – accueil`}>
-          <Logo />
-          <span className="brand-text">
-            <strong>{site.officialName || site.name}</strong>
-            <small>{site.organisme ? `${site.organisme} · ` : ''}{site.tagline}</small>
-          </span>
-        </Link>
-        <button className="menu-toggle" aria-expanded={menu} aria-controls="main-nav" onClick={() => setMenu(!menu)}>
-          <span aria-hidden="true" className="burger" />{menu ? 'Fermer' : 'Menu'}
-        </button>
-        <nav id="main-nav" ref={navRef} className={`main-nav${menu ? ' is-open' : ''}`} aria-label="Navigation principale">
-          {groups.map((g) => g.to ? (
-            <NavLink key={g.label} to={g.to} className="nav-link">{g.label}</NavLink>
-          ) : (
-            <div key={g.label} className={`has-panel${g.mega ? ' has-mega' : ''}`}>
-              <button className={`nav-link${isCurrent(g) ? ' is-current' : ''}`} aria-expanded={openGroup === g.label} onClick={() => setOpenGroup(openGroup === g.label ? null : g.label)}>
-                {g.label}<span aria-hidden="true" className="caret" />
-              </button>
-              <div className={`panel${g.mega ? ' panel-mega' : ''}${openGroup === g.label ? ' is-open' : ''}`}>
-                {g.mega ? (
-                  <>
-                    <div className="mega-cols">
-                      {groupes.map((gr) => (
-                        <div key={gr}>
-                          <p className="panel-title">{gr}</p>
-                          <ul>{rubriques.filter((r) => r.groupe === gr).map((r) => <li key={r.slug}><Link to={`/genie-biomedical/${r.slug}`}>{r.title}</Link></li>)}</ul>
-                        </div>
-                      ))}
-                    </div>
-                    <Link className="more-link" to="/genie-biomedical">Tous les domaines <span aria-hidden="true">→</span></Link>
-                  </>
-                ) : (
-                  <ul>{g.items!.map((i) => <li key={i.to}><NavLink to={i.to}>{i.label}</NavLink></li>)}</ul>
-                )}
+      <header className="site-header">
+        <div className="container header-row">
+          <Link to="/" className="brand" aria-label={`${site.name} – accueil`}>
+            <Logo />
+            <span className="brand-text">
+              {site.organisme && <span className="brand-org">{site.organisme}</span>}
+              <strong>{site.officialName || site.name}</strong>
+            </span>
+          </Link>
+          <button className="menu-toggle" aria-expanded={menu} aria-controls="main-nav" onClick={() => setMenu(!menu)}>
+            <span aria-hidden="true" className="burger" />{menu ? 'Fermer' : 'Menu'}
+          </button>
+          <nav id="main-nav" ref={navRef} className={`main-nav${menu ? ' is-open' : ''}`} aria-label="Navigation principale">
+            {groups.map((g) => g.to ? (
+              <NavLink key={g.label} to={g.to} className="nav-link">{g.label}</NavLink>
+            ) : (
+              <div key={g.label} className={`has-panel${g.mega ? ' has-mega' : ''}`}>
+                <button className={`nav-link${isCurrent(g) ? ' is-current' : ''}`} aria-expanded={openGroup === g.label} onClick={() => setOpenGroup(openGroup === g.label ? null : g.label)}>
+                  {g.label}<span aria-hidden="true" className="caret" />
+                </button>
+                <div className={`panel${g.mega ? ' panel-mega' : ''}${openGroup === g.label ? ' is-open' : ''}`}>
+                  {g.mega ? (
+                    <>
+                      <div className="mega-cols">
+                        {groupes.map((gr) => (
+                          <div key={gr}>
+                            <p className="panel-title">{gr}</p>
+                            <ul>{rubriques.filter((r) => r.groupe === gr).map((r) => <li key={r.slug}><Link to={`/genie-biomedical/${r.slug}`}>{r.title}</Link></li>)}</ul>
+                          </div>
+                        ))}
+                      </div>
+                      <Link className="more-link" to="/genie-biomedical">Tous les domaines <span aria-hidden="true">→</span></Link>
+                    </>
+                  ) : (
+                    <ul>{g.items!.map((i) => <li key={i.to}><NavLink to={i.to}>{i.label}</NavLink></li>)}</ul>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-          <button className="nav-link nav-search" aria-expanded={searching} onClick={() => setSearching(!searching)}>Rechercher</button>
-        </nav>
-      </div>
+            ))}
+            <button className="nav-link nav-search" aria-expanded={searching} onClick={() => setSearching(!searching)}>Rechercher</button>
+          </nav>
+        </div>
       {searching && (
         <form className="container header-search" role="search" onSubmit={submit}>
           <label className="sr-only" htmlFor="hs">Rechercher sur le portail</label>
           <input id="hs" autoFocus type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher sur le portail" />
           <button className="btn" type="submit">Rechercher</button>
         </form>
-      )}
-    </header>
+        )}
+      </header>
+    </>
   );
 }
 
@@ -114,31 +118,41 @@ function Footer() {
   const { email, telephone, adresse } = site.contact;
   return (
     <footer className="site-footer">
-      <div className="container footer-grid">
-        <div>
-          <p className="footer-title">{site.officialName || site.name}</p>
-          {site.organisme && <p className="footer-org">Porté par {site.organisme}</p>}
-          <p>{site.description}</p>
-          <p className="footer-note">{site.statutMention}</p>
+      <div className="container footer-id">
+        <div className="footer-brand">
+          <Logo inverse />
+          <div>
+            <p className="footer-name">{site.officialName || site.name}</p>
+            {site.organisme && <p className="footer-org"><Mark3 /> {site.organisme}</p>}
+          </div>
         </div>
-        <nav aria-label="Navigation secondaire">
+        <p className="footer-status">{site.statutMention} Les informations officielles seront publiées lorsqu'elles seront établies et vérifiées.</p>
+      </div>
+      <div className="container footer-grid">
+        <nav aria-label="Le portail">
           <p className="footer-title">Le portail</p>
           <ul>
             <li><Link to="/a-propos">À propos</Link></li>
             <li><Link to="/membres">Membres</Link></li>
             <li><Link to="/genie-biomedical">Génie biomédical</Link></li>
             <li><Link to="/projets">Projets et innovations</Link></li>
-            <li><Link to="/contact">Contact et contribution</Link></li>
+            <li><Link to="/recherche">Recherche</Link></li>
           </ul>
         </nav>
-        <nav aria-label="Publications et opportunités">
+        <nav aria-label="Publications">
           <p className="footer-title">Publications</p>
           <ul>
             <li><Link to="/actualites">Actualités</Link></li>
             <li><Link to="/communiques">Communiqués</Link></li>
-            <li><Link to="/ressources">Ressources techniques</Link></li>
             <li><Link to="/formations">Formations et établissements</Link></li>
             <li><Link to="/opportunites">Opportunités</Link></li>
+          </ul>
+        </nav>
+        <nav aria-label="Ressources">
+          <p className="footer-title">Ressources</p>
+          <ul>
+            {resourceCategories.slice(0, 5).map((c) => <li key={c.label}><Link to={`/ressources?cat=${encodeURIComponent(c.label)}`}>{c.label}</Link></li>)}
+            <li><Link to="/ressources">Tout le catalogue</Link></li>
           </ul>
         </nav>
         <div>
@@ -149,11 +163,11 @@ function Footer() {
               {telephone && <div>{telephone}</div>}
               {adresse && <div>{adresse}</div>}
             </address>
-          ) : <p>Coordonnées à venir. <Link to="/contact">Voir la page contact</Link></p>}
+          ) : <p>Coordonnées à venir.</p>}
+          <p><Link to="/contact">Contact et contribution</Link></p>
           {socials.length > 0 && <ul className="inline-list">{socials.map(([n, u]) => <li key={n}><a href={u} target="_blank" rel="noopener noreferrer">{n}</a></li>)}</ul>}
           {site.liensInstitutionnels.length > 0 && (
-            <><p className="footer-title footer-sub">Liens institutionnels</p>
-            <ul>{site.liensInstitutionnels.map((l) => <li key={l.url}><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a></li>)}</ul></>
+            <ul>{site.liensInstitutionnels.map((l) => <li key={l.url}><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a></li>)}</ul>
           )}
         </div>
       </div>
@@ -172,6 +186,8 @@ function Footer() {
 }
 
 export default function Layout() {
+  const { pathname } = useLocation();
+  useReveal(pathname);
   return (
     <>
       <a className="skip" href="#contenu" onClick={(e) => { e.preventDefault(); document.getElementById('contenu')?.focus(); }}>Aller au contenu</a>

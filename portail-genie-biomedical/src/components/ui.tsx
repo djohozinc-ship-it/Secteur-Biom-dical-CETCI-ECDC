@@ -4,15 +4,41 @@ import { asset, formatDate, initials } from '../utils/format';
 import { renderMarkdown } from '../utils/content';
 import { site } from '../config/site';
 
-export function Logo() {
+export function Logo({ inverse = false }: { inverse?: boolean }) {
   if (site.logo) return <img src={asset(site.logo)} alt="" width="44" height="44" className="logo-img" />;
   // Logo provisoire : à remplacer via site.logo dans src/config/site.ts
+  const bg = inverse ? '#ffffff' : 'var(--blue)';
+  const fg = inverse ? 'var(--blue)' : '#ffffff';
   return (
-    <svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true" focusable="false">
-      <rect width="64" height="64" rx="10" fill="var(--petrol)" />
-      <path d="M27 13h10v14h14v10H37v14H27V37H13V27h14z" fill="#fff" />
-      <rect x="13" y="55" width="38" height="3" rx="1.5" fill="var(--accent-light)" />
+    <svg viewBox="0 0 64 64" width="42" height="42" aria-hidden="true" focusable="false">
+      <rect width="64" height="64" rx="4" fill={bg} />
+      <path d="M27 12h10v15h15v10H37v15H27V37H12V27h15z" fill={fg} />
+      <rect x="12" y="56" width="14" height="3" fill="var(--green)" />
     </svg>
+  );
+}
+
+// Très petit repère aux couleurs du Bénin, utilisé avec parcimonie (hero, pied de page).
+export function Mark3() {
+  return <span className="mark3" aria-hidden="true"><i /><i /><i /></span>;
+}
+
+type FigureSlot = 'hero' | 'presentation' | 'innovation' | 'formation';
+// Photographie éditoriale : ratio, légende et crédit homogènes. Sans photo, emplacement neutre.
+export function Figure({ slot, ratio = 'wide' }: { slot: FigureSlot; ratio?: 'portrait' | 'wide' | 'thumb' }) {
+  const img = site.images[slot];
+  if (img.src) {
+    return (
+      <figure className={`fig fig-${ratio}`}>
+        <div className="fig-frame"><img src={asset(img.src)} alt={img.alt} loading={slot === 'hero' ? 'eager' : 'lazy'} /></div>
+        {(img.caption || img.credit) && <figcaption>{img.caption}{img.credit && <span className="fig-credit"> Crédit : {img.credit}</span>}</figcaption>}
+      </figure>
+    );
+  }
+  return (
+    <figure className={`fig fig-${ratio} fig-empty`}>
+      <div className="fig-frame" role="img" aria-label="Photographie à venir"><span>Photographie à venir</span></div>
+    </figure>
   );
 }
 
@@ -46,7 +72,7 @@ export function Section({ title, eyebrow, to, linkLabel, children, tone = 'white
 }) {
   const hid = `s-${id ?? title}`;
   return (
-    <section className={`section section-${tone}`} aria-labelledby={hid}>
+    <section className={`section section-${tone}`} aria-labelledby={hid} data-reveal>
       <div className="container">
         <div className="section-head">
           <div>
