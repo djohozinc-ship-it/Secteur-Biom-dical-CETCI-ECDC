@@ -1,0 +1,6 @@
+[
+  { "id": "m1", "name": "Aïcha Dossou", "role": "Coordinatrice du portail", "pole": "Coordination", "bio": "Profil fictif de démonstration.", "consentement": true, "statut": "publie" },
+  { "id": "m2", "name": "Koffi Adjovi", "role": "Responsable maintenance", "pole": "Maintenance", "bio": "Profil fictif de démonstration.", "consentement": true, "statut": "publie" },
+  { "id": "m3", "name": "Marius Hounkpatin", "role": "Chargé de l'innovation", "pole": "Innovation", "bio": "Profil fictif de démonstration.", "consentement": true, "statut": "publie" },
+  { "id": "m4", "name": "Membre sans autorisation", "role": "Non publié", "pole": "Coordination", "bio": "consentement = false : jamais affiché.", "consentement": false, "statut": "publie" }
+]

@@ -16,7 +16,7 @@ export default function Members() {
           <button className={`chip${pole === '' ? ' is-on' : ''}`} aria-pressed={pole === ''} onClick={() => setPole('')}>Tous</button>
           {poles.map((p) => <button key={p} className={`chip${pole === p ? ' is-on' : ''}`} aria-pressed={pole === p} onClick={() => setPole(p)}>{p}</button>)}
         </div>
-        {shown.length === 0 ? <EmptyState title="Aucun membre à afficher">Ajoutez des membres dans src/data/membres/membres.json.</EmptyState> : (
+        {shown.length === 0 ? <EmptyState title="Contenu à venir">La présentation des membres sera publiée avec leur accord.</EmptyState> : (
           <ul className="member-grid">
             {shown.map((m) => (
               <li key={m.id} className="member">

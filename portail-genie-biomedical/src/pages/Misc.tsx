@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/ui';
+import { site } from '../config/site';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 export function Legal() {
@@ -11,7 +12,7 @@ export function Legal() {
         <p className="notice">Texte provisoire. Il sera complété avec les informations officielles de l'organisation (statut, responsable de publication).</p>
         <h2>Éditeur</h2><p>Communauté du secteur biomédical — informations à renseigner.</p>
         <h2>Hébergement</h2><p>Site statique hébergé gratuitement sur GitHub Pages.</p>
-        <h2>Contenus</h2><p>Les contenus marqués « Démo » sont des exemples et ne constituent pas des informations réelles.</p>
+        {site.showDemo && <><h2>Contenus</h2><p>Les contenus marqués « Démonstration » sont fictifs et ne constituent pas des informations réelles.</p></>}
       </div>
     </>
   );

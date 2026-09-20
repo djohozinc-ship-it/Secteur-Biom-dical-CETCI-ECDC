@@ -1,0 +1,5 @@
+[
+  { "id": "demo-communique-1", "title": "Exemple de communiqué", "date": "2026-09-01", "summary": "Communiqué fictif servant à montrer l'affichage.", "content": "Contenu **fictif** de démonstration.", "category": "Institutionnel", "source": "Démonstration", "statut": "publie" },
+  { "id": "demo-communique-2", "title": "Exemple de communiqué archivé", "date": "2026-01-10", "summary": "Communiqué fictif archivé.", "content": "Contenu fictif de démonstration.", "category": "Appel", "source": "Démonstration", "statut": "archive" },
+  { "id": "demo-communique-3", "title": "Communiqué non publié", "date": "2026-09-15", "summary": "Statut brouillon : n'est jamais affiché.", "content": "Non affiché.", "category": "Institutionnel", "statut": "brouillon" }
+]

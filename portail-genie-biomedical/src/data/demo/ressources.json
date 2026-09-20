@@ -1,0 +1,4 @@
+[
+  { "id": "demo-ressource-1", "title": "Exemple de fiche technique", "description": "Ressource fictive : illustre la structure d'une fiche.", "category": "Fiches techniques", "typeDocument": "PDF", "source": "Démonstration", "date": "2026-08-01", "auteur": "Auteur fictif", "rubrique": "dispositifs-medicaux", "statut": "publie" },
+  { "id": "demo-ressource-2", "title": "Exemple de check-list de maintenance", "description": "Ressource fictive : modèle de check-list.", "category": "Check-lists", "typeDocument": "Modèle", "source": "Démonstration", "rubrique": "maintenance-biomedicale", "statut": "publie" }
+]

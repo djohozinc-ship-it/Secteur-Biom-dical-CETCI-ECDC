@@ -1,0 +1,4 @@
+[
+  { "id": "demo-opportunite-1", "title": "Exemple d'opportunité en cours", "type": "Bourses", "description": "Opportunité fictive avec date limite.", "organisme": "Organisme fictif", "source": "Démonstration", "datePublication": "2026-09-01", "dateLimite": "2027-03-31", "statut": "publie" },
+  { "id": "demo-opportunite-2", "title": "Exemple d'opportunité expirée", "type": "Conférences", "description": "Date limite dépassée : passe automatiquement en archives.", "source": "Démonstration", "dateLimite": "2025-01-15", "statut": "publie" }
+]

@@ -14,7 +14,7 @@ export default function About() {
   usePageMeta('À propos', 'Mission, vision, objectifs et valeurs du portail.');
   return (
     <>
-      <PageHeader title="À propos" intro="Présentation provisoire de la plateforme. Les informations officielles (statut, partenaires) seront ajoutées lorsqu'elles seront disponibles." crumbs={[{ label: 'À propos' }]} />
+      <PageHeader title="À propos" intro="Présentation générale du portail. Les informations officielles (organisme porteur, statut, partenaires) seront ajoutées lorsqu'elles seront disponibles." crumbs={[{ label: 'À propos' }]} />
       <Section title="Mission, vision et valeurs"><Grid>{blocks.map((b) => <article key={b.title} className="card"><div className="card-body"><h3>{b.title}</h3><p>{b.text}</p></div></article>)}</Grid></Section>
       <Section title="Objectifs" tone="mist"><ul className="checklist">{objectifs.map((o) => <li key={o}>{o}</li>)}</ul></Section>
       <Section title="Publics concernés"><ul className="checklist">{publics.map((o) => <li key={o}>{o}</li>)}</ul></Section>

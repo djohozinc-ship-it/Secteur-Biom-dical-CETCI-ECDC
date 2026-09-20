@@ -2,8 +2,10 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { asset, formatDate, initials } from '../utils/format';
 import { renderMarkdown } from '../utils/content';
+import { site } from '../config/site';
 
 export function Logo() {
+  if (site.logo) return <img src={asset(site.logo)} alt="" width="44" height="44" className="logo-img" />;
   return (
     <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true" focusable="false">
       <rect width="64" height="64" rx="12" fill="var(--blue)" />
@@ -14,7 +16,7 @@ export function Logo() {
 }
 
 export function DemoBadge() {
-  return <span className="badge badge-demo">Démo</span>;
+  return <span className="badge badge-demo">Démonstration</span>;
 }
 
 export function PageHeader({ title, intro, crumbs }: { title: string; intro?: string; crumbs?: { label: string; to?: string }[] }) {
@@ -80,6 +82,15 @@ export function Card({ to, image, tag, date, title, summary, demo, footer }: {
   return <article className="card">{to ? <Link to={to} className="card-link">{body}</Link> : body}</article>;
 }
 
+export function ArchiveTabs({ archives, setArchives, labelLive = 'En cours' }: { archives: boolean; setArchives: (v: boolean) => void; labelLive?: string }) {
+  return (
+    <div className="chips" role="group" aria-label="Affichage">
+      <button className={`chip${!archives ? ' is-on' : ''}`} aria-pressed={!archives} onClick={() => setArchives(false)}>{labelLive}</button>
+      <button className={`chip${archives ? ' is-on' : ''}`} aria-pressed={archives} onClick={() => setArchives(true)}>Archives</button>
+    </div>
+  );
+}
+
 export function Grid({ children, cols = 3 }: { children: ReactNode; cols?: 2 | 3 | 4 }) {
   return <div className={`grid grid-${cols}`}>{children}</div>;
 }
@@ -127,7 +138,7 @@ export function Markdown({ source }: { source: string }) {
 }
 
 export function ShareLinks({ title }: { title: string }) {
-  const url = encodeURIComponent(window.location.href);
+  const url = encodeURIComponent(typeof window !== 'undefined' ? window.location.href : site.siteUrl);
   const t = encodeURIComponent(title);
   const links = [
     { label: 'WhatsApp', href: `https://wa.me/?text=${t}%20${url}` },

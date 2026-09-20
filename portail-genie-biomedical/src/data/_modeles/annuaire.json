@@ -1,0 +1,1 @@
+{ "id": "identifiant-unique", "typeProfil": "Établissement", "nom": "", "fonction": "", "organisme": "", "description": "", "consentement": false, "coordonneesAutorisees": false, "coordonnees": { "email": "", "telephone": "" }, "source": "", "dateValidation": "AAAA-MM-JJ", "statut": "brouillon" }
