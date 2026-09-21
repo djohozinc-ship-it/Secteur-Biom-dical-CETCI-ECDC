@@ -46,3 +46,9 @@ Si l'adresse du site change, mettre à jour `index.html`, `public/robots.txt`, `
 - 3 autres emplacements photo (`presentation`, `innovation`, `formation`) : voir `public/images/README.txt`. Sans photo, un emplacement neutre s'affiche.
 - Utilisez des photos d'au moins 1600 px de large : une petite image agrandie en pleine largeur paraît floue.
 - N'utilisez que des images dont vous détenez les droits ; pour une photo de personnes, obtenez leur accord.
+
+## Référencement Google
+- `index.html` contient le titre, la description, les balises de partage, les données structurées (JSON-LD) et un contenu de secours lisible par les moteurs de recherche.
+- Le titre de l'accueil se règle avec `seoTitle` dans `src/config/site.ts` (≈ 60 caractères).
+- Avec `HashRouter`, Google n'indexe que l'adresse de la page d'accueil ; les sous-pages (`/#/actualites`…) ne sont pas indexées séparément.
+- Inscrire le site dans Google Search Console (voir le guide fourni), puis demander l'indexation.
