@@ -3,6 +3,8 @@ import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-do
 import { site } from '../config/site';
 import { rubriques } from '../utils/content';
 import { Logo, Mark3 } from './ui';
+import { Glyph } from './illustrations';
+import { asset } from '../utils/format';
 import { useReveal } from '../hooks/useReveal';
 import { resourceCategories } from '../utils/taxonomy';
 
@@ -55,7 +57,9 @@ function Header() {
     <>
       <div className="topbar">
         <div className="container topbar-row">
-          <span>{site.statutMention}</span>
+          {site.annonce.texte ? (
+            <span className="announce"><Glyph name="megaphone" size={16} />{site.annonce.to ? <Link to={site.annonce.to}>{site.annonce.texte}</Link> : site.annonce.texte}</span>
+          ) : <span>{site.statutMention}</span>}
           <Link to="/contact">Contact</Link>
         </div>
       </div>
@@ -63,8 +67,9 @@ function Header() {
         <div className="container header-row">
           <Link to="/" className="brand" aria-label={`${site.name} – accueil`}>
             <Logo />
+            {site.logo && <span className="brand-sep" aria-hidden="true" />}
             <span className="brand-text">
-              {site.organisme && <span className="brand-org">{site.organisme}</span>}
+              {site.organisme && !site.logo && <span className="brand-org">{site.organisme}</span>}
               <strong>{site.officialName || site.name}</strong>
             </span>
           </Link>
@@ -120,10 +125,11 @@ function Footer() {
     <footer className="site-footer">
       <div className="container footer-id">
         <div className="footer-brand">
-          <Logo inverse />
+          {site.organismeLogo ? <img className="footer-logo" src={asset(site.organismeLogo)} alt={`Logo ${site.organisme}`} /> : <Logo inverse />}
           <div>
             <p className="footer-name">{site.officialName || site.name}</p>
-            {site.organisme && <p className="footer-org"><Mark3 /> {site.organisme}</p>}
+            {site.organisme && <p className="footer-org"><Mark3 /> Porté par {site.organisme}</p>}
+            {site.organismeNom && <p className="footer-orgfull">{site.organismeNom}</p>}
           </div>
         </div>
         <p className="footer-status">{site.statutMention} Les informations officielles seront publiées lorsqu'elles seront établies et vérifiées.</p>

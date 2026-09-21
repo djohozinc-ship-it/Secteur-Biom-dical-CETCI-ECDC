@@ -41,7 +41,8 @@ Si l'adresse du site change, mettre à jour `index.html`, `public/robots.txt`, `
 
 ## Design et images
 - Identité : bleu institutionnel, blanc, gris clairs, vert santé en accent ; minuscule repère tricolore. Tout se règle dans `:root` de `src/styles/main.css`.
-- 4 emplacements photo (`hero`, `presentation`, `innovation`, `formation`) à renseigner dans `src/config/site.ts`, section `images`. Voir `public/images/README.txt` (sujets, formats, droits).
-- Sans photo, un emplacement neutre « Photographie à venir » s'affiche.
-- Logo : `logo` dans `src/config/site.ts` (fichier dans `public/`). Le logo générique reste en secours.
-- N'utilisez que des images dont vous détenez les droits ; pour une photo d'une personne, obtenez son accord.
+- **Diaporama d'accueil** : `heroSlides` dans `src/config/site.ts` (image, texte alternatif obligatoire, cadrage `position`, titre, texte, bouton). Les actualités qui ont une `image` s'ajoutent automatiquement au diaporama. Défilement automatique pausable, arrêté au survol/focus et désactivé si l'utilisateur réduit les animations.
+- **Logos** : `logo` (secteur biomédical, en-tête) et `organismeLogo` (CETCI, fond transparent, pied de page) dans `site.ts`, fichiers dans `public/images/`.
+- 3 autres emplacements photo (`presentation`, `innovation`, `formation`) : voir `public/images/README.txt`. Sans photo, un emplacement neutre s'affiche.
+- Utilisez des photos d'au moins 1600 px de large : une petite image agrandie en pleine largeur paraît floue.
+- N'utilisez que des images dont vous détenez les droits ; pour une photo de personnes, obtenez leur accord.

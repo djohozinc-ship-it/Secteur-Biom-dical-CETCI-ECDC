@@ -5,7 +5,7 @@ import { renderMarkdown } from '../utils/content';
 import { site } from '../config/site';
 
 export function Logo({ inverse = false }: { inverse?: boolean }) {
-  if (site.logo) return <img src={asset(site.logo)} alt="" width="44" height="44" className="logo-img" />;
+  if (site.logo && !inverse) return <img src={asset(site.logo)} alt="" className="logo-img" />;
   // Logo provisoire : à remplacer via site.logo dans src/config/site.ts
   const bg = inverse ? '#ffffff' : 'var(--blue)';
   const fg = inverse ? 'var(--blue)' : '#ffffff';
@@ -23,14 +23,14 @@ export function Mark3() {
   return <span className="mark3" aria-hidden="true"><i /><i /><i /></span>;
 }
 
-type FigureSlot = 'hero' | 'presentation' | 'innovation' | 'formation';
+type FigureSlot = 'presentation' | 'innovation' | 'formation';
 // Photographie éditoriale : ratio, légende et crédit homogènes. Sans photo, emplacement neutre.
 export function Figure({ slot, ratio = 'wide' }: { slot: FigureSlot; ratio?: 'portrait' | 'wide' | 'thumb' }) {
   const img = site.images[slot];
   if (img.src) {
     return (
       <figure className={`fig fig-${ratio}`}>
-        <div className="fig-frame"><img src={asset(img.src)} alt={img.alt} loading={slot === 'hero' ? 'eager' : 'lazy'} /></div>
+        <div className="fig-frame"><img src={asset(img.src)} alt={img.alt} loading="lazy" /></div>
         {(img.caption || img.credit) && <figcaption>{img.caption}{img.credit && <span className="fig-credit"> Crédit : {img.credit}</span>}</figcaption>}
       </figure>
     );

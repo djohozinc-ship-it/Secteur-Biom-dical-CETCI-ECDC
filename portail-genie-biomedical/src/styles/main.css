@@ -12,6 +12,7 @@
   --blue-700: #14417a;
   --green: #0f7a55;
   --green-dark: #0b6547;
+  --green-light: #5cc79a;
   --gray-50: #f4f6f8;
   --gray-100: #e9edf1;
   --line: #d4dae1;
@@ -27,7 +28,7 @@
   --radius: 2px;
   --maxw: 1240px;
   --gutter: clamp(1rem, 4vw, 2.5rem);
-  --header-h: 64px;
+  --header-h: 72px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -96,7 +97,8 @@ main:focus { outline: none; }
 .brand-text { display: block; min-width: 0; line-height: 1.15; }
 .brand-org { display: block; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--green-dark); }
 .brand-text strong { display: block; font-family: var(--font-title); font-size: 1rem; }
-.logo-img { width: 42px; height: 42px; object-fit: contain; }
+.logo-img { height: 52px; width: auto; max-width: 160px; object-fit: contain; display: block; }
+.brand-sep { width: 1px; align-self: stretch; margin-block: 14px; background: var(--line); }
 .menu-toggle { display: inline-flex; align-items: center; gap: var(--s2); font: inherit; font-weight: 600; font-size: .9rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: .5rem .8rem; cursor: pointer; color: var(--blue); }
 .burger, .burger::before, .burger::after { display: block; width: 16px; height: 2px; background: currentColor; position: relative; }
 .burger::before, .burger::after { content: ""; position: absolute; left: 0; }
@@ -150,12 +152,7 @@ main:focus { outline: none; }
     linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 32px 100%, var(--gray-50); border: 1px solid var(--line); }
 .fig-empty .fig-frame span { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; color: var(--ink-soft); background: var(--white); padding: .3rem .6rem; margin: var(--s3); border: 1px solid var(--line); }
 
-/* ---------- Accueil : hero ---------- */
-.hero { background: var(--white); padding-top: clamp(2rem, 6vw, 4.5rem); }
-.hero-grid { display: grid; gap: var(--s6); align-items: center; padding-bottom: clamp(2rem, 5vw, 4rem); }
-.hero-text h1 { max-width: 16ch; margin-bottom: var(--s5); }
-@media (min-width: 720px) { .hero-grid { grid-template-columns: 1.15fr .85fr; gap: var(--s6); } }
-@media (min-width: 900px) { .hero-grid { grid-template-columns: 7fr 5fr; gap: var(--s8); } }
+/* ---------- Accueil : diaporama + accès rapides ---------- */
 .quick-strip { background: var(--blue); }
 .quick-strip ul { list-style: none; margin-block: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .quick-strip li + li { border-left: 1px solid rgba(255,255,255,.18); }
@@ -435,3 +432,58 @@ input, select, textarea { font: inherit; padding: .65rem .75rem; border: 1px sol
 table, pre { max-width: 100%; overflow-x: auto; display: block; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } .reveal { opacity: 1; transform: none; } }
 .info-band .muted { margin-top: var(--s3); }
+
+/* ---------- Bandeau d'annonce ---------- */
+.announce { display: inline-flex; align-items: center; gap: var(--s2); }
+.announce a { text-decoration: none; }
+.announce a:hover { text-decoration: underline; }
+
+/* ---------- Diaporama d'accueil (pleine largeur, style éditorial) ---------- */
+.slider { position: relative; background: var(--blue-900); color: var(--white); }
+.slides { display: grid; }
+.slide { grid-area: 1 / 1; display: flex; flex-direction: column; visibility: hidden; opacity: 0; transition: opacity .7s ease, visibility 0s linear .7s; }
+.slide.is-active { visibility: visible; opacity: 1; transition: opacity .7s ease; }
+.slide-media { height: clamp(240px, 62vw, 340px); position: relative; overflow: hidden; background: var(--blue-900); }
+.slide-media img { width: 100%; height: 100%; object-fit: cover; }
+.slide-caption { background: var(--blue-900); }
+.caption-box { padding: var(--s5) 0 var(--s6); max-width: 40rem; }
+.slider--multi .caption-box { padding-bottom: var(--s8); }
+.caption-kicker { text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 700; color: var(--green-light); margin: 0 0 var(--s2); }
+.caption-box h2 { color: var(--white); font-size: clamp(1.5rem, 5vw, 2.4rem); margin-bottom: var(--s3); }
+.caption-box p { color: #d3deec; }
+.slide-credit { position: absolute; right: var(--s3); top: var(--s2); margin: 0; font-size: .7rem; color: #fff; background: rgba(7,29,59,.7); padding: .1rem .4rem; }
+.slider-arrow { position: absolute; top: calc(clamp(240px, 62vw, 340px) / 2 - 22px); width: 44px; height: 44px; display: grid; place-items: center; border: 0; cursor: pointer; background: rgba(7,29,59,.72); color: #fff; transition: background-color .15s; }
+.slider-arrow:hover { background: var(--blue-700); }
+.slider-prev { left: 0; } .slider-next { right: 0; }
+.slider-bar { position: absolute; left: 0; right: 0; bottom: 0; }
+.slider-controls { display: flex; align-items: center; gap: var(--s3); padding-bottom: var(--s4); }
+.slider-pause { width: 32px; height: 32px; display: grid; place-items: center; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.55); border-radius: var(--radius); cursor: pointer; }
+.slider-pause:hover { background: rgba(255,255,255,.15); }
+.slider-dots { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--s2); }
+.slider-dots button { width: 34px; height: 5px; padding: 0; border: 0; background: rgba(255,255,255,.4); cursor: pointer; }
+.slider-dots button.is-on { background: #fff; }
+.slider-dots button:hover { background: rgba(255,255,255,.75); }
+@media (min-width: 900px) {
+  .slide { position: relative; min-height: clamp(480px, 42vw, 600px); justify-content: flex-end; }
+  .slide-media { position: absolute; inset: 0; height: auto; }
+  .slide-caption { position: relative; background: transparent; }
+  .caption-box { background: rgba(7,29,59,.88); border-left: 4px solid var(--green-light); padding: var(--s4) var(--s5); margin-bottom: var(--s6); max-width: 34rem; }
+  .slider--multi .caption-box { margin-bottom: 4rem; padding-bottom: var(--s4); }
+  .caption-box h2 { font-size: clamp(1.5rem, 2.3vw, 2rem); }
+  .caption-box p:not(.caption-kicker) { font-size: .95rem; margin-bottom: var(--s3); }
+  .slider-arrow { top: 50%; margin-top: -22px; width: 48px; height: 64px; margin-top: -32px; }
+}
+
+/* Accès rapides sous le diaporama */
+.hero-links { border-bottom: 1px solid var(--line); }
+
+/* Panneau d'identité (présentation) */
+.id-panel { border: 1px solid var(--line); padding: var(--s5); background: var(--white); }
+.id-panel img { width: 100%; max-width: 420px; margin: 0 auto var(--s4); }
+.id-panel p { margin: 0 0 var(--s4); display: grid; gap: var(--s1); font-size: .92rem; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: var(--s3); }
+.id-panel strong { color: var(--blue); font-family: var(--font-title); font-size: 1.05rem; }
+
+/* Pied de page : logo CETCI */
+.footer-logo { height: 84px; width: auto; max-width: 170px; object-fit: contain; flex: none; }
+.footer-orgfull { margin: var(--s1) 0 0; font-size: .82rem; color: #b4c5da; max-width: 34ch; }
+@media (max-width: 420px) { .logo-img { height: 42px; max-width: 120px; } .brand-sep { margin-block: 10px; } }

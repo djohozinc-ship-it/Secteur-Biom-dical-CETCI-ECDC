@@ -46,3 +46,8 @@ export interface Rubrique { slug: string; title: string; groupe: string; intro: 
 export interface SearchItem {
   id: string; kind: string; title: string; text: string; category: string; to: string; demo?: boolean;
 }
+
+export interface HeroSlide {
+  image: string; alt: string; position?: string; // position du cadrage, ex. '50% 35%'
+  kicker?: string; title: string; text?: string; cta?: { label: string; to: string }; credit?: string;
+}

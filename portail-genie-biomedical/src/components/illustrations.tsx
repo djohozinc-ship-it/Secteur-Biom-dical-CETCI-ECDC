@@ -24,6 +24,11 @@ const paths: Record<string, string> = {
   steril: 'M5 9a7 7 0 0 1 14 0v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zM9 14h6M12 11v6',
   search: 'M10.5 4a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM16 16l5 5',
   arrow: 'M4 12h15M13 6l6 6-6 6',
+  megaphone: 'M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1zM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12',
+  chevL: 'M15 5l-7 7 7 7',
+  chevR: 'M9 5l7 7-7 7',
+  pause: 'M8 5v14M16 5v14',
+  play: 'M7 4l13 8-13 8z',
   cap: 'M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5',
 };
 

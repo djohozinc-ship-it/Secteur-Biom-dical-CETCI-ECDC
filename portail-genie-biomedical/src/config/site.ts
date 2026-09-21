@@ -1,3 +1,5 @@
+import type { HeroSlide } from '../types';
+
 // ============================================================
 // POINT CENTRAL DE CONFIGURATION
 // Laissez vide ('' ou []) tout ce qui n'est pas encore officiel :
@@ -13,15 +15,31 @@ export const site = {
     "Portail sectoriel consacré au génie biomédical au Bénin : actualités, communiqués, ressources techniques, projets, formations et opportunités.",
   organisme: 'CETCI / ECDC', // communauté porteuse du portail
   statutMention: "Initiative communautaire — ce portail n'est pas un site gouvernemental.",
-  // Photographies éditoriales (fichiers dans public/images/, voir public/images/README.txt).
-  // Tant que 'src' est vide, un emplacement neutre « Photographie à venir » s'affiche.
+  // Diaporama de l'accueil (photos dans public/images/). Les actualités qui ont une image s'ajoutent automatiquement.
+  heroSlides: [
+    {
+      image: 'images/equipe-secteur-biomedical.jpg',
+      alt: "Photo de groupe : une douzaine de jeunes en polos bleu clair, alignés devant un tableau blanc dans une salle aux murs verts",
+      position: '50% 46%',
+      kicker: 'Communauté',
+      title: 'La communauté du secteur biomédical',
+      text: 'Un portail pour informer, partager, valoriser et relier les acteurs du génie biomédical au Bénin.',
+      cta: { label: 'Découvrir le portail', to: '/a-propos' },
+      credit: '',
+    },
+  ] as HeroSlide[],
+
+  // Autres photographies éditoriales. Tant que 'src' est vide, un emplacement neutre s'affiche.
   images: {
-    hero: { src: '', alt: '', caption: '', credit: '' },
     presentation: { src: '', alt: '', caption: '', credit: '' },
     innovation: { src: '', alt: '', caption: '', credit: '' },
     formation: { src: '', alt: '', caption: '', credit: '' },
-  } as Record<'hero' | 'presentation' | 'innovation' | 'formation', { src: string; alt: string; caption: string; credit: string }>,
-  logo: '', // ex. 'images/logo.svg' (fichier dans public/). Vide = logo générique
+  } as Record<'presentation' | 'innovation' | 'formation', { src: string; alt: string; caption: string; credit: string }>,
+  logo: 'images/logo-secteur-biomedical.png', // logo du secteur biomédical (fichier dans public/). Vide = logo générique
+  organismeNom: "Centre d'Élaboration des Technologies de Conception en Ingénierie", // nom développé de l'organisme porteur
+  organismeLogo: 'images/logo-cetci.png', // logo du CETCI (fond transparent, pour le pied de page)
+  // Annonce affichée dans le bandeau du haut (laisser texte vide pour n'afficher que la mention de statut)
+  annonce: { texte: '', to: '' },
   siteUrl: 'https://djohozinc-ship-it.github.io/Secteur-Biom-dical-CETCI-ECDC/',
 
   // --- Coordonnées ---

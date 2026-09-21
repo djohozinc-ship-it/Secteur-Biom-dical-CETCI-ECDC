@@ -1,6 +1,6 @@
 PHOTOGRAPHIES ÉDITORIALES — mode d'emploi
 =========================================
-Le design prévoit 4 emplacements photo. Tant qu'un fichier n'est pas renseigné dans
+Le design prévoit un diaporama d'accueil et 3 emplacements photo. Tant qu'un fichier n'est pas renseigné dans
 src/config/site.ts (section "images"), le site affiche un emplacement neutre « Photographie à venir ».
 
 Pour chaque photo : copier le fichier dans ce dossier (public/images/), puis renseigner dans site.ts :
@@ -10,9 +10,9 @@ Pour chaque photo : copier le fichier dans ce dossier (public/images/), puis ren
   credit : nom du photographe ou de la source (facultatif)
 
 Sujets recommandés (chaque image doit avoir une fonction éditoriale) :
-  hero          Technicien ou ingénieur biomédical en situation de travail réelle sur un équipement
-                (laboratoire, atelier de maintenance, service hospitalier). Pas de pose face caméra.
-                Format conseillé : carré ou proche du carré, 1600 x 1600 px minimum.
+  diaporama     Photos pleine largeur de l'accueil (déclarées dans heroSlides). Format paysage, 1920 x 800 px
+                minimum, sujet principal (visages, équipement) dans la moitié supérieure : la légende occupe le bas.
+                Sujets : technicien ou ingénieur au travail sur un équipement, atelier, laboratoire, étudiants.
   presentation  Équipement médical en cours de vérification ou de maintenance, ou contrôle d'un appareil.
                 Format : 3:2 ou 4:5, 1600 px de large minimum.
   innovation    Prototype, carte électronique, banc d'essai ou travail d'étudiants en ingénierie.

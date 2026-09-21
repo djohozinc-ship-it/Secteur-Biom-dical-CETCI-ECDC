@@ -4,6 +4,8 @@ import { site } from '../config/site';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { articles, communiques, formations, isArchived, opportunites, projets, ressources, rubriques } from '../utils/content';
 import { Badge, DemoBadge, DocRow, Figure, Mark3, Placeholder } from '../components/ui';
+import HeroSlider from '../components/HeroSlider';
+import type { HeroSlide } from '../types';
 import { Glyph, domainGlyph } from '../components/illustrations';
 import { contributionModes, opportunityTypes, resourceCategories } from '../utils/taxonomy';
 import { asset, dayMonth, daysUntil, formatDate } from '../utils/format';
@@ -32,24 +34,17 @@ export default function Home() {
   const opps = opportunites.filter((o) => !isArchived(o)).sort((a, b) => (a.dateLimite ?? '9999').localeCompare(b.dateLimite ?? '9999')).slice(0, 3);
   const groupes = Array.from(new Set(rubriques.map((r) => r.groupe)));
   const featured = projets[0];
+  const newsSlides: HeroSlide[] = news.filter((a) => a.image).slice(0, 3).map((a) => ({
+    image: a.image!, alt: a.imageAlt ?? '', kicker: a.category, title: a.title, text: a.summary, cta: { label: 'Lire la suite', to: `/actualites/${a.slug}` },
+  }));
+  const slides: HeroSlide[] = [...site.heroSlides, ...newsSlides];
   const search = (e: FormEvent) => { e.preventDefault(); navigate(`/recherche?q=${encodeURIComponent(q)}`); };
 
   return (
     <>
-      {/* 2. Hero éditorial */}
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="container hero-grid">
-          <div className="hero-text">
-            <p className="kicker"><Mark3 /> Portail sectoriel{site.organisme ? ` · ${site.organisme}` : ''}</p>
-            <h1 id="hero-title">Le génie biomédical au service de la santé au Bénin</h1>
-            <p className="lead">{site.description}</p>
-            <div className="btn-row">
-              <Link className="btn" to="/genie-biomedical">Explorer les domaines</Link>
-              <Link className="btn btn-ghost" to="/a-propos">Présentation du portail</Link>
-            </div>
-          </div>
-          <Figure slot="hero" ratio="portrait" />
-        </div>
+      {/* 2. Diaporama d'accueil (photos pleine largeur + légende) */}
+      <HeroSlider slides={slides} />
+      <div className="hero-links">
         <nav className="quick-strip" aria-label="Accès rapides">
           <ul className="container">
             {quick.map((q2) => (
@@ -57,14 +52,15 @@ export default function Home() {
             ))}
           </ul>
         </nav>
-      </section>
+      </div>
 
       {/* 3. Présentation */}
       <section className="section intro" aria-labelledby="intro-title" data-reveal>
         <div className="container intro-grid">
           <div className="intro-lead">
-            <p className="eyebrow">Le secteur</p>
-            <h2 id="intro-title">Des compétences techniques au cœur des soins</h2>
+            <p className="kicker"><Mark3 /> Portail sectoriel{site.organisme ? ` · ${site.organisme}` : ''}</p>
+            <h1 id="intro-title">Le génie biomédical au service de la santé au Bénin</h1>
+            <p className="lead">{site.description}</p>
             <p className="statement">Le génie biomédical réunit les compétences qui permettent de choisir, installer, utiliser et maintenir en sécurité les équipements de santé.</p>
             <p>Ce portail rassemble, avec leurs sources, les informations utiles aux étudiants, techniciens, ingénieurs et établissements du Bénin.</p>
             <ol className="principles">
@@ -73,7 +69,13 @@ export default function Home() {
               ))}
             </ol>
           </div>
-          <Figure slot="presentation" ratio="portrait" />
+          {site.images.presentation.src ? <Figure slot="presentation" ratio="portrait" /> : (
+            <aside className="id-panel" aria-label="Identité du secteur">
+              {site.logo && <img src={asset(site.logo)} alt="Logo du secteur biomédical du CETCI" />}
+              {site.organismeNom && <p><strong>{site.organisme}</strong><span>{site.organismeNom}</span></p>}
+              <Link className="more-link" to="/a-propos">À propos du portail <span aria-hidden="true">→</span></Link>
+            </aside>
+          )}
         </div>
       </section>
 
