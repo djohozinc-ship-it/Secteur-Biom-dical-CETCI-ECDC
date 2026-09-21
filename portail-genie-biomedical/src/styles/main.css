@@ -487,3 +487,21 @@ table, pre { max-width: 100%; overflow-x: auto; display: block; }
 .footer-logo { height: 84px; width: auto; max-width: 170px; object-fit: contain; flex: none; }
 .footer-orgfull { margin: var(--s1) 0 0; font-size: .82rem; color: #b4c5da; max-width: 34ch; }
 @media (max-width: 420px) { .logo-img { height: 42px; max-width: 120px; } .brand-sep { margin-block: 10px; } }
+
+/* Contenu de secours de index.html (visible uniquement avant le chargement du site) */
+.static-fallback { max-width: 60rem; margin: 3rem auto; padding: 0 1rem; font-family: var(--font-body); color: var(--ink); }
+.static-fallback h1 { font-size: 1.8rem; }
+
+/* ---------- Vidéo dans le diaporama ---------- */
+.slide-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-toggle { position: absolute; top: var(--s3); left: var(--s3); z-index: 2; display: inline-flex; align-items: center; gap: var(--s2); font: inherit; font-size: .82rem; font-weight: 600; color: #fff; background: rgba(7,29,59,.78); border: 1px solid rgba(255,255,255,.5); border-radius: var(--radius); padding: .4rem .7rem; cursor: pointer; }
+.video-toggle:hover { background: var(--blue-700); }
+.caption-actions { display: flex; flex-wrap: wrap; gap: var(--s3); }
+.btn-outline-light { display: inline-flex; align-items: center; gap: var(--s2); background: transparent; color: #fff; border-color: rgba(255,255,255,.75); }
+.btn-outline-light:hover { background: rgba(255,255,255,.15); border-color: #fff; color: #fff; }
+.video-dialog { border: 0; padding: 0; width: min(960px, 94vw); background: #000; color: #fff; }
+.video-dialog::backdrop { background: rgba(7,29,59,.88); }
+.video-dialog-head { display: flex; justify-content: space-between; align-items: center; gap: var(--s3); padding: var(--s2) var(--s3); background: var(--blue-900); font-weight: 600; }
+.video-dialog-head .btn-small { margin-top: 0; }
+.video-frame { aspect-ratio: 16 / 9; }
+.video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
