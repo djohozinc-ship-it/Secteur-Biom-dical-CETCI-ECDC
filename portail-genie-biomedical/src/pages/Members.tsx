@@ -16,7 +16,7 @@ export default function Members() {
     setIndex(0);
   }, [pole]);
 
-  const current = shown[index];
+  const current = shown[index] ?? shown[0];
 
   const previous = () => {
     setIndex((value) => (value - 1 + shown.length) % shown.length);
