@@ -28,19 +28,18 @@ export const site = {
       cta: { label: 'Découvrir le portail', to: '/a-propos' },
       credit: '',
     },
-    // --- DIAPOSITIVE VIDÉO : à ajouter APRÈS la photo pour garder les deux (voir public/videos/README.txt) ---
-    // Ne mettez PAS « video » dans la diapositive photo ci-dessus : la vidéo remplacerait la photo.
-    // Décommentez le bloc ci-dessous ; la vidéo se joue en entier, puis le diaporama revient à la photo.
-    // {
-    //   image: 'images/equipe-secteur-biomedical.jpg', // affiche visible pendant le chargement de la vidéo
-    //   alt: "Vidéo de présentation du secteur biomédical",
-    //   position: '50% 46%',
-    //   kicker: 'Vidéo',
-    //   title: 'Le secteur biomédical en vidéo',
-    //   text: 'Découvrez le secteur biomédical en images.',
-    //   video: { src: 'videos/presentation.mp4' },        // vidéo d'arrière-plan sans son (fichier dans public/videos/)
-    //   // youtube: 'https://youtu.be/XXXXXXXXXXX',        // OU : bouton « Regarder la vidéo » (avec son)
-    // },
+    // --- DIAPOSITIVE VIDÉO : deuxième slide du diaporama ---
+    // La photo d'ensemble reste une vraie diapositive indépendante.
+    // La vidéo est jouée sans son, puis le diaporama revient automatiquement à la photo.
+    {
+      image: 'images/equipe-secteur-biomedical.jpg',
+      alt: "Vidéo de présentation du secteur biomédical",
+      position: '50% 46%',
+      kicker: 'Vidéo',
+      title: 'Le secteur biomédical en vidéo',
+      text: 'Découvrez le secteur biomédical en images.',
+      video: { src: 'videos/presentation.mp4' },
+    },
   ] as HeroSlide[],
 
   // Autres photographies éditoriales. Tant que 'src' est vide, un emplacement neutre s'affiche.
