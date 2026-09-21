@@ -46,12 +46,18 @@ export default function HeroSlider({ slides }: { slides: HeroSlide[] }) {
   const [dialogId, setDialogId] = useState<string | null>(null);
   const videos = useRef<(HTMLVideoElement | null)[]>([]);
 
+  const slidesRef = useRef(slides);
+  slidesRef.current = slides;
+
+  // Défilement automatique. Diapositive photo : 7 s. Diapositive vidéo en lecture : on attend la fin de la vidéo
+  // (événement « ended », voir plus bas) ; si la vidéo ne se lit pas, retour à 7 s.
   useEffect(() => {
     if (n < 2 || !playing || hold || dialogId) return;
-    const s = slides[index];
-    const t = window.setTimeout(() => setIndex((i) => (i + 1) % n), s.durationMs ?? (s.video ? 15000 : 7000));
+    const s = slidesRef.current[index];
+    const waitingForVideo = !!s.video && videoOn;
+    const t = window.setTimeout(() => setIndex((i) => (i + 1) % n), s.durationMs ?? (waitingForVideo ? 120000 : 7000));
     return () => window.clearTimeout(t);
-  }, [index, playing, hold, n, slides, dialogId]);
+  }, [index, playing, hold, n, dialogId, videoOn]);
 
   // Lecture / pause de la vidéo de la diapositive active
   useEffect(() => {
@@ -72,9 +78,9 @@ export default function HeroSlider({ slides }: { slides: HeroSlide[] }) {
       className={`slider${n > 1 ? ' slider--multi' : ''}`}
       aria-roledescription="carousel"
       aria-label="À la une"
-      onMouseEnter={() => setHold(true)}
-      onMouseLeave={() => setHold(false)}
-      onFocus={() => setHold(true)}
+      onPointerEnter={(e) => { if (e.pointerType === 'mouse') setHold(true); }}
+      onPointerLeave={(e) => { if (e.pointerType === 'mouse') setHold(false); }}
+      onFocus={(e) => { if (e.target.matches(':focus-visible')) setHold(true); }}
       onBlur={() => setHold(false)}
     >
       <div className="slides" aria-live={playing && n > 1 ? 'off' : 'polite'}>
@@ -84,7 +90,7 @@ export default function HeroSlider({ slides }: { slides: HeroSlide[] }) {
             <div key={`${s.image}-${i}`} className={`slide${i === index ? ' is-active' : ''}`} role="group" aria-roledescription="slide" aria-label={`${i + 1} sur ${n}`} aria-hidden={i !== index}>
               <div className="slide-media">
                 {s.video ? (
-                  <video ref={(el) => { videos.current[i] = el; }} muted loop playsInline preload="metadata" poster={asset(s.image)} aria-label={s.alt} style={{ objectPosition: s.position ?? '50% 50%' }}>
+                  <video ref={(el) => { videos.current[i] = el; }} muted loop={n === 1} playsInline preload="metadata" onEnded={(e) => { if (n > 1 && playing) go(i + 1); else { e.currentTarget.currentTime = 0; e.currentTarget.play().catch(() => undefined); } }} onError={() => setVideoOn(false)} poster={asset(s.image)} aria-label={s.alt} style={{ objectPosition: s.position ?? '50% 50%' }}>
                     <source src={asset(s.video.src)} type={mime(s.video.src)} />
                   </video>
                 ) : (
