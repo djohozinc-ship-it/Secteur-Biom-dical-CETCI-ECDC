@@ -11,8 +11,9 @@ export const site = {
   officialName: '', // nom officiel, quand il sera connu
   shortName: 'Génie biomédical Bénin',
   tagline: 'Maintenance, ingénierie hospitalière et innovation en santé',
+  seoTitle: 'Secteur biomédical CETCI | Génie biomédical au Bénin', // titre affiché dans Google et l'onglet pour la page d'accueil (≈ 60 caractères max)
   description:
-    "Portail sectoriel consacré au génie biomédical au Bénin : actualités, communiqués, ressources techniques, projets, formations et opportunités.",
+    "Portail du secteur biomédical du CETCI / ECDC : actualités, ressources techniques, projets, formations et opportunités du génie biomédical au Bénin.",
   organisme: 'CETCI / ECDC', // communauté porteuse du portail
   statutMention: "Initiative communautaire — ce portail n'est pas un site gouvernemental.",
   // Diaporama de l'accueil (photos dans public/images/). Les actualités qui ont une image s'ajoutent automatiquement.
@@ -26,6 +27,9 @@ export const site = {
       text: 'Un portail pour informer, partager, valoriser et relier les acteurs du génie biomédical au Bénin.',
       cta: { label: 'Découvrir le portail', to: '/a-propos' },
       credit: '',
+      // --- Ajouter une vidéo à cette diapositive (voir public/videos/README.txt) : décommenter UNE des lignes ---
+      // video: { src: 'videos/presentation.mp4' },       // vidéo d'arrière-plan courte, sans son (la photo sert d'affiche)
+      // youtube: 'https://youtu.be/XXXXXXXXXXX',          // bouton « Regarder la vidéo » (avec son), hébergée sur YouTube
     },
   ] as HeroSlide[],
 
