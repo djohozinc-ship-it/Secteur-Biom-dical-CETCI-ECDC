@@ -8,7 +8,7 @@ function setMeta(selector: string, attr: 'content', value: string) {
 // Met à jour le titre et les métadonnées de la page (moteurs de recherche, partages).
 export function usePageMeta(title?: string, description?: string) {
   useEffect(() => {
-    const fullTitle = title ? `${title} – ${site.name}` : site.name;
+    const fullTitle = title ? `${title} – ${site.name}` : site.seoTitle;
     const desc = description ?? site.description;
     document.title = fullTitle;
     setMeta('meta[name="description"]', 'content', desc);
