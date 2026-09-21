@@ -27,10 +27,20 @@ export const site = {
       text: 'Un portail pour informer, partager, valoriser et relier les acteurs du génie biomédical au Bénin.',
       cta: { label: 'Découvrir le portail', to: '/a-propos' },
       credit: '',
-      // --- Ajouter une vidéo à cette diapositive (voir public/videos/README.txt) : décommenter UNE des lignes ---
-      video: { src: 'videos/presentation.mp4' },       // vidéo d'arrière-plan courte, sans son (la photo sert d'affiche)
-      // youtube: 'https://youtu.be/XXXXXXXXXXX',          // bouton « Regarder la vidéo » (avec son), hébergée sur YouTube
     },
+    // --- DIAPOSITIVE VIDÉO : à ajouter APRÈS la photo pour garder les deux (voir public/videos/README.txt) ---
+    // Ne mettez PAS « video » dans la diapositive photo ci-dessus : la vidéo remplacerait la photo.
+    // Décommentez le bloc ci-dessous ; la vidéo se joue en entier, puis le diaporama revient à la photo.
+    // {
+    //   image: 'images/equipe-secteur-biomedical.jpg', // affiche visible pendant le chargement de la vidéo
+    //   alt: "Vidéo de présentation du secteur biomédical",
+    //   position: '50% 46%',
+    //   kicker: 'Vidéo',
+    //   title: 'Le secteur biomédical en vidéo',
+    //   text: 'Découvrez le secteur biomédical en images.',
+    //   video: { src: 'videos/presentation.mp4' },        // vidéo d'arrière-plan sans son (fichier dans public/videos/)
+    //   // youtube: 'https://youtu.be/XXXXXXXXXXX',        // OU : bouton « Regarder la vidéo » (avec son)
+    // },
   ] as HeroSlide[],
 
   // Autres photographies éditoriales. Tant que 'src' est vide, un emplacement neutre s'affiche.
