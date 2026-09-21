@@ -1,0 +1,229 @@
+/* Présentation institutionnelle des membres — isolée pour ne pas modifier la feuille globale. */
+.members-showcase {
+  border-top: 2px solid var(--blue);
+  padding-top: var(--s5);
+}
+
+.members-showcase-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s5);
+  margin-bottom: var(--s5);
+}
+
+.members-showcase-head h2 {
+  margin-bottom: 0;
+}
+
+.members-counter {
+  margin: 0;
+  white-space: nowrap;
+  color: var(--ink-soft);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.members-counter span:first-child {
+  color: var(--blue);
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+}
+
+.member-profile {
+  display: grid;
+  grid-template-columns: minmax(260px, 42%) minmax(0, 1fr);
+  min-height: 520px;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.member-profile-photo {
+  position: relative;
+  min-height: 420px;
+  background: var(--gray-50);
+  overflow: hidden;
+}
+
+.member-profile-photo .avatar {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.member-profile-index {
+  position: absolute;
+  left: var(--s4);
+  bottom: var(--s4);
+  background: rgba(7, 29, 59, .9);
+  color: #fff;
+  padding: .35rem .65rem;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.member-profile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.member-profile-kicker {
+  margin: 0 0 var(--s2);
+  color: var(--green-dark);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.member-profile-content h3 {
+  margin-bottom: .35rem;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+.member-profile-role {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.member-profile-line {
+  width: 56px;
+  height: 3px;
+  margin: var(--s5) 0;
+  background: var(--green);
+}
+
+.member-profile-bio {
+  max-width: 58ch;
+  margin-bottom: var(--s5);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.member-profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4);
+  margin-bottom: var(--s5);
+}
+
+.member-profile-links a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.member-profile-controls {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--s4);
+  margin-top: auto;
+  padding-top: var(--s5);
+  border-top: 1px solid var(--line);
+}
+
+.member-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  padding: .35rem 0;
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.member-arrow span:first-child,
+.member-arrow span:last-child {
+  font-size: 1.2rem;
+}
+
+.member-arrow:hover:not(:disabled) {
+  color: var(--green-dark);
+}
+
+.member-arrow:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.member-arrow-next {
+  justify-content: flex-end;
+}
+
+.member-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.member-progress button {
+  width: 24px;
+  height: 3px;
+  padding: 0;
+  border: 0;
+  background: var(--line);
+  cursor: pointer;
+}
+
+.member-progress button.is-active {
+  background: var(--green);
+}
+
+.members-note {
+  margin: var(--s3) 0 0;
+  color: var(--ink-soft);
+  font-size: .78rem;
+}
+
+@media (max-width: 720px) {
+  .members-showcase-head {
+    align-items: flex-start;
+  }
+
+  .member-profile {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .member-profile-photo,
+  .member-profile-photo .avatar {
+    min-height: 360px;
+    height: min(72vw, 520px);
+  }
+
+  .member-profile-content {
+    padding: var(--s5);
+  }
+
+  .member-profile-content h3 {
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+  }
+
+  .member-profile-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .member-progress {
+    display: none;
+  }
+
+  .member-arrow-next {
+    justify-self: end;
+  }
+}
