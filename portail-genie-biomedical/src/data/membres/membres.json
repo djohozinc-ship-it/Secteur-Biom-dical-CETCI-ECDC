@@ -9,5 +9,16 @@
     "links": [],
     "consentement": true,
     "statut": "publie"
+  },
+  {
+    "id": "joel-hounmenou-jesugo",
+    "name": "Joël HOUNMENOU Jesugo",
+    "role": "Technicien supérieur en maintenance biomédicale et hospitalière · Spécialiste en bio-informatique et santé numérique",
+    "pole": "Pôle 2 — Robotisation, automatisation médicale et technologies du secteur",
+    "bio": "Technicien supérieur en maintenance biomédicale et hospitalière et membre du secteur biomédical, spécialisé en bio-informatique et en santé numérique. Il est chargé de la gestion et de la sécurisation des données médicales, du développement de solutions e-santé et de systèmes d’information hospitaliers.",
+    "photo": "",
+    "links": [],
+    "consentement": true,
+    "statut": "publie"
   }
 ]
