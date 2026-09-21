@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { membres } from '../utils/content';
 import { PageHeader, Avatar, DemoBadge, EmptyState } from '../components/ui';
 import { usePageMeta } from '../hooks/usePageMeta';
-import './members.css';
+import '../styles/members.css';
 
 export default function Members() {
   usePageMeta('Membres', 'Les membres de la communauté du secteur biomédical.');
