@@ -50,4 +50,7 @@ export interface SearchItem {
 export interface HeroSlide {
   image: string; alt: string; position?: string; // position du cadrage, ex. '50% 35%'
   kicker?: string; title: string; text?: string; cta?: { label: string; to: string }; credit?: string;
+  video?: { src: string };   // vidéo d'arrière-plan (sans son) ; 'image' sert d'affiche
+  youtube?: string;          // adresse ou identifiant YouTube : ajoute un bouton « Regarder la vidéo »
+  durationMs?: number;       // durée d'affichage avant la diapositive suivante
 }
