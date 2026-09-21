@@ -1,7 +1,11 @@
 /* Présentation institutionnelle des membres — isolée pour ne pas modifier la feuille globale. */
 .members-showcase {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
   border-top: 2px solid var(--blue);
-  padding-top: var(--s5);
+  padding: var(--s5) max(var(--s5), calc((100vw - 1180px) / 2));
+  box-sizing: border-box;
 }
 
 .members-showcase-head {
@@ -12,9 +16,7 @@
   margin-bottom: var(--s5);
 }
 
-.members-showcase-head h2 {
-  margin-bottom: 0;
-}
+.members-showcase-head h2 { margin-bottom: 0; }
 
 .members-counter {
   margin: 0;
@@ -33,8 +35,9 @@
 
 .member-profile {
   display: grid;
-  grid-template-columns: minmax(260px, 42%) minmax(0, 1fr);
-  min-height: 520px;
+  grid-template-columns: minmax(280px, 42%) minmax(0, 1fr);
+  width: 100%;
+  min-height: min(650px, 72vh);
   border: 1px solid var(--line);
   background: var(--white);
 }
@@ -72,7 +75,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(1.5rem, 4vw, 3.5rem);
+  padding: clamp(1.5rem, 5vw, 5rem);
 }
 
 .member-profile-kicker {
@@ -86,7 +89,7 @@
 
 .member-profile-content h3 {
   margin-bottom: .35rem;
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
 }
 
 .member-profile-role {
@@ -104,7 +107,7 @@
 }
 
 .member-profile-bio {
-  max-width: 58ch;
+  max-width: 62ch;
   margin-bottom: var(--s5);
   color: var(--ink-soft);
   font-size: 1rem;
@@ -118,10 +121,7 @@
   margin-bottom: var(--s5);
 }
 
-.member-profile-links a {
-  font-weight: 700;
-  text-decoration: none;
-}
+.member-profile-links a { font-weight: 700; text-decoration: none; }
 
 .member-profile-controls {
   display: grid;
@@ -148,22 +148,10 @@
 }
 
 .member-arrow span:first-child,
-.member-arrow span:last-child {
-  font-size: 1.2rem;
-}
-
-.member-arrow:hover:not(:disabled) {
-  color: var(--green-dark);
-}
-
-.member-arrow:disabled {
-  opacity: .35;
-  cursor: not-allowed;
-}
-
-.member-arrow-next {
-  justify-content: flex-end;
-}
+.member-arrow span:last-child { font-size: 1.2rem; }
+.member-arrow:hover:not(:disabled) { color: var(--green-dark); }
+.member-arrow:disabled { opacity: .35; cursor: not-allowed; }
+.member-arrow-next { justify-content: flex-end; }
 
 .member-progress {
   display: flex;
@@ -180,10 +168,7 @@
   background: var(--line);
   cursor: pointer;
 }
-
-.member-progress button.is-active {
-  background: var(--green);
-}
+.member-progress button.is-active { background: var(--green); }
 
 .members-note {
   margin: var(--s3) 0 0;
@@ -192,38 +177,17 @@
 }
 
 @media (max-width: 720px) {
-  .members-showcase-head {
-    align-items: flex-start;
-  }
-
-  .member-profile {
-    grid-template-columns: 1fr;
-    min-height: 0;
-  }
-
+  .members-showcase { padding: var(--s4) var(--s3); }
+  .members-showcase-head { align-items: flex-start; }
+  .member-profile { grid-template-columns: 1fr; min-height: 0; }
   .member-profile-photo,
   .member-profile-photo .avatar {
     min-height: 360px;
     height: min(72vw, 520px);
   }
-
-  .member-profile-content {
-    padding: var(--s5);
-  }
-
-  .member-profile-content h3 {
-    font-size: clamp(1.8rem, 9vw, 2.5rem);
-  }
-
-  .member-profile-controls {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .member-progress {
-    display: none;
-  }
-
-  .member-arrow-next {
-    justify-self: end;
-  }
+  .member-profile-content { padding: var(--s5); }
+  .member-profile-content h3 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
+  .member-profile-controls { grid-template-columns: 1fr 1fr; }
+  .member-progress { display: none; }
+  .member-arrow-next { justify-self: end; }
 }
