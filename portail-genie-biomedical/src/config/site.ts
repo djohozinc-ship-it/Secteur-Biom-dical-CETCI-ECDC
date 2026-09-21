@@ -28,7 +28,7 @@ export const site = {
       cta: { label: 'Découvrir le portail', to: '/a-propos' },
       credit: '',
       // --- Ajouter une vidéo à cette diapositive (voir public/videos/README.txt) : décommenter UNE des lignes ---
-      // video: { src: 'videos/presentation.mp4' },       // vidéo d'arrière-plan courte, sans son (la photo sert d'affiche)
+      video: { src: 'videos/presentation.mp4' },       // vidéo d'arrière-plan courte, sans son (la photo sert d'affiche)
       // youtube: 'https://youtu.be/XXXXXXXXXXX',          // bouton « Regarder la vidéo » (avec son), hébergée sur YouTube
     },
   ] as HeroSlide[],
