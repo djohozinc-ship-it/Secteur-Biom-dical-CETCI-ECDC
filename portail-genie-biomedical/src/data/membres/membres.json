@@ -20,5 +20,16 @@
     "links": [],
     "consentement": true,
     "statut": "publie"
+  },
+  {
+    "id": "divine-hessouh",
+    "name": "HESSOUH Divine Princesse",
+    "role": "Technicienne supérieure en maintenance biomédicale et hospitalière · Chargée des normes, du droit biomédical et de la propriété intellectuelle",
+    "pole": "Pôle 2 — Robotisation, automatisation médicale et technologies du secteur",
+    "bio": "Technicienne supérieure en maintenance biomédicale et hospitalière, chargée des normes, du droit biomédical, de la conformité réglementaire et de la propriété intellectuelle. Elle veille à la prise en compte des standards sanitaires nationaux et internationaux ainsi qu’à la protection des innovations du secteur. Elle intervient dans l’examen de conformité des innovations avant leur validation.",
+    "photo": "",
+    "links": [],
+    "consentement": true,
+    "statut": "publie"
   }
 ]
