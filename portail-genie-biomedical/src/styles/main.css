@@ -528,8 +528,6 @@ table, pre { max-width: 100%; overflow-x: auto; display: block; }
 .about-sector-grid li::before { content: "—"; color: var(--green); margin-right: var(--s2); }
 .about-media-placeholder { min-height: 260px; border: 1px solid var(--line); border-top: 2px solid var(--green); background: var(--gray-50); display: grid; place-items: center; padding: var(--s5); text-align: center; color: var(--ink-soft); }
 .about-media-placeholder span { max-width: 32ch; font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
-.about-process { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; margin-top: var(--s7); padding: var(--s4) 0; border-block: 2px solid var(--blue); color: var(--blue); font-weight: 700; }
-.about-process b { color: var(--green); }
 .about-biomedical-head { display: grid; gap: var(--s7); align-items: start; }
 @media (min-width: 760px) { .about-biomedical-head { grid-template-columns: 230px minmax(0, 1fr); gap: var(--s8); } }
 .about-biomedical-head img { width: 100%; max-width: 220px; margin: 0 auto; }
