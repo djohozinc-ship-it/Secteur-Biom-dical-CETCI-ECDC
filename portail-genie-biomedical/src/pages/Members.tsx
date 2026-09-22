@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import { membres } from '../utils/content';
 import { PageHeader, Avatar, DemoBadge, EmptyState } from '../components/ui';
+import { Glyph } from '../components/illustrations';
 import { usePageMeta } from '../hooks/usePageMeta';
 import '../styles/members.css';
+
+// Le champ « pôle » est volontairement long et détaillé pour la fiche ; pour le badge,
+// on n'en garde que le nom court, avant le tiret cadratin qui introduit la description.
+const shortPole = (pole: string) => pole.split('—')[0].trim();
 
 export default function Members() {
   usePageMeta('Membres', 'Les membres de la communauté du secteur biomédical.');
@@ -83,10 +88,13 @@ export default function Members() {
               </div>
 
               <div className="member-profile-content">
-                <p className="member-profile-kicker">{current.pole}</p>
-                <h3>{current.name}</h3>
-                <p className="member-profile-role">
+                <p className="member-profile-kicker">
                   {current.role} {current.demo && <DemoBadge />}
+                </p>
+                <h3>{current.name}</h3>
+                <p className="member-profile-badge">
+                  <span className="member-profile-badge-icon" aria-hidden="true"><Glyph name="building" size={16} /></span>
+                  {shortPole(current.pole)}
                 </p>
                 <div className="member-profile-line" />
                 <p className="member-profile-bio">{current.bio}</p>
