@@ -61,7 +61,7 @@ export default function About() {
           <div className="about-intro-grid">
             <div className="prose">
               <p>
-                Le <strong>Centre d’Élaboration des Technologies de Conception en Ingénierie / Engineering Development Center (CETCI/ECDC)</strong> est une communauté fondée en 2024 à l’initiative d’une association d’étudiants, avec une ambition claire : <strong>mettre les compétences scientifiques, techniques et créatives de ses membres au service de la conception de solutions technologiques adaptées aux réalités nationales et aux besoins de la sous-région</strong>.
+                Le <strong>Centre d’Élaboration des Technologies de Conception en Ingénierie / Engineering Concepts Development Center (CETCI/ECDC)</strong> est une communauté fondée en 2024 à l’initiative d’une association d’étudiants, avec une ambition claire : <strong>mettre les compétences scientifiques, techniques et créatives de ses membres au service de la conception de solutions technologiques adaptées aux réalités nationales et aux besoins de la sous-région</strong>.
               </p>
               <p>
                 Le CETCI/ECDC est né d’une volonté de rapprocher les connaissances académiques des problématiques concrètes rencontrées sur le terrain, tout en préparant une vision plus ambitieuse pour l’avenir : <strong>contribuer progressivement à la mise en place, sur le territoire béninois, d’un véritable espace de conception et de développement d’équipements et de solutions technologiques adaptés aux réalités du pays et de la région</strong>.
