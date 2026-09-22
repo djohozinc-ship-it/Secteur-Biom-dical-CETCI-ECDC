@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://djohozinc-ship-it.github.io/Secteur-Biom-dical-CETCI-ECDC/sitemap.xml
