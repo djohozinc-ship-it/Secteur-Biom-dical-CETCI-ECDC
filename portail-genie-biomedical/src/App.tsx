@@ -13,7 +13,7 @@ import Opportunities from './pages/Opportunities';
 import Directory from './pages/Directory';
 import Contact from './pages/Contact';
 import SearchPage from './pages/SearchPage';
-import { Legal, Privacy, NotFound } from './pages/Misc';
+import { Legal, Privacy, Terms, IntellectualProperty, NotFound } from './pages/Misc';
 
 export default function App() {
   return (
