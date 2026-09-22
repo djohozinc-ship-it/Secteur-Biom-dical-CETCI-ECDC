@@ -16,7 +16,7 @@ export default function About() {
   usePageMeta('À propos', 'Mission, publics et valeurs du portail du génie biomédical.');
   return (
     <>
-      <PageHeader title="À propos du portail" eyebrow="Le portail" intro={`Un portail sectoriel consacré au génie biomédical au Bénin${site.organisme ? `, porté par ${site.organisme}` : ''}.`} crumbs={[{ label: 'À propos' }]} />
+      <PageHeader title="À propos de CETCI / ECDC " eyebrow="Le portail" intro={`Portail sectoriel consacré au Secteur Biomédical{site.organisme ? `, porté par ${site.organisme}` : ''}.`} crumbs={[{ label: 'À propos' }]} />
       <div className="container page-body reading">
         <div className="reading-main">
           <h2>Notre statut</h2>
