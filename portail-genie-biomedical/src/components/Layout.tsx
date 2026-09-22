@@ -185,7 +185,7 @@ function Footer() {
       )}
       <div className="container footer-bottom">
         <span>© {new Date().getFullYear()} {site.officialName || site.name}</span>
-        <span><Link to="/mentions-legales">Mentions légales</Link> · <Link to="/confidentialite">Confidentialité</Link></span>
+        <span><Link to="/mentions-legales">Mentions légales</Link> · <Link to="/confidentialite">Confidentialité</Link> · <Link to="/conditions-utilisation">Conditions d’utilisation</Link> · <Link to="/propriete-intellectuelle">Propriété intellectuelle</Link></span>
       </div>
     </footer>
   );
