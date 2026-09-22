@@ -10,6 +10,7 @@ const sectors = [
   'Secteur de l’électricité',
   'Secteur de la maintenance des systèmes',
   'Secteur de la robotique',
+  'Secteur de l’IA et informatique'
   'Secteur du génie civil et de l’architecture',
   'Secteur juridique',
   'Secteur de la mécanique',
@@ -17,10 +18,10 @@ const sectors = [
 ];
 
 const poles = [
-  'Ingénierie biomédicale et technologies médicales',
-  'Électronique, instrumentation et systèmes embarqués',
-  'Intelligence, automatisation et technologies connectées',
-  'Projets, documentation et collaboration',
+  'Sciences Biomédicales et Recherches',
+  'Ingénierie et Technologies Médicales',
+  'Numérique, IA et cybersécurité',
+  'Qualité, Normes et Coordination,
 ];
 
 const skills = [
