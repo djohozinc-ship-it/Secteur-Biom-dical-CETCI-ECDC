@@ -7,11 +7,11 @@ import type { HeroSlide } from '../types';
 // ============================================================
 export const site = {
   // --- Identité ---
-  name: 'Portail du Génie Biomédical au Bénin', // nom d'affichage provisoire
+  name: 'Portail du Secteur Biomédical au Bénin', // nom d'affichage provisoire
   officialName: '', // nom officiel, quand il sera connu
-  shortName: 'Génie biomédical Bénin',
+  shortName: 'Secteur biomédical CETCI / ECDC',
   tagline: 'Maintenance, ingénierie hospitalière et innovation en santé',
-  seoTitle: 'Portail du Génie Biomédical au Bénin | CETCI / ECDC', // titre affiché dans Google et l'onglet pour la page d'accueil (≈ 60 caractères max)
+  seoTitle: 'Portail du Secteur Biomédical au Bénin | CETCI / ECDC', // titre affiché dans Google et l'onglet pour la page d'accueil (≈ 60 caractères max)
   description:
     "Portail du secteur biomédical du CETCI / ECDC au Bénin : actualités, ressources techniques, projets, formations et opportunités en génie biomédical.",
   organisme: 'CETCI / ECDC', // communauté porteuse du portail
