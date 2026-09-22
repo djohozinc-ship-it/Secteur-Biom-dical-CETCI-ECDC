@@ -167,9 +167,6 @@ export default function About() {
               <MediaPlaceholder label="Photographie d’un prototype ou d’une séance de conception à intégrer" />
             </div>
           </div>
-          <div className="about-process" aria-label="Chaîne de conception technologique">
-            <span>Besoin</span><b>→</b><span>Idée</span><b>→</b><span>Concept</span><b>→</b><span>Prototype</span><b>→</b><span>Validation</span><b>→</b><span>Développement</span><b>→</b><span>Production</span>
-          </div>
         </Section>
 
         <Section title="Le secteur biomédical : l’ingénierie au service de la santé" tone="paper" id="biomedical">
