@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { site } from '../config/site';
-import { communiques, formations, opportunites, ressources, rubriques } from '../utils/content';
+import { rubriques } from '../utils/content';
 import { Logo, Mark3 } from './ui';
 import { Glyph } from './illustrations';
 import { asset } from '../utils/format';
@@ -11,11 +11,11 @@ import { resourceCategories } from '../utils/taxonomy';
 interface Item { to: string; label: string }
 interface Group { label: string; to?: string; items?: Item[]; mega?: boolean }
 
-// Les rubriques sans contenu publié restent masquées : elles réapparaissent dès qu'une fiche est ajoutée.
-const hasComm = communiques.length > 0;
-const hasRes = ressources.length > 0;
-const hasForm = formations.length > 0;
-const hasOpp = opportunites.length > 0;
+// Toutes les rubriques restent visibles dans le menu, même sans contenu publié pour le moment.
+const hasComm = true;
+const hasRes = true;
+const hasForm = true;
+const hasOpp = true;
 const publications: Item[] = [
   { to: '/actualites', label: 'Actualités' },
   ...(hasComm ? [{ to: '/communiques', label: 'Annonces' }] : []),

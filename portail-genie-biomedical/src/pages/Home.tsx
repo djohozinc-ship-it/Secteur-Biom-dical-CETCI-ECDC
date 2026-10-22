@@ -10,12 +10,12 @@ import { Glyph, domainGlyph } from '../components/illustrations';
 import { contributionModes, opportunityTypes, resourceCategories } from '../utils/taxonomy';
 import { asset, dayMonth, daysUntil, formatDate } from '../utils/format';
 
-// Accès rapides : les rubriques vides n'apparaissent pas.
+// Accès rapides
 const quick = [
-  { to: '/genie-biomedical', label: 'Domaines du génie biomédical', icon: 'book' },
-  { to: '/membres', label: 'Membres', icon: 'cap' },
-  { to: '/projets', label: 'Projets', icon: 'chip' },
   { to: '/actualites', label: 'Actualités', icon: 'doc' },
+  { to: '/ressources', label: 'Bibliothèque et cours', icon: 'book' },
+  { to: '/formations', label: 'Formations', icon: 'cap' },
+  { to: '/opportunites', label: 'Opportunités', icon: 'calendar' },
 ];
 
 const principes = [
@@ -135,7 +135,7 @@ export default function Home() {
             </Placeholder>
           )}
 
-          {(comm.length > 0 || opps.length > 0) && <div className="info-band">
+          <div className="info-band">
             <div>
               <h3 className="band-title">Annonces</h3>
               {comm.length ? comm.map((c) => (
@@ -161,7 +161,7 @@ export default function Home() {
               }) : <p className="muted">Aucune opportunité en cours pour le moment.</p>}
               <p><Link className="more-link" to="/opportunites">Toutes les opportunités <span aria-hidden="true">→</span></Link></p>
             </div>
-          </div>}
+          </div>
         </div>
       </section>
 
@@ -180,7 +180,7 @@ export default function Home() {
               <button className="btn btn-light" type="submit">Rechercher</button>
             </form>
             <ul className="search-tags">
-              {ressources.length > 0 && resourceCategories.slice(0, 5).map((c) => <li key={c.label}><Link to={`/ressources?cat=${encodeURIComponent(c.label)}`}>{c.label}</Link></li>)}
+              {resourceCategories.slice(0, 5).map((c) => <li key={c.label}><Link to={`/ressources?cat=${encodeURIComponent(c.label)}`}>{c.label}</Link></li>)}
             </ul>
           </div>
         </div>
@@ -212,7 +212,7 @@ export default function Home() {
       </section>
 
       {/* 8. Ressources */}
-      {ressources.length > 0 && <section className="section" aria-labelledby="res-title" data-reveal>
+      <section className="section" aria-labelledby="res-title" data-reveal>
         <div className="container split-label">
           <div className="label-col">
             <p className="eyebrow">Bibliothèque</p>
@@ -235,10 +235,10 @@ export default function Home() {
             })}
           </ul>
         </div>
-      </section>}
+      </section>
 
       {/* 9. Formation / écosystème */}
-      {(formations.length > 0 || opportunites.some((o) => !isArchived(o))) && <section className="section section-gray" aria-labelledby="form-title" data-reveal>
+      <section className="section section-gray" aria-labelledby="form-title" data-reveal>
         <div className="container eco-grid">
           <div>
             <p className="eyebrow">Se former</p>
@@ -256,7 +256,7 @@ export default function Home() {
             </ul>
           </div>
         </div>
-      </section>}
+      </section>
 
       {site.indicateurs.length > 0 && (
         <section className="section" aria-labelledby="ind-title" data-reveal>
