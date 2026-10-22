@@ -8,7 +8,7 @@ function setMeta(selector: string, attr: 'content', value: string) {
 // Met à jour le titre et les métadonnées de la page (moteurs de recherche, partages).
 export function usePageMeta(title?: string, description?: string) {
   useEffect(() => {
-    const fullTitle = title ? `${title} – ${site.name}` : site.seoTitle;
+    const fullTitle = title ? `${title} | ${site.name}` : site.seoTitle;
     const desc = description ?? site.description;
     document.title = fullTitle;
     setMeta('meta[name="description"]', 'content', desc);
@@ -16,6 +16,11 @@ export function usePageMeta(title?: string, description?: string) {
     setMeta('meta[property="og:description"]', 'content', desc);
     setMeta('meta[name="twitter:title"]', 'content', fullTitle);
     setMeta('meta[name="twitter:description"]', 'content', desc);
+    // URL canonique propre : chemin sans le préfixe du dépôt, avec barre finale (comme sur GitHub Pages).
+    const path = window.location.pathname.replace(/\/?$/, '/');
+    const url = new URL(path, site.siteUrl).href;
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+    setMeta('meta[property="og:url"]', 'content', url);
     window.scrollTo(0, 0);
   }, [title, description]);
 }

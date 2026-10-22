@@ -10,18 +10,19 @@ import { Glyph, domainGlyph } from '../components/illustrations';
 import { contributionModes, opportunityTypes, resourceCategories } from '../utils/taxonomy';
 import { asset, dayMonth, daysUntil, formatDate } from '../utils/format';
 
+// Accès rapides : les rubriques vides n'apparaissent pas.
 const quick = [
+  { to: '/genie-biomedical', label: 'Domaines du génie biomédical', icon: 'book' },
+  { to: '/membres', label: 'Membres', icon: 'cap' },
+  { to: '/projets', label: 'Projets', icon: 'chip' },
   { to: '/actualites', label: 'Actualités', icon: 'doc' },
-  { to: '/ressources', label: 'Ressources techniques', icon: 'book' },
-  { to: '/formations', label: 'Formations', icon: 'cap' },
-  { to: '/opportunites', label: 'Opportunités', icon: 'calendar' },
 ];
 
 const principes = [
-  { t: 'Informer', d: "Rassembler les informations utiles aux professionnels et aux étudiants du secteur." },
-  { t: 'Partager', d: "Mettre à disposition des ressources techniques dont la diffusion est autorisée, avec leur source." },
-  { t: 'Valoriser', d: "Faire connaître les projets, les prototypes et les compétences du secteur au Bénin." },
-  { t: 'Relier', d: "Faciliter les échanges entre étudiants, techniciens, ingénieurs, établissements et partenaires." },
+  { t: 'Se former', d: "Approfondir ensemble, au-delà des cours, les sciences de l'ingénieur appliquées à la santé." },
+  { t: 'Maintenir', d: "Mettre en pratique des compétences de maintenance biomédicale." },
+  { t: 'Concevoir', d: "Transformer un besoin de santé en idée, puis en concept et en prototype." },
+  { t: 'Collaborer', d: "Travailler avec les autres secteurs du CETCI/ECDC et avec des partenaires." },
 ];
 
 export default function Home() {
@@ -58,11 +59,11 @@ export default function Home() {
       <section className="section intro" aria-labelledby="intro-title" data-reveal>
         <div className="container intro-grid">
           <div className="intro-lead">
-            <p className="kicker"><Mark3 /> Portail sectoriel{site.organisme ? ` · ${site.organisme}` : ''}</p>
-            <h1 id="intro-title">Le génie biomédical au service de la santé au Bénin</h1>
+            <p className="kicker"><Mark3 /> Groupe d'étudiants{site.organisme ? ` · ${site.organisme}` : ''}</p>
+            <h1 id="intro-title">Le secteur biomédical du CETCI/ECDC</h1>
             <p className="lead">{site.description}</p>
             <p className="statement">Le génie biomédical réunit les compétences qui permettent de choisir, installer, utiliser et maintenir en sécurité les équipements de santé.</p>
-            <p>Ce portail rassemble, avec leurs sources, les informations utiles aux étudiants, techniciens, ingénieurs et établissements du Bénin.</p>
+            <p>Le secteur biomédical est un groupe d'étudiants (notamment de l'EPAC et de la Faculté des Sciences de la Santé) au sein du CETCI/ECDC, une organisation privée et indépendante. Il ne vend pas d'équipements médicaux : il se forme, développe ses compétences, notamment en maintenance biomédicale, et travaille sur des projets.</p>
             <ol className="principles">
               {principes.map((p, i) => (
                 <li key={p.t}><span className="num" aria-hidden="true">0{i + 1}</span><div><h3>{p.t}</h3><p>{p.d}</p></div></li>
@@ -73,7 +74,7 @@ export default function Home() {
             <aside className="id-panel" aria-label="Identité du secteur">
               {site.logo && <img src={asset(site.logo)} alt="Logo du secteur biomédical du CETCI" />}
               {site.organismeNom && <p><strong>{site.organisme}</strong><span>{site.organismeNom}</span></p>}
-              <Link className="more-link" to="/a-propos">À propos du portail <span aria-hidden="true">→</span></Link>
+              <Link className="more-link" to="/a-propos">À propos du secteur <span aria-hidden="true">→</span></Link>
             </aside>
           )}
         </div>
@@ -101,7 +102,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Actualités + communiqués + échéances */}
+      {/* 5. Actualités + annonces + échéances */}
       <section className="section" aria-labelledby="news-title" data-reveal>
         <div className="container">
           <div className="head-row">
@@ -134,13 +135,13 @@ export default function Home() {
             </Placeholder>
           )}
 
-          <div className="info-band">
+          {(comm.length > 0 || opps.length > 0) && <div className="info-band">
             <div>
-              <h3 className="band-title">Communiqués</h3>
+              <h3 className="band-title">Annonces</h3>
               {comm.length ? comm.map((c) => (
                 <DocRow key={c.id} to={`/communiques/${c.id}`} date={c.date} tag={c.category} title={c.title} demo={c.demo} aside={c.pdf ? <span className="pdf">PDF</span> : undefined} />
-              )) : <p className="muted">Aucun communiqué publié pour le moment.</p>}
-              <p><Link className="more-link" to="/communiques">Tous les communiqués <span aria-hidden="true">→</span></Link></p>
+              )) : <p className="muted">Aucune annonce publiée pour le moment.</p>}
+              <p><Link className="more-link" to="/communiques">Toutes les annonces <span aria-hidden="true">→</span></Link></p>
             </div>
             <div>
               <h3 className="band-title">Prochaines échéances</h3>
@@ -160,7 +161,7 @@ export default function Home() {
               }) : <p className="muted">Aucune opportunité en cours pour le moment.</p>}
               <p><Link className="more-link" to="/opportunites">Toutes les opportunités <span aria-hidden="true">→</span></Link></p>
             </div>
-          </div>
+          </div>}
         </div>
       </section>
 
@@ -170,16 +171,16 @@ export default function Home() {
           <div>
             <p className="eyebrow eyebrow-light">Connaissance</p>
             <h2 id="search-title">Retrouver une information</h2>
-            <p>Une recherche unique parcourt les actualités, communiqués, ressources, projets, formations et opportunités publiés.</p>
+            <p>Une recherche unique parcourt les actualités, projets, domaines du génie biomédical et contenus publiés sur le site.</p>
           </div>
           <div>
             <form role="search" className="search-form" onSubmit={search}>
-              <label className="sr-only" htmlFor="home-q">Rechercher sur le portail</label>
-              <input id="home-q" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Ex. maintenance préventive, autoclave, bourse" />
+              <label className="sr-only" htmlFor="home-q">Rechercher sur le site</label>
+              <input id="home-q" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Ex. maintenance préventive, autoclave, métrologie" />
               <button className="btn btn-light" type="submit">Rechercher</button>
             </form>
             <ul className="search-tags">
-              {resourceCategories.slice(0, 5).map((c) => <li key={c.label}><Link to={`/ressources?cat=${encodeURIComponent(c.label)}`}>{c.label}</Link></li>)}
+              {ressources.length > 0 && resourceCategories.slice(0, 5).map((c) => <li key={c.label}><Link to={`/ressources?cat=${encodeURIComponent(c.label)}`}>{c.label}</Link></li>)}
             </ul>
           </div>
         </div>
@@ -211,7 +212,7 @@ export default function Home() {
       </section>
 
       {/* 8. Ressources */}
-      <section className="section" aria-labelledby="res-title" data-reveal>
+      {ressources.length > 0 && <section className="section" aria-labelledby="res-title" data-reveal>
         <div className="container split-label">
           <div className="label-col">
             <p className="eyebrow">Bibliothèque</p>
@@ -234,10 +235,10 @@ export default function Home() {
             })}
           </ul>
         </div>
-      </section>
+      </section>}
 
       {/* 9. Formation / écosystème */}
-      <section className="section section-gray" aria-labelledby="form-title" data-reveal>
+      {(formations.length > 0 || opportunites.some((o) => !isArchived(o))) && <section className="section section-gray" aria-labelledby="form-title" data-reveal>
         <div className="container eco-grid">
           <div>
             <p className="eyebrow">Se former</p>
@@ -255,7 +256,7 @@ export default function Home() {
             </ul>
           </div>
         </div>
-      </section>
+      </section>}
 
       {site.indicateurs.length > 0 && (
         <section className="section" aria-labelledby="ind-title" data-reveal>
@@ -275,8 +276,8 @@ export default function Home() {
       <section className="contrib-band" aria-labelledby="contrib-title" data-reveal>
         <div className="container">
           <div className="head-row">
-            <div><p className="eyebrow">Participer</p><h2 id="contrib-title">Contribuer au portail</h2></div>
-            <Link className="more-link" to="/contact">Contact et contribution <span aria-hidden="true">→</span></Link>
+            <div><p className="eyebrow">Participer</p><h2 id="contrib-title">Collaborer avec le secteur</h2></div>
+            <Link className="more-link" to="/contact">Contact et collaboration <span aria-hidden="true">→</span></Link>
           </div>
           <ul className="contrib">
             {contributionModes.map((m) => <li key={m.key}><Link to={`/contact?motif=${m.key}`}><strong>{m.label}</strong><span>{m.desc}</span></Link></li>)}

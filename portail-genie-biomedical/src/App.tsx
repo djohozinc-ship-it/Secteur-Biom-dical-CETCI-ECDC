@@ -38,6 +38,8 @@ export default function App() {
         <Route path="recherche" element={<SearchPage />} />
         <Route path="mentions-legales" element={<Legal />} />
         <Route path="confidentialite" element={<Privacy />} />
+        <Route path="conditions-utilisation" element={<Terms />} />
+        <Route path="propriete-intellectuelle" element={<IntellectualProperty />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

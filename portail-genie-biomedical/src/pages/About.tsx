@@ -10,7 +10,7 @@ const sectors = [
   'Secteur de l’électricité',
   'Secteur de la maintenance des systèmes',
   'Secteur de la robotique',
-  'Secteur de l’IA et informatique'
+  'Secteur de l’IA et informatique',
   'Secteur du génie civil et de l’architecture',
   'Secteur juridique',
   'Secteur de la mécanique',
@@ -21,7 +21,7 @@ const poles = [
   'Sciences Biomédicales et Recherches',
   'Ingénierie et Technologies Médicales',
   'Numérique, IA et cybersécurité',
-  'Qualité, Normes et Coordination,
+  'Qualité, Normes et Coordination',
 ];
 
 const skills = [
@@ -45,7 +45,7 @@ function MediaPlaceholder({ label }: { label: string }) {
 export default function About() {
   usePageMeta(
     'À propos',
-    'Présentation du CETCI/ECDC et du Secteur Biomédical : vision, organisation, compétences et ambition technologique.'
+    'Le Secteur Biomédical du CETCI/ECDC : un groupe d\'étudiants en génie biomédical au sein d\'une organisation privée et indépendante au Bénin. Vision, organisation et compétences.'
   );
 
   return (
@@ -53,7 +53,7 @@ export default function About() {
       <PageHeader
         title="Le CETCI/ECDC : concevoir aujourd’hui les solutions technologiques de demain"
         eyebrow="À propos"
-        intro="Une communauté d’ingénierie, d’innovation et de collaboration."
+        intro="Une organisation privée et indépendante, fondée en 2024 à l’initiative d’étudiants. Le secteur biomédical en est l’un des secteurs."
         crumbs={[{ label: 'À propos' }]}
       />
 
@@ -297,9 +297,9 @@ export default function About() {
         </Section>
       </main>
 
-      <Section title="À propos du portail" tone="dark" id="portail">
+      <Section title="Statut du site" tone="dark" id="portail">
         <p>
-          {site.statutMention} Le contenu institutionnel du portail est publié à partir des informations communiquées par la communauté et pourra être complété au fur et à mesure de la formalisation des documents, responsables, partenaires et références officielles.
+          {site.statutMention} Le contenu de ce site est publié à partir des informations communiquées par les membres du CETCI/ECDC et sera complété au fil de l'avancée des projets.
         </p>
       </Section>
     </>

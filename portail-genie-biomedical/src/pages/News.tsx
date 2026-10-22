@@ -9,7 +9,7 @@ import { asset, formatDate } from '../utils/format';
 import { NotFound } from './Misc';
 
 export function NewsList() {
-  usePageMeta('Actualités', 'Toutes les actualités du portail.');
+  usePageMeta('Actualités', 'Actualités du Secteur Biomédical du CETCI/ECDC.');
   const [archives, setArchives] = useState(false);
   const list = articles.filter((a) => (a.statut === 'archive') === archives);
   const f = useFilter(list, (a) => ({ title: a.title, text: `${a.summary} ${a.body}`, category: a.category }));
@@ -18,7 +18,7 @@ export function NewsList() {
   list.forEach((a) => { counts[a.category] = (counts[a.category] ?? 0) + 1; });
   return (
     <>
-      <PageHeader title="Actualités" eyebrow="Publications" intro="Nouvelles, analyses et vie de la communauté du génie biomédical." crumbs={[{ label: 'Actualités' }]} />
+      <PageHeader title="Actualités" eyebrow="Publications" intro="Nouvelles et vie du secteur biomédical du CETCI/ECDC." crumbs={[{ label: 'Actualités' }]} />
       <div className="container page-body">
         {articles.length === 0 ? <EmptyState title="Aucune actualité pour le moment">Les premières actualités seront publiées prochainement, avec leur date et leur source.</EmptyState> : (
           <div className="with-side">

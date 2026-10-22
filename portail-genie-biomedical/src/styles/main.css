@@ -1,8 +1,8 @@
 /* =====================================================================
-   IDENTITÉ GRAPHIQUE — Portail du Génie Biomédical au Bénin (CETCI / ECDC)
+   IDENTITÉ GRAPHIQUE — Secteur Biomédical du CETCI/ECDC
    Direction : éditorial / institutionnel / scientifique (esprit « Swiss »).
    Bleu institutionnel profond, blanc, gris clairs, vert santé en accent.
-   Un minuscule repère tricolore (.mark3) évoque le Bénin sans le citer.
+   Un petit repère décoratif (.mark3) reprend les couleurs de la marque.
    Tout se règle ici, dans :root.
    ===================================================================== */
 :root {
@@ -19,7 +19,7 @@
   --ink: #1b2733;
   --ink-soft: #536373;
   --white: #fff;
-  --benin-green: #0a8a4f; --benin-yellow: #f2c230; --benin-red: #d9342b;
+  --benin-green: #0f7a55; --benin-yellow: #5cc79a; --benin-red: #14417a; /* repère de marque : vert, vert clair, bleu */
   /* Typographie : titres serif éditoriaux, texte sans-serif système (aucun chargement externe) */
   --font-title: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

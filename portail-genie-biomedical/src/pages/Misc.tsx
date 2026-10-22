@@ -10,9 +10,9 @@ function LegalIntro() {
     <div className="legal-meta">
       <p><strong>Dernière mise à jour :</strong> {lastUpdated}</p>
       <p>
-        Ces pages présentent les règles générales applicables au portail du Secteur
+        Ces pages présentent les règles générales applicables au site du Secteur
         Biomédical du CETCI/ECDC. Elles doivent être complétées ou ajustées si
-        l'organisation, les responsables, les coordonnées ou les services du portail évoluent.
+        l'organisation, les responsables, les coordonnées ou les services du site évoluent.
       </p>
     </div>
   );
@@ -28,27 +28,28 @@ export function Legal() {
 
         <h2>1. Éditeur du site</h2>
         <p>
-          Le présent portail est édité par le <strong>Secteur Biomédical du CETCI/ECDC</strong>,
-          communauté d'ingénierie, d'innovation et de collaboration dédiée au développement
-          de compétences et de solutions technologiques dans le domaine biomédical.
+          Le présent site est édité par le <strong>Secteur Biomédical du CETCI/ECDC</strong>, groupe
+          d'étudiants au sein du CETCI/ECDC, organisation privée et indépendante (communauté
+          d'ingénierie, d'innovation et de collaboration) dédiée au développement de compétences
+          et de solutions technologiques dans le domaine biomédical.
         </p>
         <dl className="legal-facts">
           <div><dt>Organisme / communauté</dt><dd>{site.organisme}</dd></div>
           <div><dt>Secteur</dt><dd>Secteur Biomédical</dd></div>
           <div><dt>Pays</dt><dd>République du Bénin</dd></div>
-          <div><dt>Responsable du portail</dt><dd>Cédric DJOHOZIN</dd></div>
+          <div><dt>Responsable du site</dt><dd>Cédric DJOHOZIN</dd></div>
           <div><dt>Contact</dt><dd>{site.contact.email || 'Adresse e-mail à renseigner'}</dd></div>
           <div><dt>Site</dt><dd>{site.siteUrl}</dd></div>
         </dl>
         <p className="notice">
-          <strong>Statut du portail.</strong> {site.statutMention} Ce portail ne constitue pas,
+          <strong>Statut du site.</strong> {site.statutMention} Ce site ne constitue pas,
           par lui-même, un site officiel du Gouvernement du Bénin, du Ministère de la Santé,
-          de l'EPAC ou d'une autre institution publique.
+          de l'EPAC ou d'une autre institution publique. Le secteur ne vend pas d'équipements médicaux.
         </p>
 
-        <h2>2. Objet du portail</h2>
+        <h2>2. Objet du site</h2>
         <p>
-          Le portail a pour objectif de présenter les activités, projets, membres, réalisations,
+          Le site a pour objectif de présenter les activités, projets, membres, réalisations,
           ressources et initiatives du Secteur Biomédical du CETCI/ECDC. Il vise notamment à
           informer, valoriser les travaux, faciliter les collaborations et partager des ressources
           techniques et scientifiques.
@@ -62,18 +63,18 @@ export function Legal() {
         </p>
         <p className="notice">
           <strong>Important :</strong> la présentation d'un prototype, d'un algorithme, d'un
-          dispositif ou d'une technologie sur ce portail ne signifie pas qu'il est homologué,
+          dispositif ou d'une technologie sur ce site ne signifie pas qu'il est homologué,
           certifié ou autorisé pour une utilisation clinique.
         </p>
 
         <h2>4. Responsabilité</h2>
         <p>
-          L'équipe du portail s'efforce de publier des informations exactes et à jour. Toutefois,
+          L'équipe du site s'efforce de publier des informations exactes et à jour. Toutefois,
           aucune garantie absolue n'est donnée concernant l'exhaustivité, l'actualité permanente,
-          l'absence d'erreurs ou la disponibilité continue du portail.
+          l'absence d'erreurs ou la disponibilité continue du site.
         </p>
         <p>
-          Le portail ne constitue pas une plateforme de diagnostic, de prescription ou de prise
+          Le site ne constitue pas une plateforme de diagnostic, de prescription ou de prise
           en charge médicale. Aucune information publiée ne doit être interprétée comme un avis
           médical personnalisé.
         </p>
@@ -81,7 +82,7 @@ export function Legal() {
         <h2>5. Propriété intellectuelle</h2>
         <p>
           Sauf indication contraire, les textes, photographies, graphiques, logos, documents,
-          interfaces et autres contenus publiés sur le portail sont protégés par les règles
+          interfaces et autres contenus publiés sur le site sont protégés par les règles
           applicables en matière de propriété intellectuelle.
         </p>
         <p>
@@ -103,27 +104,27 @@ export function Legal() {
         </p>
         <p>
           Une personne identifiable qui estime qu'une photographie la représentant a été publiée
-          de manière inappropriée peut contacter l'équipe du portail afin de demander son examen.
+          de manière inappropriée peut contacter l'équipe du site afin de demander son examen.
         </p>
 
         <h2>7. Liens externes</h2>
         <p>
-          Le portail peut contenir des liens vers des sites, plateformes ou services tiers.
+          Le site peut contenir des liens vers des sites, plateformes ou services tiers.
           Ces services disposent de leurs propres conditions et politiques. Le Secteur Biomédical
           du CETCI/ECDC ne contrôle pas nécessairement leurs contenus ou pratiques.
         </p>
 
         <h2>8. Hébergement et disponibilité</h2>
         <p>
-          Le portail est actuellement publié sous forme de site statique sur GitHub Pages.
+          Le site est actuellement publié sous forme de site statique sur GitHub Pages.
           Des opérations de maintenance, des mises à jour ou des incidents techniques peuvent
           temporairement affecter sa disponibilité.
         </p>
 
         <h2>9. Contact</h2>
         <p>
-          Pour toute question concernant le portail, ses contenus, une photographie, un document
-          ou une demande relative à la confidentialité, utilisez la page <Link to="/contact">Contact et contribution</Link>.
+          Pour toute question concernant le site, ses contenus, une photographie, un document
+          ou une demande relative à la confidentialité, utilisez la page <Link to="/contact">Contact et collaboration</Link>.
         </p>
       </article>
     </>
@@ -140,16 +141,16 @@ export function Privacy() {
 
         <h2>1. Notre principe</h2>
         <p>
-          La protection des données personnelles constitue un principe important du portail.
+          La protection des données personnelles constitue un principe important du site.
           Nous cherchons à ne collecter que les informations nécessaires au fonctionnement du
-          portail et aux finalités clairement identifiées.
+          site et aux finalités clairement identifiées.
         </p>
 
         <h2>2. Données communiquées volontairement</h2>
         <p>
           Selon les fonctionnalités disponibles, une personne peut volontairement communiquer
           son nom, son adresse e-mail, son établissement, sa fonction, son domaine d'activité
-          ou le contenu d'un message envoyé au portail.
+          ou le contenu d'un message envoyé au site.
         </p>
 
         <h2>3. Données techniques</h2>
@@ -162,7 +163,7 @@ export function Privacy() {
 
         <h2>4. Données de santé</h2>
         <p className="notice">
-          <strong>Le portail n'a pas vocation à collecter ou stocker des dossiers médicaux,
+          <strong>Le site n'a pas vocation à collecter ou stocker des dossiers médicaux,
           résultats d'examens, antécédents médicaux ou autres données de santé de patients.</strong>
         </p>
         <p>
@@ -176,7 +177,7 @@ export function Privacy() {
         <ul>
           <li>répondre aux demandes de contact ;</li>
           <li>communiquer avec les membres, étudiants et partenaires ;</li>
-          <li>assurer le fonctionnement et la sécurité du portail ;</li>
+          <li>assurer le fonctionnement et la sécurité du site ;</li>
           <li>améliorer les contenus et l'expérience utilisateur ;</li>
           <li>gérer les contributions, candidatures ou participations lorsque ces fonctionnalités existent ;</li>
           <li>documenter les activités du CETCI/ECDC.</li>
@@ -184,7 +185,7 @@ export function Privacy() {
 
         <h2>6. Cookies et technologies similaires</h2>
         <p>
-          Le portail n'a pas vocation à utiliser des cookies publicitaires. Des cookies ou
+          Le site n'a pas vocation à utiliser des cookies publicitaires. Des cookies ou
           technologies similaires peuvent toutefois être utilisés par certaines fonctionnalités
           techniques ou certains services externes. Lorsqu'un mécanisme de consentement est
           nécessaire, il doit être mis en place avant les traitements concernés.
@@ -192,7 +193,7 @@ export function Privacy() {
 
         <h2>7. Services tiers</h2>
         <p>
-          Le portail peut s'appuyer sur des services externes pour l'hébergement, la diffusion
+          Le site peut s'appuyer sur des services externes pour l'hébergement, la diffusion
           de contenus, les formulaires, les statistiques ou d'autres fonctionnalités. Ces services
           peuvent appliquer leurs propres politiques de confidentialité.
         </p>
@@ -217,7 +218,7 @@ export function Privacy() {
         <p>
           Les données personnelles ne sont pas destinées à être vendues. Elles peuvent être
           communiquées à des prestataires techniques lorsque cela est nécessaire au fonctionnement
-          du portail, ou lorsque la loi l'exige, dans la mesure nécessaire à la finalité concernée.
+          du site, ou lorsque la loi l'exige, dans la mesure nécessaire à la finalité concernée.
         </p>
 
         <h2>11. Profils des membres</h2>
@@ -236,18 +237,18 @@ export function Privacy() {
           traitement repose sur celui-ci.
         </p>
         <p>
-          Pour exercer une demande, utilisez la page <Link to="/contact">Contact et contribution</Link>.
+          Pour exercer une demande, utilisez la page <Link to="/contact">Contact et collaboration</Link>.
         </p>
 
         <h2>13. Mineurs</h2>
         <p>
-          Le portail n'est pas destiné à collecter volontairement des données personnelles de mineurs.
+          Le site n'est pas destiné à collecter volontairement des données personnelles de mineurs.
           Toute fonctionnalité nécessitant une telle collecte devra prévoir des mesures adaptées.
         </p>
 
         <h2>14. Modifications</h2>
         <p>
-          Cette politique peut être mise à jour lorsque le portail, ses fonctionnalités ou les
+          Cette politique peut être mise à jour lorsque le site, ses fonctionnalités ou les
           exigences applicables évoluent. La date de dernière modification est indiquée en tête de page.
         </p>
 
@@ -272,20 +273,20 @@ export function Terms() {
 
         <h2>1. Acceptation</h2>
         <p>
-          L'accès au portail implique la prise de connaissance des présentes conditions. Si vous
+          L'accès au site implique la prise de connaissance des présentes conditions. Si vous
           n'acceptez pas une partie de ces conditions, vous devez éviter d'utiliser les fonctionnalités
           concernées.
         </p>
 
         <h2>2. Utilisation autorisée</h2>
         <p>
-          Le portail peut être utilisé pour consulter les informations publiées, découvrir les
+          Le site peut être utilisé pour consulter les informations publiées, découvrir les
           activités du secteur, accéder aux ressources disponibles et prendre contact avec la communauté
           dans un cadre légal et respectueux.
         </p>
 
         <h2>3. Utilisations interdites</h2>
-        <p>Il est notamment interdit d'utiliser le portail pour :</p>
+        <p>Il est notamment interdit d'utiliser le site pour :</p>
         <ul>
           <li>contourner ou compromettre ses mécanismes de sécurité ;</li>
           <li>introduire volontairement des contenus malveillants ;</li>
@@ -314,14 +315,14 @@ export function Terms() {
           Leur présence ne signifie pas nécessairement que le CETCI/ECDC approuve l'ensemble de leur contenu.
         </p>
 
-        <h2>7. Évolution du portail</h2>
+        <h2>7. Évolution du site</h2>
         <p>
-          Le contenu, les fonctionnalités et l'organisation du portail peuvent évoluer, être
+          Le contenu, les fonctionnalités et l'organisation du site peuvent évoluer, être
           suspendus ou supprimés lorsque cela est nécessaire.
         </p>
 
         <h2>8. Contact</h2>
-        <p><Link className="btn" to="/contact">Contact et contribution</Link></p>
+        <p><Link className="btn" to="/contact">Contact et collaboration</Link></p>
       </article>
     </>
   );
@@ -337,14 +338,14 @@ export function IntellectualProperty() {
 
         <h2>1. Principes</h2>
         <p>
-          Le portail présente des contenus issus des activités du CETCI/ECDC, du Secteur Biomédical,
+          Le site présente des contenus issus des activités du CETCI/ECDC, du Secteur Biomédical,
           de ses membres, de partenaires et, lorsque cela est indiqué, de tiers. Les droits sont
           attachés à leurs auteurs ou titulaires respectifs.
         </p>
 
         <h2>2. Projets et prototypes</h2>
         <p>
-          La publication d'un projet ou d'un prototype ne signifie pas que le portail transfère,
+          La publication d'un projet ou d'un prototype ne signifie pas que le site transfère,
           abandonne ou concède automatiquement les droits de propriété intellectuelle qui peuvent
           être attachés à ce projet.
         </p>
@@ -363,7 +364,7 @@ export function IntellectualProperty() {
 
         <h2>4. Utilisation des contenus</h2>
         <p>
-          Toute réutilisation substantielle d'un contenu original du portail à des fins commerciales,
+          Toute réutilisation substantielle d'un contenu original du site à des fins commerciales,
           promotionnelles ou institutionnelles doit faire l'objet d'une autorisation lorsque celle-ci
           est requise. Une réutilisation autorisée doit conserver les mentions d'auteur et d'origine
           applicables.
@@ -372,14 +373,14 @@ export function IntellectualProperty() {
         <h2>5. Marques et logos</h2>
         <p>
           Les noms, marques et logos du CETCI/ECDC, du Secteur Biomédical et des partenaires restent
-          la propriété de leurs titulaires respectifs. Leur présence sur le portail ne constitue pas
+          la propriété de leurs titulaires respectifs. Leur présence sur le site ne constitue pas
           une autorisation générale de les reproduire ou de suggérer une affiliation non établie.
         </p>
 
         <h2>6. Demande d'autorisation</h2>
         <p>
           Pour demander une autorisation de réutilisation d'un contenu ou signaler un problème de
-          propriété intellectuelle, utilisez la page <Link to="/contact">Contact et contribution</Link>.
+          propriété intellectuelle, utilisez la page <Link to="/contact">Contact et collaboration</Link>.
         </p>
       </article>
     </>

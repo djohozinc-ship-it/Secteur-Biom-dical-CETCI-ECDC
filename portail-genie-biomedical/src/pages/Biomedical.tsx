@@ -13,7 +13,7 @@ const groupIntro: Record<string, string> = {
 const groupGlyph: Record<string, string> = { Fondamentaux: 'wrench', 'Services et équipements': 'monitor', Technologies: 'chip' };
 
 export function BiomedicalIndex() {
-  usePageMeta('Génie biomédical', 'Les grands domaines du génie biomédical.');
+  usePageMeta('Génie biomédical : les grands domaines', 'Les grands domaines du génie biomédical présentés par le Secteur Biomédical du CETCI/ECDC : maintenance, ingénierie hospitalière, dispositifs médicaux, imagerie, métrologie.');
   const groupes = Array.from(new Set(rubriques.map((r) => r.groupe)));
   return (
     <>

@@ -7,25 +7,25 @@ import type { HeroSlide } from '../types';
 // ============================================================
 export const site = {
   // --- Identité ---
-  name: 'Portail du Secteur Biomédical au Bénin', // nom d'affichage provisoire
+  name: 'Secteur Biomédical CETCI/ECDC', // nom d'affichage
   officialName: '', // nom officiel, quand il sera connu
-  shortName: 'Secteur biomédical CETCI / ECDC',
-  tagline: 'Maintenance, ingénierie hospitalière et innovation en santé',
-  seoTitle: 'Portail du Secteur Biomédical au Bénin | CETCI / ECDC', // titre affiché dans Google et l'onglet pour la page d'accueil (≈ 60 caractères max)
+  shortName: 'Secteur biomédical CETCI/ECDC',
+  tagline: 'Des étudiants en génie biomédical : maintenance, projets et innovation en santé',
+  seoTitle: 'Secteur Biomédical CETCI/ECDC | Étudiants en génie biomédical', // titre affiché dans Google et l'onglet pour la page d'accueil (≈ 60 caractères max)
   description:
-    "Portail du secteur biomédical du CETCI / ECDC au Bénin : actualités, ressources techniques, projets, formations et opportunités en génie biomédical.",
-  organisme: 'CETCI / ECDC', // communauté porteuse du portail
-  statutMention: "Initiative communautaire — ce portail n'est pas un site gouvernemental.",
+    "Le Secteur Biomédical du CETCI/ECDC est un groupe d'étudiants en génie biomédical, au sein d'une organisation privée au Bénin : maintenance biomédicale, projets, prototypes et innovation en santé.",
+  organisme: 'CETCI/ECDC', // organisation privée porteuse du secteur
+  statutMention: "Le Secteur Biomédical est un groupe d'étudiants du CETCI/ECDC, une organisation privée et indépendante. Ce site n'est pas un site gouvernemental ni celui d'un organisme public.",
   // Diaporama de l'accueil (photos dans public/images/). Les actualités qui ont une image s'ajoutent automatiquement.
   heroSlides: [
     {
       image: 'images/equipe-secteur-biomedical.jpg',
       alt: "Photo de groupe : une douzaine de jeunes en polos bleu clair, alignés devant un tableau blanc dans une salle aux murs verts",
       position: '50% 46%',
-      kicker: 'Communauté',
-      title: 'La communauté du secteur biomédical',
-      text: 'Un portail pour informer, partager, valoriser et relier les acteurs du génie biomédical au Bénin.',
-      cta: { label: 'Découvrir le portail', to: '/a-propos' },
+      kicker: 'Groupe d\'étudiants',
+      title: 'Le secteur biomédical du CETCI/ECDC',
+      text: 'Des étudiants qui se forment au génie biomédical, développent leurs compétences en maintenance et conçoivent des projets au service de la santé.',
+      cta: { label: 'Découvrir le secteur', to: '/a-propos' },
       credit: '',
     },
     // --- DIAPOSITIVE VIDÉO : deuxième slide du diaporama ---

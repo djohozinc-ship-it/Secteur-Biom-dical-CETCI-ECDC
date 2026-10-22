@@ -36,7 +36,7 @@ export default function Members() {
       <PageHeader
         title="Membres"
         eyebrow="Le secteur biomédical"
-        intro="Découvrez les acteurs qui contribuent au développement du génie biomédical au Bénin."
+        intro="Découvrez les étudiants du secteur biomédical du CETCI/ECDC."
         crumbs={[{ label: 'Membres' }]}
       />
 

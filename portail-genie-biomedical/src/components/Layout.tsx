@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { site } from '../config/site';
-import { rubriques } from '../utils/content';
+import { communiques, formations, opportunites, ressources, rubriques } from '../utils/content';
 import { Logo, Mark3 } from './ui';
 import { Glyph } from './illustrations';
 import { asset } from '../utils/format';
@@ -11,24 +11,32 @@ import { resourceCategories } from '../utils/taxonomy';
 interface Item { to: string; label: string }
 interface Group { label: string; to?: string; items?: Item[]; mega?: boolean }
 
+// Les rubriques sans contenu publié restent masquées : elles réapparaissent dès qu'une fiche est ajoutée.
+const hasComm = communiques.length > 0;
+const hasRes = ressources.length > 0;
+const hasForm = formations.length > 0;
+const hasOpp = opportunites.length > 0;
+const publications: Item[] = [
+  { to: '/actualites', label: 'Actualités' },
+  ...(hasComm ? [{ to: '/communiques', label: 'Annonces' }] : []),
+  ...(hasRes ? [{ to: '/ressources', label: 'Ressources techniques' }] : []),
+];
+const learn: Item[] = [
+  ...(hasForm ? [{ to: '/formations', label: 'Formations et établissements' }] : []),
+  ...(hasOpp ? [{ to: '/opportunites', label: 'Opportunités' }] : []),
+];
+
 const groups: Group[] = [
-  { label: 'Le portail', items: [
+  { label: 'Le secteur', items: [
     { to: '/a-propos', label: 'À propos' },
     { to: '/membres', label: 'Membres' },
     ...(site.annuaireEnabled ? [{ to: '/annuaire', label: 'Annuaire' }] : []),
-    { to: '/contact', label: 'Contact et contribution' },
+    { to: '/contact', label: 'Contact et collaboration' },
   ] },
   { label: 'Génie biomédical', mega: true },
-  { label: 'Publications', items: [
-    { to: '/actualites', label: 'Actualités' },
-    { to: '/communiques', label: 'Communiqués' },
-    { to: '/ressources', label: 'Ressources techniques' },
-  ] },
+  { label: 'Actualités', ...(publications.length > 1 ? { items: publications } : { to: '/actualites' }) },
   { label: 'Projets', to: '/projets' },
-  { label: 'Se former', items: [
-    { to: '/formations', label: 'Formations et établissements' },
-    { to: '/opportunites', label: 'Opportunités' },
-  ] },
+  ...(learn.length ? [{ label: 'Se former', items: learn } as Group] : []),
 ];
 
 function Header() {
@@ -108,8 +116,8 @@ function Header() {
         </div>
       {searching && (
         <form className="container header-search" role="search" onSubmit={submit}>
-          <label className="sr-only" htmlFor="hs">Rechercher sur le portail</label>
-          <input id="hs" autoFocus type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher sur le portail" />
+          <label className="sr-only" htmlFor="hs">Rechercher sur le site</label>
+          <input id="hs" autoFocus type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher sur le site" />
           <button className="btn" type="submit">Rechercher</button>
         </form>
         )}
@@ -132,11 +140,11 @@ function Footer() {
             {site.organismeNom && <p className="footer-orgfull">{site.organismeNom}</p>}
           </div>
         </div>
-        <p className="footer-status">{site.statutMention} Les informations officielles seront publiées lorsqu'elles seront établies et vérifiées.</p>
+        <p className="footer-status">{site.statutMention}</p>
       </div>
       <div className="container footer-grid">
-        <nav aria-label="Le portail">
-          <p className="footer-title">Le portail</p>
+        <nav aria-label="Le secteur">
+          <p className="footer-title">Le secteur</p>
           <ul>
             <li><Link to="/a-propos">À propos</Link></li>
             <li><Link to="/membres">Membres</Link></li>
@@ -149,18 +157,20 @@ function Footer() {
           <p className="footer-title">Publications</p>
           <ul>
             <li><Link to="/actualites">Actualités</Link></li>
-            <li><Link to="/communiques">Communiqués</Link></li>
-            <li><Link to="/formations">Formations et établissements</Link></li>
-            <li><Link to="/opportunites">Opportunités</Link></li>
+            {hasComm && <li><Link to="/communiques">Annonces</Link></li>}
+            {hasForm && <li><Link to="/formations">Formations et établissements</Link></li>}
+            {hasOpp && <li><Link to="/opportunites">Opportunités</Link></li>}
           </ul>
         </nav>
-        <nav aria-label="Ressources">
-          <p className="footer-title">Ressources</p>
-          <ul>
-            {resourceCategories.slice(0, 5).map((c) => <li key={c.label}><Link to={`/ressources?cat=${encodeURIComponent(c.label)}`}>{c.label}</Link></li>)}
-            <li><Link to="/ressources">Tout le catalogue</Link></li>
-          </ul>
-        </nav>
+        {hasRes && (
+          <nav aria-label="Ressources">
+            <p className="footer-title">Ressources</p>
+            <ul>
+              {resourceCategories.slice(0, 5).map((c) => <li key={c.label}><Link to={`/ressources?cat=${encodeURIComponent(c.label)}`}>{c.label}</Link></li>)}
+              <li><Link to="/ressources">Tout le catalogue</Link></li>
+            </ul>
+          </nav>
+        )}
         <div>
           <p className="footer-title">Contact</p>
           {email || telephone || adresse ? (
@@ -170,7 +180,7 @@ function Footer() {
               {adresse && <div>{adresse}</div>}
             </address>
           ) : <p>Coordonnées à venir.</p>}
-          <p><Link to="/contact">Contact et contribution</Link></p>
+          <p><Link to="/contact">Contact et collaboration</Link></p>
           {socials.length > 0 && <ul className="inline-list">{socials.map(([n, u]) => <li key={n}><a href={u} target="_blank" rel="noopener noreferrer">{n}</a></li>)}</ul>}
           {site.liensInstitutionnels.length > 0 && (
             <ul>{site.liensInstitutionnels.map((l) => <li key={l.url}><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a></li>)}</ul>
@@ -197,7 +207,7 @@ export default function Layout() {
   return (
     <>
       <a className="skip" href="#contenu" onClick={(e) => { e.preventDefault(); document.getElementById('contenu')?.focus(); }}>Aller au contenu</a>
-      {site.showDemo && <div className="demo-banner" role="note">Mode démonstration : les contenus marqués « Démonstration » sont fictifs et ne constituent pas des informations officielles.</div>}
+      {site.showDemo && <div className="demo-banner" role="note">Mode démonstration : les contenus marqués « Démonstration » sont fictifs.</div>}
       <Header />
       <main id="contenu" tabIndex={-1}><Outlet /></main>
       <Footer />

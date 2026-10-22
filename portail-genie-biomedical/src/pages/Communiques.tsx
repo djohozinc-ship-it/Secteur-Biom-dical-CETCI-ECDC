@@ -9,21 +9,21 @@ import { asset, formatDate } from '../utils/format';
 import { NotFound } from './Misc';
 
 export function CommuniqueList() {
-  usePageMeta('Communiqués', 'Annonces et documents de la communauté.');
+  usePageMeta('Annonces', 'Annonces et documents du secteur biomédical du CETCI/ECDC.');
   const [archives, setArchives] = useState(false);
   const list = communiques.filter((c) => (c.statut === 'archive') === archives);
   const f = useFilter(list, (c) => ({ title: c.title, text: `${c.summary} ${c.content}`, category: c.category }));
   const p = usePagination(f.result, 10);
   return (
     <>
-      <PageHeader title="Communiqués" eyebrow="Publications" intro="Annonces et documents de la communauté, classés par date, avec leur statut." crumbs={[{ label: 'Communiqués' }]} />
+      <PageHeader title="Annonces" eyebrow="Publications" intro="Annonces et documents du secteur biomédical, classés par date, avec leur statut." crumbs={[{ label: 'Annonces' }]} />
       <div className="container page-body">
-        {communiques.length === 0 ? <EmptyState title="Aucun communiqué publié">Les annonces apparaîtront ici avec leur date, leur statut et, le cas échéant, un document PDF.</EmptyState> : (
+        {communiques.length === 0 ? <EmptyState title="Aucune annonce publiée">Les annonces apparaîtront ici avec leur date, leur statut et, le cas échéant, un document PDF.</EmptyState> : (
           <div className="with-side">
             <SideFilter {...f} />
             <div>
               <ArchiveTabs archives={archives} setArchives={setArchives} labelLive="Récents" />
-              {f.result.length === 0 ? <EmptyState title="Aucun communiqué ne correspond" /> : (
+              {f.result.length === 0 ? <EmptyState title="Aucune annonce ne correspond" /> : (
                 <>
                   <div className="doclist">
                     {p.slice.map((c) => (
@@ -49,7 +49,7 @@ export function CommuniqueDetail() {
   if (!c) return <NotFound />;
   return (
     <>
-      <PageHeader title={c.title} crumbs={[{ label: 'Communiqués', to: '/communiques' }, { label: c.category }]} />
+      <PageHeader title={c.title} crumbs={[{ label: 'Annonces', to: '/communiques' }, { label: c.category }]} />
       <div className="container page-body reading">
         <article className="reading-main">
           <p className="lead">{c.summary}</p>
@@ -67,7 +67,7 @@ export function CommuniqueDetail() {
             { label: 'Source', value: c.source },
           ]} />
           {c.pdf && <p><a className="btn" href={asset(c.pdf)} download>Télécharger le PDF</a></p>}
-          <p><Link className="more-link" to="/communiques">← Tous les communiqués</Link></p>
+          <p><Link className="more-link" to="/communiques">← Toutes les annonces</Link></p>
         </aside>
       </div>
     </>

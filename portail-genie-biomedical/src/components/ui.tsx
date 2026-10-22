@@ -18,7 +18,7 @@ export function Logo({ inverse = false }: { inverse?: boolean }) {
   );
 }
 
-// Très petit repère aux couleurs du Bénin, utilisé avec parcimonie (hero, pied de page).
+// Petit repère décoratif aux couleurs de la marque (bleu, vert), utilisé avec parcimonie.
 export function Mark3() {
   return <span className="mark3" aria-hidden="true"><i /><i /><i /></span>;
 }

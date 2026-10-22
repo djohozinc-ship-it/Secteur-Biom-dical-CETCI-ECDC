@@ -1,1 +1,1 @@
-# Portail du Secteur Biomédical CETCI / ECDC
+# Site du Secteur Biomédical CETCI/ECDC

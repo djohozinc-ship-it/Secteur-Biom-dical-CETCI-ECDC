@@ -8,7 +8,7 @@ import { contributionModes } from '../utils/taxonomy';
 const teamSubject = "Contacter l'équipe";
 
 export default function Contact() {
-  usePageMeta('Contact et contribution', "Contacter l'équipe, proposer un article, un projet, une ressource ou un partenariat.");
+  usePageMeta('Contact et collaboration', "Contacter le Secteur Biomédical du CETCI/ECDC : question, projet, ressource ou partenariat.");
   const [params] = useSearchParams();
   const initial = contributionModes.find((m) => m.key === params.get('motif'))?.subject ?? teamSubject;
   const [subject, setSubject] = useState(initial);
@@ -19,10 +19,10 @@ export default function Contact() {
   const hasCoords = email || telephone || adresse || site.externalFormUrl || site.whatsapp;
   return (
     <>
-      <PageHeader title="Contact et contribution" eyebrow="Le portail" intro="Écrire à l'équipe, ou contribuer au contenu du portail." crumbs={[{ label: 'Contact' }]} />
+      <PageHeader title="Contact et collaboration" eyebrow="Le secteur" intro="Écrire à l'équipe du secteur biomédical, ou proposer une collaboration." crumbs={[{ label: 'Contact' }]} />
       <div className="container page-body contact-layout">
         <div>
-          <h2>Contribuer</h2>
+          <h2>Collaborer</h2>
           <ul className="contrib-list">
             {contributionModes.map((m) => (
               <li key={m.key}><strong>{m.label}</strong><span>{m.desc}</span></li>
@@ -39,7 +39,7 @@ export default function Contact() {
               {site.externalFormUrl && <li><a href={site.externalFormUrl} target="_blank" rel="noopener noreferrer">Formulaire externe</a></li>}
               {site.whatsapp && <li><a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>}
             </ul>
-          ) : <p className="notice">Les coordonnées officielles seront publiées après vérification. Aucune n'est affichée pour l'instant.</p>}
+          ) : <p className="notice">Les coordonnées de contact seront publiées prochainement.</p>}
         </div>
 
         <div className="contact-form">
