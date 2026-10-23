@@ -3,6 +3,7 @@ const paths: Record<string, string> = {
   wrench: 'M14.7 6.3a4 4 0 0 0-5.4 5l-6 6 2.4 2.4 6-6a4 4 0 0 0 5-5.4l-2.6 2.6-2-2z',
   monitor: 'M3 5h18v11H3zM8 20h8M12 16v4M6 11h3l1.5-3 2 5 1.5-2H18',
   chip: 'M8 8h8v8H8zM10 3v3M14 3v3M10 18v3M14 18v3M3 10h3M3 14h3M18 10h3M18 14h3',
+  info: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 11v6M12 7.5v.01',
   doc: 'M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7',
   mail: 'M3 6h18v12H3zM3 7l9 7 9-7',
   calendar: 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4',

@@ -34,6 +34,7 @@ export interface Opportunite {
 }
 export interface Membre {
   id: string; name: string; role: string; pole: string; bio: string; photo?: string;
+  depuis?: string; // ex. « Chef du secteur depuis la création du secteur » (ligne avec icône calendrier)
   links?: { label: string; url: string }[]; consentement: boolean; statut: Statut; demo?: boolean;
 }
 export interface EntreeAnnuaire {

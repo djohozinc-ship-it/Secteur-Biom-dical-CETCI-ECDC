@@ -39,7 +39,7 @@
   width: 100vw;
   margin-left: calc(50% - 50vw);
   min-height: min(650px, 76vh);
-  background: var(--blue-900);
+  background: #1d2330;
 }
 
 .member-profile-photo {
@@ -58,19 +58,6 @@
   display: block;
 }
 
-.member-profile-index {
-  position: absolute;
-  left: var(--s4);
-  bottom: var(--s4);
-  background: rgba(7, 29, 59, .9);
-  color: #fff;
-  padding: .35rem .65rem;
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
 .member-profile-content {
   display: flex;
   flex-direction: column;
@@ -79,30 +66,34 @@
   color: #cfdcea;
 }
 
-/* Sous-titre : la fonction de la personne, telle qu'on la nommerait à l'oral. */
+/* Fonction, en haut du panneau, centrée (comme sur la maquette). */
 .member-profile-kicker {
-  max-width: 46ch;
-  margin: 0 0 var(--s3);
-  color: #a9c2d6;
-  font-size: 1rem;
+  max-width: 52ch;
+  margin: 0 auto var(--s4);
+  color: #e3e9f1;
+  font-size: .95rem;
   line-height: 1.4;
+  text-align: center;
 }
 
 .member-profile-content h3 {
-  margin-bottom: var(--s4);
+  margin: 0 0 var(--s5);
   color: #fff;
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.15;
+  text-align: center;
 }
 
-/* Repère du pôle, présenté comme une information plutôt qu'une décoration. */
+/* Ligne « depuis… » (ou pôle) avec pastille ronde blanche. */
 .member-profile-badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: var(--s3);
-  width: fit-content;
-  margin: 0;
+  margin: 0 0 var(--s5);
   color: #fff;
-  font-size: .92rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -110,28 +101,32 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   flex: none;
   border-radius: 50%;
   background: #fff;
-  color: var(--blue);
+  color: #1d2330;
 }
+.member-profile-info-icon { background: #3b4558; color: #fff; }
 
-.member-profile-line {
-  width: 56px;
-  height: 3px;
-  margin: var(--s5) 0;
-  background: var(--green-light);
+/* Présentation : pastille « i » puis paragraphes justifiés. */
+.member-profile-about {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s3);
+  margin-bottom: var(--s5);
 }
 
 .member-profile-bio {
-  max-width: 62ch;
-  margin-bottom: var(--s5);
-  color: #cfdcea;
+  color: #e3e9f1;
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
 }
+.member-profile-bio p { margin: 0 0 var(--s4); }
+.member-profile-bio p:last-child { margin-bottom: 0; }
 
 .member-profile-links {
   display: flex;
@@ -208,6 +203,7 @@
   .member-profile-content { padding: var(--s5); }
   .member-profile-content h3 { font-size: clamp(1.8rem, 9vw, 2.5rem); }
   .member-profile-controls { grid-template-columns: 1fr 1fr; }
+  .member-profile-bio { text-align: left; }
   .member-progress { display: none; }
   .member-arrow-next { justify-self: end; }
 }

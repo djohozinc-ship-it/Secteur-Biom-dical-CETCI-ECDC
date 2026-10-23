@@ -82,9 +82,6 @@ export default function Members() {
             <article className="member-profile" aria-live="polite">
               <div className="member-profile-photo">
                 <Avatar name={current.name} photo={current.photo} />
-                <div className="member-profile-index">
-                  Profil {String(index + 1).padStart(2, '0')}
-                </div>
               </div>
 
               <div className="member-profile-content">
@@ -93,11 +90,15 @@ export default function Members() {
                 </p>
                 <h3>{current.name}</h3>
                 <p className="member-profile-badge">
-                  <span className="member-profile-badge-icon" aria-hidden="true"><Glyph name="building" size={16} /></span>
-                  {shortPole(current.pole)}
+                  <span className="member-profile-badge-icon" aria-hidden="true"><Glyph name={current.depuis ? 'calendar' : 'building'} size={18} /></span>
+                  {current.depuis ?? shortPole(current.pole)}
                 </p>
-                <div className="member-profile-line" />
-                <p className="member-profile-bio">{current.bio}</p>
+                <div className="member-profile-about">
+                  <span className="member-profile-badge-icon member-profile-info-icon" aria-hidden="true"><Glyph name="info" size={18} /></span>
+                  <div className="member-profile-bio">
+                    {current.bio.split(/\n\s*\n/).map((para, i) => <p key={i}>{para}</p>)}
+                  </div>
+                </div>
 
                 {current.links && current.links.length > 0 && (
                   <div className="member-profile-links">
