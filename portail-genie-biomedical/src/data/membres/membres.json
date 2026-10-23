@@ -4,9 +4,22 @@
     "name": "Cédric DJOHOZIN",
     "role": "Chef du secteur biomédical · Chargé de la robotisation médicale, de l’automatisation médicale et des technologies du secteur",
     "pole": "Pôle 2 : Ingénierie et Technologies Médicales — Robotisation, automatisation médicale et technologies du secteur",
-    "bio": "Technicien en maintenance biomédicale et hospitalière, formé initialement en électrotechnique et en électronique. En tant que chef du secteur biomédical et responsable du pôle 2, il contribue au développement des technologies biomédicales, notamment dans les domaines de la robotisation et de l’automatisation médicales, afin de soutenir l’innovation et l’évolution du secteur au Bénin.",
+    "bio": "Nommé chef du secteur biomédical dès sa création, Cédric DJOHOZIN est technicien en maintenance biomédicale et hospitalière. Formé d’abord en électrotechnique et en électronique, il est diplômé en 2026 d’une Licence professionnelle en Génie Biomédical (option Maintenance Biomédicale et Hospitalière) de l’École Polytechnique d’Abomey-Calavi, où il est sorti major de la 15e promotion avec 16,08/20. Il a effectué plusieurs stages au Centre Hospitalier Départemental du Zou, consacrés à la maintenance préventive et corrective, à l’installation de dispositifs médicaux et au suivi du parc d’équipements. Son mémoire, SACRURO, un système automatisé de récupération et de valorisation des rejets d’osmoseur utilisés en hémodialyse, a été évalué 90/100 par le jury. Il travaille aussi sur Mor-Eyes Pro, un prototype de communication par clignements oculaires, et sur DICOM Anonymizer, un outil d’anonymisation de fichiers d’imagerie médicale. Membre de la branche IEEE Student UAC Bénin, il s’intéresse aux technologies médicales intelligentes, aux systèmes embarqués et à la robotique médicale, avec l’objectif de concevoir et maintenir des technologies adaptées aux besoins de santé du Bénin.",
     "photo": "images/cedric.png",
-    "links": [],
+    "links": [
+      {
+        "label": "Portfolio",
+        "url": "https://djohozinc-ship-it.github.io/Cedric-biomedical-portfolio/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/djohozinc-ship-it"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "http://www.linkedin.com/in/concepteurdemaintenance"
+      }
+    ],
     "consentement": true,
     "statut": "publie"
   },
