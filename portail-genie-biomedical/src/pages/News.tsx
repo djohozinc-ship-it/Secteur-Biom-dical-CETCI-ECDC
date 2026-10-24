@@ -20,7 +20,7 @@ export function NewsList() {
     <>
       <PageHeader title="Actualités" eyebrow="Publications" intro="Nouvelles et vie du secteur biomédical du CETCI/ECDC." crumbs={[{ label: 'Actualités' }]} />
       <div className="container page-body">
-        {articles.length === 0 ? <EmptyState title="Aucune actualité pour le moment">Les premières actualités seront publiées prochainement, avec leur date et leur source.</EmptyState> : (
+        {articles.length === 0 ? <EmptyState title="Aucune actualité pour le moment">Les premières actualités du secteur seront publiées prochainement.</EmptyState> : (
           <div className="with-side">
             <SideFilter {...f} counts={counts} />
             <div>

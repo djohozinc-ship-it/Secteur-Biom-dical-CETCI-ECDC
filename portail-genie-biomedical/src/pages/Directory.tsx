@@ -13,7 +13,7 @@ export default function Directory() {
       <>
         <PageHeader title="Annuaire biomédical" crumbs={[{ label: 'Annuaire' }]} />
         <div className="container page-body">
-          <EmptyState title="L'annuaire n'est pas encore activé">Il sera ouvert lorsque les autorisations de publication auront été obtenues.</EmptyState>
+          <EmptyState title="L'annuaire n'est pas encore activé">Il sera ouvert plus tard.</EmptyState>
         </div>
       </>
     );

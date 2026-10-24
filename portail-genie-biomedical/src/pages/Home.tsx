@@ -131,7 +131,7 @@ export default function Home() {
             </div>
           ) : (
             <Placeholder glyph={<Glyph name="doc" size={30} />} title="La première actualité sera publiée ici">
-              Chaque actualité indique sa date et sa source.
+              Les actualités du secteur seront publiées ici.
             </Placeholder>
           )}
 
@@ -189,10 +189,12 @@ export default function Home() {
       {/* 7. Innovation */}
       <section className="section section-gray" aria-labelledby="innov-title" data-reveal>
         <div className="container innov-grid">
-          <Figure slot="innovation" ratio="wide" />
+          {featured?.images?.[0]
+            ? <figure className="fig fig-wide"><div className="fig-frame"><img src={asset(featured.images[0])} alt={`Illustration du projet ${featured.name}`} loading="lazy" /></div></figure>
+            : <Figure slot="innovation" ratio="wide" />}
           <div>
             <p className="eyebrow">Innovation</p>
-            <h2 id="innov-title">Projets et innovations</h2>
+            <h2 id="innov-title">Projets</h2>
             {featured ? (
               <>
                 <div className="tags"><Badge tone="line">{featured.status}</Badge>{featured.demo && <DemoBadge />}</div>
@@ -202,8 +204,7 @@ export default function Home() {
               </>
             ) : (
               <>
-                <p>Prototypes d'étudiants, dispositifs conçus localement, travaux de recherche, solutions numériques : chaque projet aura sa fiche (problème traité, objectifs, technologies, état d'avancement).</p>
-                <p className="muted">Un prototype n'est jamais présenté comme un dispositif médical certifié.</p>
+                <p>Les projets du secteur seront présentés ici : problème traité, objectifs, technologies et état d'avancement.</p>
               </>
             )}
             <p><Link className="more-link" to="/projets">Voir les projets <span aria-hidden="true">→</span></Link></p>
@@ -217,7 +218,7 @@ export default function Home() {
           <div className="label-col">
             <p className="eyebrow">Bibliothèque</p>
             <h2 id="res-title">Ressources techniques</h2>
-            <p>Fiches, guides, modèles et références, classés par catégorie et toujours accompagnés de leur source.</p>
+            <p>Cours, fiches, guides et modèles utiles aux étudiants et aux techniciens, classés par catégorie.</p>
             <Link className="more-link" to="/ressources">Ouvrir le catalogue <span aria-hidden="true">→</span></Link>
           </div>
           <ul className="catalog">
@@ -244,12 +245,12 @@ export default function Home() {
             <p className="eyebrow">Se former</p>
             <h2 id="form-title">Formations et établissements</h2>
             <Figure slot="formation" ratio="wide" />
-            <p>Formations en génie biomédical, établissements d'enseignement, ressources d'apprentissage : chaque fiche cite sa source et sa date de vérification.</p>
+            <p>Les formations en génie biomédical et les établissements dans lesquels nos membres se forment.</p>
             {formations.length > 0 && <ul className="plain">{formations.slice(0, 3).map((f) => <li key={f.id}>{f.formation ?? f.etablissement}{f.demo && ' (démonstration)'}</li>)}</ul>}
             <Link className="btn" to="/formations">Voir les formations</Link>
           </div>
           <div>
-            <p className="eyebrow">Écosystème</p>
+            <p className="eyebrow">Autour du secteur</p>
             <h2>Opportunités</h2>
             <ul className="arrow-list">
               {opportunityTypes.map((t) => <li key={t.label}><Link to={`/opportunites?type=${encodeURIComponent(t.label)}`}><span><strong>{t.label}</strong><small>{t.desc}</small></span><Glyph name="arrow" size={18} /></Link></li>)}
@@ -276,7 +277,7 @@ export default function Home() {
       <section className="contrib-band" aria-labelledby="contrib-title" data-reveal>
         <div className="container">
           <div className="head-row">
-            <div><p className="eyebrow">Participer</p><h2 id="contrib-title">Collaborer avec le secteur</h2></div>
+            <div><p className="eyebrow">Nous rejoindre</p><h2 id="contrib-title">Collaborer avec le secteur</h2></div>
             <Link className="more-link" to="/contact">Contact et collaboration <span aria-hidden="true">→</span></Link>
           </div>
           <ul className="contrib">

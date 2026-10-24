@@ -8,7 +8,7 @@ import { dayMonth, daysUntil, formatDate } from '../utils/format';
 import { opportunityTypes } from '../utils/taxonomy';
 
 export default function Opportunities() {
-  usePageMeta('Opportunités', 'Bourses, stages, emplois, concours, conférences, appels à projets et formations.');
+  usePageMeta('Opportunités', 'Bourses, stages, concours et événements en lien avec le génie biomédical.');
   const [params] = useSearchParams();
   const [archives, setArchives] = useState(false);
   const list = opportunites
@@ -20,13 +20,13 @@ export default function Opportunities() {
   const cats = Array.from(new Set([...opportunityTypes.map((t) => t.label), ...f.categories]));
   return (
     <>
-      <PageHeader title="Opportunités" eyebrow="Se former" intro="Bourses, stages, emplois, concours, conférences, appels à projets. Vérifiez toujours la date limite et la source officielle avant de candidater." crumbs={[{ label: 'Opportunités' }]} />
+      <PageHeader title="Opportunités" eyebrow="Se former" intro="Bourses, stages, concours, conférences et appels à projets en lien avec le génie biomédical. Vérifiez toujours la date limite auprès de l'organisme." crumbs={[{ label: 'Opportunités' }]} />
       <div className="container page-body">
         <div className="with-side">
           <SideFilter {...f} categories={cats} counts={counts} catLabel="Type" />
           <div>
             <ArchiveTabs archives={archives} setArchives={setArchives} />
-            {opportunites.length === 0 ? <EmptyState title="Aucune opportunité publiée">Les opportunités vérifiées seront listées avec leur organisme, leur date limite et un lien officiel.</EmptyState>
+            {opportunites.length === 0 ? <EmptyState title="Opportunités à venir">Les bourses, stages et concours seront publiés ici, avec leur date limite.</EmptyState>
               : f.result.length === 0 ? <EmptyState title={archives ? 'Aucune archive' : 'Aucune opportunité en cours'}>Essayez un autre type ou d'autres mots-clés.</EmptyState> : (
               <ul className="opps">
                 {f.result.map((o) => {

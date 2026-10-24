@@ -42,9 +42,9 @@ const pages = [];
 const add = (path, title, desc, h1, body = '', index = true) => pages.push({ path, title, desc, h1, body, index });
 
 add('a-propos/', `À propos | ${NAME}`,
-  "Le Secteur Biomédical du CETCI/ECDC : un groupe d'étudiants en génie biomédical au sein d'une organisation privée et indépendante au Bénin. Vision, organisation, pôles et compétences.",
-  'À propos du Secteur Biomédical du CETCI/ECDC',
-  "<p>Le CETCI/ECDC (Centre d'Élaboration des Technologies de Conception en Ingénierie) est une organisation privée et indépendante, fondée en 2024 à l'initiative d'étudiants. Le secteur biomédical en est l'un des secteurs : des étudiants en génie biomédical qui se forment, développent leurs compétences en maintenance biomédicale et travaillent sur des projets.</p>");
+  "Le Secteur Biomédical du CETCI/ECDC : un groupe d'étudiants en génie biomédical au sein d'une organisation privée et indépendante au Bénin. Pôles, activités et vision.",
+  'Le secteur biomédical du CETCI/ECDC',
+  "<p>Le CETCI/ECDC (Centre d'Élaboration des Technologies de Conception en Ingénierie) est une organisation privée et indépendante, fondée en 2024 à l'initiative d'étudiants. Le secteur biomédical en est l'un des dix secteurs : sept étudiants qui développent leurs compétences en maintenance biomédicale et travaillent sur des projets. Il ne vend pas d'équipements médicaux.</p>");
 add('membres/', `Membres | ${NAME}`,
   'Les étudiants du Secteur Biomédical du CETCI/ECDC : chef de secteur, pôles et compétences en génie biomédical.',
   'Membres du secteur biomédical du CETCI/ECDC');
@@ -64,9 +64,9 @@ for (const [p, t] of [['mentions-legales/', 'Mentions légales'], ['confidential
 }
 // Listes : indexées seulement si elles contiennent quelque chose
 add('actualites/', `Actualités | ${NAME}`, 'Actualités du Secteur Biomédical du CETCI/ECDC.', 'Actualités', '', articles.length > 0);
-add('projets/', `Projets et prototypes | ${NAME}`, 'Projets et prototypes des étudiants du Secteur Biomédical du CETCI/ECDC.', 'Projets et prototypes', '', projets.length > 0);
+add('projets/', `Projets et prototypes | ${NAME}`, 'Projets et prototypes des étudiants du Secteur Biomédical du CETCI/ECDC : assistance à la communication, dialyse, imagerie médicale, assistant vocal.', 'Projets et prototypes', `<ul>${projets.map((p) => `<li><a href="${BASE}projets/${p.id}/">${esc(p.name)}</a></li>`).join('')}</ul>`, projets.length > 0);
 add('communiques/', `Annonces | ${NAME}`, 'Annonces du Secteur Biomédical du CETCI/ECDC.', 'Annonces', '', communiques.length > 0);
-add('ressources/', `Ressources techniques | ${NAME}`, 'Ressources techniques du Secteur Biomédical du CETCI/ECDC.', 'Ressources techniques', '', ressources.length > 0);
+add('ressources/', `Bibliothèque et cours | ${NAME}`, 'Cours, fiches techniques, guides et tutoriels de maintenance biomédicale du Secteur Biomédical du CETCI/ECDC.', 'Bibliothèque et cours', '', ressources.length > 0);
 add('formations/', `Formations | ${NAME}`, 'Formations en génie biomédical.', 'Formations', '', formations.length > 0);
 add('opportunites/', `Opportunités | ${NAME}`, 'Opportunités en génie biomédical.', 'Opportunités', '', opportunites.length > 0);
 for (const a of articles) add(`actualites/${a.slug}/`, `${a.title} | ${NAME}`, a.summary || a.title, a.title, `<p>${esc(a.summary)}</p>`);

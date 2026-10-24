@@ -7,7 +7,7 @@ import { asset } from '../utils/format';
 import { resourceCategories } from '../utils/taxonomy';
 
 export default function Resources() {
-  usePageMeta('Ressources techniques', 'Fiches techniques, guides, tutoriels, modèles de maintenance et références.');
+  usePageMeta('Bibliothèque et cours', 'Cours, fiches techniques, guides, tutoriels et modèles de maintenance biomédicale.');
   const [params] = useSearchParams();
   const f = useFilter(ressources, (r) => ({ title: r.title, text: `${r.description} ${r.source ?? ''} ${r.auteur ?? ''}`, category: r.category }), { cat: params.get('cat') ?? '' });
   const counts: Record<string, number> = {};
@@ -16,13 +16,13 @@ export default function Resources() {
   const activeDesc = resourceCategories.find((c) => c.label === f.cat)?.desc;
   return (
     <>
-      <PageHeader title="Ressources techniques" eyebrow="Bibliothèque" intro="Fiches, guides, tutoriels et références. Seuls les documents dont la diffusion est autorisée sont proposés, avec leur source." crumbs={[{ label: 'Ressources' }]} />
+      <PageHeader title="Bibliothèque et cours" eyebrow="Ressources" intro="Cours, fiches, guides et tutoriels pour apprendre et pratiquer la maintenance biomédicale. Chaque document indique sa source." crumbs={[{ label: 'Ressources' }]} />
       <div className="container page-body">
         <div className="with-side">
           <SideFilter {...f} categories={cats} counts={counts} />
           <div>
             {f.cat && activeDesc && <p className="cat-desc"><strong>{f.cat}</strong> — {activeDesc}</p>}
-            {ressources.length === 0 ? <EmptyState title="Le catalogue est en cours de constitution">Aucune ressource n'est encore publiée. Chaque entrée indiquera son type de document, sa source, sa date et son auteur.</EmptyState>
+            {ressources.length === 0 ? <EmptyState title="Bibliothèque à venir">Les premiers cours et documents seront publiés ici.</EmptyState>
               : f.result.length === 0 ? <EmptyState title="Aucune ressource ne correspond">Essayez d'autres mots-clés ou une autre catégorie.</EmptyState> : (
               <ul className="catalog-list">
                 {f.result.map((r) => (

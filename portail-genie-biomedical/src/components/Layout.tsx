@@ -179,7 +179,7 @@ function Footer() {
               {telephone && <div>{telephone}</div>}
               {adresse && <div>{adresse}</div>}
             </address>
-          ) : <p>Coordonnées à venir.</p>}
+          ) : <p>Écrivez-nous depuis la page Contact.</p>}
           <p><Link to="/contact">Contact et collaboration</Link></p>
           {socials.length > 0 && <ul className="inline-list">{socials.map(([n, u]) => <li key={n}><a href={u} target="_blank" rel="noopener noreferrer">{n}</a></li>)}</ul>}
           {site.liensInstitutionnels.length > 0 && (

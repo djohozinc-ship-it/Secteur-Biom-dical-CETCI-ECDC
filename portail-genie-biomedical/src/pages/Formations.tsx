@@ -6,17 +6,17 @@ import { formatDate } from '../utils/format';
 import type { Formation } from '../types';
 
 export default function Formations() {
-  usePageMeta('Formations et établissements', "Formations en génie biomédical et établissements d'enseignement.");
+  usePageMeta('Formations', "Formations en génie biomédical et établissements d'enseignement au Bénin.");
   const f = useFilter(formations, (x) => ({ title: x.formation ?? x.etablissement, text: `${x.etablissement} ${x.description} ${x.ville ?? ''} ${x.diplome ?? ''} ${x.niveau ?? ''}`, category: x.type }));
   // Regroupement par établissement
   const byEtab = new Map<string, Formation[]>();
   f.result.forEach((x) => byEtab.set(x.etablissement, [...(byEtab.get(x.etablissement) ?? []), x]));
   return (
     <>
-      <PageHeader title="Formations et établissements" eyebrow="Se former" intro="Fiches organisées par établissement et par niveau. Les informations sont à vérifier auprès des établissements avant toute décision." crumbs={[{ label: 'Formations' }]} />
+      <PageHeader title="Formations et établissements" eyebrow="Se former" intro="Les formations en génie biomédical et les établissements qui les proposent. Renseignez-vous toujours auprès de l'établissement avant de candidater." crumbs={[{ label: 'Formations' }]} />
       <div className="container page-body">
         {formations.length === 0 ? (
-          <EmptyState title="Fiches en cours de vérification">Aucune formation ni aucun établissement n'est publié tant que les informations n'ont pas été vérifiées auprès des sources officielles.</EmptyState>
+          <EmptyState title="Formations à venir">Les formations en génie biomédical (EPAC, FSS et autres établissements) seront présentées ici.</EmptyState>
         ) : (
           <div className="with-side">
             <SideFilter {...f} catLabel="Type" />
@@ -38,7 +38,7 @@ export default function Formations() {
                           { label: 'Diplôme', value: x.diplome }, { label: 'Admission', value: x.admission }, { label: 'Contact', value: x.contact },
                           { label: 'Source', value: x.source }, { label: 'Vérifié le', value: x.dateVerification ? formatDate(x.dateVerification) : undefined },
                         ]} />
-                        {x.siteOfficiel ? <a className="btn btn-small" href={x.siteOfficiel} target="_blank" rel="noopener noreferrer">Site officiel</a> : <span className="muted">Site officiel à venir</span>}
+                        {x.siteOfficiel ? <a className="btn btn-small" href={x.siteOfficiel} target="_blank" rel="noopener noreferrer">Site web</a> : <span className="muted">Site web à venir</span>}
                       </article>
                     ))}
                   </section>

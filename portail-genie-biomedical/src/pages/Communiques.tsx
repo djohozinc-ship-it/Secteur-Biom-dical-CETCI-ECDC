@@ -18,7 +18,7 @@ export function CommuniqueList() {
     <>
       <PageHeader title="Annonces" eyebrow="Publications" intro="Annonces et documents du secteur biomédical, classés par date, avec leur statut." crumbs={[{ label: 'Annonces' }]} />
       <div className="container page-body">
-        {communiques.length === 0 ? <EmptyState title="Aucune annonce publiée">Les annonces apparaîtront ici avec leur date, leur statut et, le cas échéant, un document PDF.</EmptyState> : (
+        {communiques.length === 0 ? <EmptyState title="Aucune annonce publiée">Les annonces du secteur apparaîtront ici.</EmptyState> : (
           <div className="with-side">
             <SideFilter {...f} />
             <div>

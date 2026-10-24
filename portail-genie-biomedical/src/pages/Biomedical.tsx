@@ -60,17 +60,17 @@ export function BiomedicalDetail() {
           <section id="themes" aria-labelledby="t-themes">
             <h2 id="t-themes">Thèmes abordés</h2>
             <ul className="theme-list">{r.themes.map((t) => <li key={t}>{t}</li>)}</ul>
-            <p className="muted">Présentation générale. Des contenus détaillés et vérifiés seront ajoutés progressivement.</p>
+            <p className="muted">Présentation générale. Des contenus plus détaillés seront ajoutés au fil du temps.</p>
           </section>
           <section id="ressources" aria-labelledby="t-res">
             <h2 id="t-res">Ressources associées</h2>
             {res.length ? <ul className="plain">{res.map((x) => <li key={x.id}><strong>{x.title}</strong> <Badge tone="dark">{x.typeDocument}</Badge>{x.demo && <> <DemoBadge /></>}<br /><span className="muted">{x.description}</span></li>)}</ul>
-              : <EmptyState title="Ressources à venir">Aucune ressource n'est encore associée à ce domaine.</EmptyState>}
+              : <EmptyState title="Ressources à venir">Pas encore de document pour ce domaine.</EmptyState>}
           </section>
           <section id="articles" aria-labelledby="t-art">
             <h2 id="t-art">Articles associés</h2>
             {arts.length ? <div className="doclist">{arts.map((a) => <DocRow key={a.slug} to={`/actualites/${a.slug}`} date={a.date} tag={a.category} title={a.title} summary={a.summary} demo={a.demo} />)}</div>
-              : <EmptyState title="Articles à venir">Aucun article n'est encore associé à ce domaine.</EmptyState>}
+              : <EmptyState title="Articles à venir">Pas encore d'article pour ce domaine.</EmptyState>}
           </section>
           {prj.length > 0 && (
             <section id="projets" aria-labelledby="t-prj">

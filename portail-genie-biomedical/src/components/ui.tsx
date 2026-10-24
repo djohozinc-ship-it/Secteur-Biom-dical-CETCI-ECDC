@@ -35,11 +35,7 @@ export function Figure({ slot, ratio = 'wide' }: { slot: FigureSlot; ratio?: 'po
       </figure>
     );
   }
-  return (
-    <figure className={`fig fig-${ratio} fig-empty`}>
-      <div className="fig-frame" role="img" aria-label="Photographie à venir"><span>Photographie à venir</span></div>
-    </figure>
-  );
+  return null;
 }
 
 export function Badge({ children, tone = 'green' }: { children: ReactNode; tone?: 'green' | 'line' | 'ochre' | 'demo' | 'dark' }) {

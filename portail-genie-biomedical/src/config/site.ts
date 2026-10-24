@@ -2,8 +2,8 @@ import type { HeroSlide } from '../types';
 
 // ============================================================
 // POINT CENTRAL DE CONFIGURATION
-// Laissez vide ('' ou []) tout ce qui n'est pas encore officiel :
-// le site n'affiche que ce qui est renseigné.
+// Laissez vide ('' ou []) ce qui n'est pas encore renseigné :
+// le site n'affiche que ce qui est rempli.
 // ============================================================
 export const site = {
   // --- Identité ---
@@ -15,12 +15,12 @@ export const site = {
   description:
     "Le Secteur Biomédical du CETCI/ECDC est un groupe d'étudiants en génie biomédical, au sein d'une organisation privée au Bénin : maintenance biomédicale, projets, prototypes et innovation en santé.",
   organisme: 'CETCI/ECDC', // organisation privée porteuse du secteur
-  statutMention: "Le Secteur Biomédical est un groupe d'étudiants du CETCI/ECDC, une organisation privée et indépendante. Ce site n'est pas un site gouvernemental ni celui d'un organisme public.",
+  statutMention: "Le Secteur Biomédical est un groupe d'étudiants du CETCI/ECDC, organisation privée et indépendante. Ce n'est pas un site gouvernemental.",
   // Diaporama de l'accueil (photos dans public/images/). Les actualités qui ont une image s'ajoutent automatiquement.
   heroSlides: [
     {
       image: 'images/equipe-secteur-biomedical.jpg',
-      alt: "Photo de groupe : une douzaine de jeunes en polos bleu clair, alignés devant un tableau blanc dans une salle aux murs verts",
+      alt: "Photo de groupe de membres du CETCI/ECDC en polos bleu clair, devant un tableau blanc",
       position: '50% 46%',
       kicker: 'Groupe d\'étudiants',
       title: 'Le secteur biomédical du CETCI/ECDC',

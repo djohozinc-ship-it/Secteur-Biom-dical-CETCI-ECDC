@@ -10,7 +10,7 @@ import '../styles/members.css';
 const shortPole = (pole: string) => pole.split('—')[0].trim();
 
 export default function Members() {
-  usePageMeta('Membres', 'Les membres de la communauté du secteur biomédical.');
+  usePageMeta('Membres', 'Les membres du Secteur Biomédical du CETCI/ECDC : étudiants en maintenance biomédicale, génie biomédical et sciences de la santé, répartis en quatre pôles.');
 
   const poles = Array.from(new Set(membres.map((m) => shortPole(m.pole)))).sort();
   const [pole, setPole] = useState('');

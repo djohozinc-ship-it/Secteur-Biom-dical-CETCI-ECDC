@@ -7,13 +7,13 @@ import { asset, formatDate } from '../utils/format';
 import { NotFound } from './Misc';
 
 export function ProjectList() {
-  usePageMeta('Projets et innovations', 'Projets, prototypes et solutions numériques en santé.');
+  usePageMeta('Projets et prototypes', 'Projets et prototypes des étudiants du Secteur Biomédical du CETCI/ECDC : assistance à la communication, dialyse, imagerie médicale, assistant vocal.');
   const f = useFilter(projets, (p) => ({ title: p.name, text: `${p.description} ${p.problem} ${p.technologies.join(' ')}`, category: p.category }));
   return (
     <>
-      <PageHeader title="Projets et innovations" eyebrow="Valoriser le travail local" intro="Projets d'étudiants, prototypes, travaux de recherche et solutions numériques. Un prototype n'est jamais présenté comme un dispositif médical certifié." crumbs={[{ label: 'Projets' }]} />
+      <PageHeader title="Projets et prototypes" eyebrow="Réalisations" intro="Ce que les étudiants du secteur conçoivent et expérimentent. Ces prototypes ne sont pas des dispositifs médicaux certifiés." crumbs={[{ label: 'Projets' }]} />
       <div className="container page-body">
-        {projets.length === 0 ? <EmptyState title="Aucun projet publié">Chaque fiche présentera le problème traité, les objectifs, les technologies, l'équipe et l'état d'avancement.</EmptyState> : (
+        {projets.length === 0 ? <EmptyState title="Projets à venir">Les projets du secteur seront présentés ici.</EmptyState> : (
           <div className="with-side">
             <SideFilter {...f} />
             <div>
@@ -50,7 +50,7 @@ export function ProjectDetail() {
       <PageHeader title={p.name} intro={p.description} crumbs={[{ label: 'Projets', to: '/projets' }, { label: p.name }]} />
       <div className="container page-body reading">
         <article className="reading-main">
-          <p className="notice">Ce projet est un travail pédagogique ou expérimental. Il n'est pas présenté comme un dispositif médical certifié.</p>
+          <p className="notice">Ce projet est un prototype ou un travail d'apprentissage. Ce n'est pas un dispositif médical certifié.</p>
           {p.images?.map((src) => <img key={src} className="article-img" src={asset(src)} alt={`Illustration du projet ${p.name}`} loading="lazy" />)}
           <h2>Problème traité</h2><p>{p.problem}</p>
           <h2>Objectifs</h2><ul>{p.objectives.map((o) => <li key={o}>{o}</li>)}</ul>
