@@ -49,7 +49,11 @@
       "Composer un message, par balayage automatique ou en code Morse",
       "Restituer le message par synthèse vocale, hors ligne"
     ],
-    "team": [],
+    "team": [
+      "Cédric DJOHOZIN",
+      "LAWISSA Dossou Smiss",
+      "HOUNYO Caleb"
+    ],
     "technologies": [
       "Python",
       "MediaPipe",

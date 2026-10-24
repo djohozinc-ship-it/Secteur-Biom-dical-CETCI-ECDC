@@ -26,6 +26,7 @@ export function ProjectList() {
                         <div className="tags"><Badge tone="ochre">{p.status}</Badge><Badge tone="line">{p.category}</Badge>{p.demo && <DemoBadge />}</div>
                         <h3><Link to={`/projets/${p.id}`}>{p.name}</Link></h3>
                         <p>{p.description}</p>
+                        {p.team.length > 0 && <p className="meta">Réalisé par : {p.team.join(', ')}</p>}
                         <p className="chips-inline">{p.technologies.map((t) => <span key={t}>{t}</span>)}</p>
                       </div>
                     </li>
@@ -63,7 +64,7 @@ export function ProjectDetail() {
             { label: 'Avancement', value: p.status },
             { label: 'Catégorie', value: p.category },
             { label: 'Technologies', value: p.technologies.join(', ') },
-            { label: 'Équipe', value: p.team.join(', ') },
+            { label: 'Réalisé par', value: p.team.join(', ') },
             { label: 'Mis à jour le', value: p.dateMiseAJour ? formatDate(p.dateMiseAJour) : undefined },
           ]} />
           {p.rubrique && <p><Link className="more-link" to={`/genie-biomedical/${p.rubrique}`}>Domaine associé <span aria-hidden="true">→</span></Link></p>}

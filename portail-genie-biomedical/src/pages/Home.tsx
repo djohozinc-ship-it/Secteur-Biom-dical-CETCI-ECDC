@@ -200,6 +200,7 @@ export default function Home() {
                 <div className="tags"><Badge tone="line">{featured.status}</Badge>{featured.demo && <DemoBadge />}</div>
                 <h3 className="innov-name"><Link to={`/projets/${featured.id}`}>{featured.name}</Link></h3>
                 <p>{featured.description}</p>
+                {featured.team.length > 0 && <p className="meta">Réalisé par : {featured.team.join(', ')}</p>}
                 <p className="meta">Technologies : {featured.technologies.join(', ')}</p>
               </>
             ) : (
