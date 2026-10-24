@@ -178,5 +178,37 @@
     ],
     "dateMiseAJour": "2026-10-24",
     "statut": "publie"
+  },
+  {
+    "id": "supervision-groupe-electrogene",
+    "name": "Supervision IoT du groupe électrogène de l’Hôpital Saint Martin de Papané",
+    "category": "Ingénierie hospitalière · IoT · Systèmes embarqués",
+    "status": "Projet de fin de formation (Licence professionnelle), soutenu le 22 juillet 2026",
+    "description": "Système de supervision en temps réel du groupe électrogène d’un hôpital : des capteurs relevés par un ESP32 envoient leurs mesures par GSM/GPRS vers une plateforme web qui affiche les valeurs et signale les anomalies.",
+    "problem": "Le groupe électrogène de l’hôpital posait des problèmes de surchauffe du moteur, de surconsommation de carburant et d’utilisation excessive. Comment le surveiller en continu pour intervenir à temps ?",
+    "objectives": [
+      "Mesurer le niveau de carburant et le niveau d’eau de refroidissement",
+      "Suivre la température du moteur, le courant de charge et la tension par phase",
+      "Transmettre les mesures à distance par GSM/GPRS",
+      "Afficher les mesures en temps réel avec des alertes visuelles en cas d’anomalie"
+    ],
+    "team": [
+      "ADOGBLANON Dossou Enock",
+      "HONVOU Ehouédé Benoit"
+    ],
+    "technologies": [
+      "ESP32",
+      "SIM800L",
+      "Capteurs",
+      "PlatformIO",
+      "HTML5/CSS3/JavaScript",
+      "KiCad",
+      "Proteus"
+    ],
+    "images": [],
+    "rubrique": "ingenierie-hospitaliere",
+    "links": [],
+    "dateMiseAJour": "2026-10-24",
+    "statut": "publie"
   }
 ]

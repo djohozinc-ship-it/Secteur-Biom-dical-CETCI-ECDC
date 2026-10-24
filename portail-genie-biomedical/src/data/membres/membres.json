@@ -82,9 +82,10 @@
     "name": "ADOGBLANON Dossou Enock",
     "role": "Technicien supérieur en maintenance biomédicale et hospitalière · Chargé de la maintenance et de la gestion des équipements",
     "pole": "Pôle 2 : Ingénierie et Technologies Médicales",
-    "bio": "Technicien supérieur en maintenance biomédicale et hospitalière, chargé de la maintenance et de la gestion des équipements au sein du secteur biomédical du CETCI/ECDC, dans le pôle 2 : Ingénierie et Technologies Médicales.",
+    "bio": "ADOGBLANON Dossou Enock est technicien supérieur en maintenance biomédicale et hospitalière. Au sein du secteur biomédical du CETCI/ECDC, il est chargé de la maintenance et de la gestion des équipements.\n\nIl est titulaire d’une Licence professionnelle en Maintenance Biomédicale et Hospitalière, obtenue en 2026 à l’École Polytechnique d’Abomey-Calavi (EPAC), au sein de la 15e promotion. Sa formation, répartie sur trois ans, alterne cours généraux, enseignements de spécialité et stages d’immersion dans des structures de santé.\n\nSon stage de fin de formation s’est déroulé à l’Hôpital Saint Martin de Papané, du 7 avril au 26 juin 2026. Il y a participé aux activités de maintenance préventive et corrective des équipements de l’hôpital, au sein de l’unité de maintenance.\n\nDe ce stage est né son projet de fin de formation, réalisé avec son camarade HONVOU Ehouédé Benoit : la conception et la réalisation d’un système IoT de supervision du groupe électrogène de l’hôpital. Le groupe posait des problèmes de surchauffe du moteur, de surconsommation de carburant et d’utilisation excessive. Leur système mesure en continu, à l’aide de capteurs reliés à un microcontrôleur ESP32, le niveau de carburant, le niveau d’eau de refroidissement, la température du moteur, le courant de charge et la tension par phase. Les données sont envoyées par GSM/GPRS vers une plateforme web qui les affiche en temps réel et déclenche des alertes en cas d’anomalie. Le projet a été soutenu le 22 juillet 2026.",
     "links": [],
     "consentement": true,
-    "statut": "publie"
+    "statut": "publie",
+    "photo": "images/enock.jpg"
   }
 ]
