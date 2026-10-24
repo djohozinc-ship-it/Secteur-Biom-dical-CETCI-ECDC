@@ -49,41 +49,41 @@
   {
     "id": "lawissa-dossou-smiss",
     "name": "LAWISSA Dossou Smiss",
-    "role": "Membre du secteur biomédical",
-    "pole": "À préciser",
-    "bio": "À compléter.",
+    "role": "Technicien supérieur en maintenance biomédicale et hospitalière",
+    "pole": "Pôle 2 : Ingénierie et Technologies Médicales",
+    "bio": "Technicien supérieur en maintenance biomédicale et hospitalière, membre du secteur biomédical du CETCI/ECDC au sein du pôle 2, Ingénierie et Technologies Médicales.",
     "links": [],
-    "consentement": false,
-    "statut": "brouillon"
+    "consentement": true,
+    "statut": "publie"
   },
   {
     "id": "boko-landry-zidane",
     "name": "BOKO Landry Zidane",
-    "role": "Membre du secteur biomédical",
-    "pole": "À préciser",
-    "bio": "À compléter.",
+    "role": "Technicien supérieur en maintenance biomédicale et hospitalière",
+    "pole": "Pôle 2 : Ingénierie et Technologies Médicales",
+    "bio": "Technicien supérieur en maintenance biomédicale et hospitalière, membre du secteur biomédical du CETCI/ECDC au sein du pôle 2, Ingénierie et Technologies Médicales.",
     "links": [],
-    "consentement": false,
-    "statut": "brouillon"
+    "consentement": true,
+    "statut": "publie"
   },
   {
     "id": "hounyo-caleb",
     "name": "HOUNYO Caleb",
-    "role": "Membre du secteur biomédical",
-    "pole": "À préciser",
-    "bio": "À compléter.",
+    "role": "Étudiant à la Faculté des Sciences de la Santé (FSS)",
+    "pole": "Pôle 1 : Sciences Biomédicales et Recherches",
+    "bio": "Étudiant à la Faculté des Sciences de la Santé (FSS), membre du secteur biomédical du CETCI/ECDC au sein du pôle 1, Sciences Biomédicales et Recherches.",
     "links": [],
-    "consentement": false,
-    "statut": "brouillon"
+    "consentement": true,
+    "statut": "publie"
   },
   {
     "id": "adogblanon-dossou-enock",
     "name": "ADOGBLANON Dossou Enock",
-    "role": "Membre du secteur biomédical",
-    "pole": "À préciser",
-    "bio": "À compléter.",
+    "role": "Technicien supérieur en maintenance biomédicale et hospitalière",
+    "pole": "Pôle 2 : Ingénierie et Technologies Médicales",
+    "bio": "Technicien supérieur en maintenance biomédicale et hospitalière, membre du secteur biomédical du CETCI/ECDC au sein du pôle 2, Ingénierie et Technologies Médicales.",
     "links": [],
-    "consentement": false,
-    "statut": "brouillon"
+    "consentement": true,
+    "statut": "publie"
   }
 ]

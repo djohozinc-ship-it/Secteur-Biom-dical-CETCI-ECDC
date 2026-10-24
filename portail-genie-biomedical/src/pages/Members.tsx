@@ -12,9 +12,9 @@ const shortPole = (pole: string) => pole.split('—')[0].trim();
 export default function Members() {
   usePageMeta('Membres', 'Les membres de la communauté du secteur biomédical.');
 
-  const poles = Array.from(new Set(membres.map((m) => m.pole))).sort();
+  const poles = Array.from(new Set(membres.map((m) => shortPole(m.pole)))).sort();
   const [pole, setPole] = useState('');
-  const shown = membres.filter((m) => !pole || m.pole === pole);
+  const shown = membres.filter((m) => !pole || shortPole(m.pole) === pole);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
