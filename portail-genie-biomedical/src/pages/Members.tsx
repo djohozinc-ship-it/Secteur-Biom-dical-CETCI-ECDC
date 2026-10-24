@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { membres } from '../utils/content';
 import { PageHeader, Avatar, DemoBadge, EmptyState } from '../components/ui';
 import { Glyph } from '../components/illustrations';
@@ -10,16 +11,23 @@ import '../styles/members.css';
 const shortPole = (pole: string) => pole.split('—')[0].trim();
 
 export default function Members() {
-  usePageMeta('Membres', 'Les membres du Secteur Biomédical du CETCI/ECDC : étudiants en maintenance biomédicale, génie biomédical et sciences de la santé, répartis en quatre pôles.');
+  const { id } = useParams();
+  const wanted = id ? membres.find((m) => m.id === id) : undefined;
+  usePageMeta(
+    wanted ? `${wanted.name}, ${wanted.role.split(' · ')[0]}` : 'Membres',
+    wanted
+      ? `${wanted.name} : ${wanted.role.replace(' · ', ', ')}, ${shortPole(wanted.pole)}. Membre du Secteur Biomédical du CETCI/ECDC.`
+      : 'Les membres du Secteur Biomédical du CETCI/ECDC : étudiants en maintenance biomédicale, génie biomédical et sciences de la santé, répartis en quatre pôles.'
+  );
 
   const poles = Array.from(new Set(membres.map((m) => shortPole(m.pole)))).sort();
   const [pole, setPole] = useState('');
   const shown = membres.filter((m) => !pole || shortPole(m.pole) === pole);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(() => Math.max(0, membres.findIndex((m) => m.id === id)));
 
   useEffect(() => {
-    setIndex(0);
-  }, [pole]);
+    setIndex(Math.max(0, membres.findIndex((m) => m.id === id)));
+  }, [pole, id]);
 
   const current = shown[index] ?? shown[0];
 
@@ -157,6 +165,12 @@ export default function Members() {
             <p className="members-note">
               Les profils sont publiés avec l'accord des personnes concernées.
             </p>
+
+            <nav aria-label="Profils des membres" className="members-note">
+              {membres.map((m, i) => (
+                <span key={m.id}>{i > 0 && ' · '}<Link to={`/membres/${m.id}`}>{m.name}</Link></span>
+              ))}
+            </nav>
           </section>
         )}
       </div>

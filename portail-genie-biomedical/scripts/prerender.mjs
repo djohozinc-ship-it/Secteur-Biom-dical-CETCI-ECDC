@@ -18,6 +18,7 @@ const published = (arr) => (Array.isArray(arr) ? arr : []).filter((x) => x && x.
 
 // --- Contenus publiés (une rubrique vide n'est pas proposée à Google) ---
 const rubriques = readJson('src/data/rubriques/rubriques.json');
+const membres = published(readJson('src/data/membres/membres.json')).filter((m) => m.consentement);
 const projets = published(readJson('src/data/projets/projets.json'));
 const communiques = published(readJson('src/data/communiques/communiques.json'));
 const ressources = published(readJson('src/data/ressources/ressources.json'));
@@ -47,7 +48,23 @@ add('a-propos/', `À propos | ${NAME}`,
   "<p>Le CETCI/ECDC (Centre d'Élaboration des Technologies de Conception en Ingénierie) est une organisation privée et indépendante, fondée en 2024 à l'initiative d'étudiants. Le secteur biomédical en est l'un des dix secteurs : sept étudiants qui développent leurs compétences en maintenance biomédicale et travaillent sur des projets. Il ne vend pas d'équipements médicaux.</p>");
 add('membres/', `Membres | ${NAME}`,
   'Les étudiants du Secteur Biomédical du CETCI/ECDC : chef de secteur, pôles et compétences en génie biomédical.',
-  'Membres du secteur biomédical du CETCI/ECDC');
+  'Membres du secteur biomédical du CETCI/ECDC',
+  `<ul>${membres.map((m) => `<li><a href="${BASE}membres/${m.id}/">${esc(m.name)}</a> : ${esc(m.role.replace(' · ', ', '))}</li>`).join('')}</ul>`);
+const shortPole = (x) => x.split('—')[0].trim();
+for (const m of membres) {
+  const jobTitle = m.role.split(' · ')[0];
+  const paras = m.bio.split(/\n\s*\n/);
+  add(`membres/${m.id}/`, `${m.name}, ${jobTitle} | ${NAME}`,
+    `${m.name} : ${m.role.replace(' · ', ', ')}, ${shortPole(m.pole)}. Membre du Secteur Biomédical du CETCI/ECDC.`,
+    m.name, `<p>${esc(m.role.replace(' · ', ', '))}</p>${paras.map((x) => `<p>${esc(x)}</p>`).join('')}`);
+  pages[pages.length - 1].jsonld = {
+    '@context': 'https://schema.org', '@type': 'Person', name: m.name, jobTitle,
+    description: paras[0], url: SITE + `membres/${m.id}/`,
+    memberOf: { '@type': 'Organization', name: 'Secteur Biomédical du CETCI/ECDC', url: SITE },
+    ...(m.photo ? { image: SITE + m.photo } : {}),
+    ...(m.links && m.links.length ? { sameAs: m.links.map((l) => l.url) } : {}),
+  };
+}
 add('genie-biomedical/', `Génie biomédical : les grands domaines | ${NAME}`,
   'Les grands domaines du génie biomédical présentés par le Secteur Biomédical du CETCI/ECDC : maintenance, ingénierie hospitalière, dispositifs médicaux, imagerie, métrologie.',
   'Génie biomédical : les grands domaines',
@@ -88,6 +105,7 @@ function render(p) {
   h = sub(h, /<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${url}" />`);
   h = sub(h, /<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${esc(p.title)}" />`);
   h = sub(h, /<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${esc(p.desc)}" />`);
+  if (p.jsonld) h = h.replace('</head>', () => `<script type="application/ld+json">${JSON.stringify(p.jsonld).replace(/</g, '\\u003c')}</script>\n</head>`);
   if (!p.index) h = sub(h, /<meta name="robots" content="[^"]*" \/>/, '<meta name="robots" content="noindex, follow" />');
   h = sub(h, fallbackRe, `<div class="static-fallback"><h1>${esc(p.h1)}</h1><p>${esc(p.desc)}</p>${p.body}<p><a href="${BASE}">Accueil – ${NAME}</a></p></div>`);
   return h;

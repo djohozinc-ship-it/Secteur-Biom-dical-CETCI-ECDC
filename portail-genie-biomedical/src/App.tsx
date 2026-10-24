@@ -22,6 +22,7 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="a-propos" element={<About />} />
         <Route path="membres" element={<Members />} />
+        <Route path="membres/:id" element={<Members />} />
         <Route path="genie-biomedical" element={<BiomedicalIndex />} />
         <Route path="genie-biomedical/:slug" element={<BiomedicalDetail />} />
         <Route path="actualites" element={<NewsList />} />
