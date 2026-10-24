@@ -34,7 +34,7 @@ export default function Home() {
   const comm = communiques.filter((c) => c.statut === 'publie').slice(0, 3);
   const opps = opportunites.filter((o) => !isArchived(o)).sort((a, b) => (a.dateLimite ?? '9999').localeCompare(b.dateLimite ?? '9999')).slice(0, 3);
   const groupes = Array.from(new Set(rubriques.map((r) => r.groupe)));
-  const featured = projets[0];
+  const featured = projets.find((p) => p.id === 'moreyes-communicator') ?? projets[0];
   const newsSlides: HeroSlide[] = news.filter((a) => a.image).slice(0, 3).map((a) => ({
     image: a.image!, alt: a.imageAlt ?? '', kicker: a.category, title: a.title, text: a.summary, cta: { label: 'Lire la suite', to: `/actualites/${a.slug}` },
   }));
