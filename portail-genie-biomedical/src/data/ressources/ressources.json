@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": "oms-inventaire-equipements",
+    "title": "Introduction to medical equipment inventory management",
+    "description": "Guide de l'OMS pour recenser, identifier et suivre le parc d'équipements médicaux d'un établissement de santé, première étape d'une maintenance organisée.",
+    "category": "Guides",
+    "typeDocument": "Page web / PDF",
+    "url": "https://www.who.int/publications/i/item/9789241501392",
+    "source": "Organisation mondiale de la Santé (OMS)",
+    "auteur": "OMS",
+    "rubrique": "maintenance-biomedicale",
+    "statut": "publie"
+  },
+  {
+    "id": "oms-gmao",
+    "title": "Computerized maintenance management system",
+    "description": "Guide de l'OMS sur les logiciels de gestion de la maintenance assistée par ordinateur (GMAO) : à quoi ils servent et comment les choisir et les mettre en place.",
+    "category": "Guides",
+    "typeDocument": "Page web / PDF",
+    "url": "https://www.who.int/es/publications/i/item/9789241501415",
+    "source": "Organisation mondiale de la Santé (OMS)",
+    "auteur": "OMS",
+    "rubrique": "maintenance-biomedicale",
+    "statut": "publie"
+  },
+  {
+    "id": "oms-programme-maintenance",
+    "title": "Medical equipment maintenance programme overview",
+    "description": "Présentation générale par l'OMS d'un programme de maintenance des équipements médicaux : organisation, types de maintenance et ressources nécessaires.",
+    "category": "Guides",
+    "typeDocument": "Page web / PDF",
+    "url": "https://www.who.int/publications/i/item/9789241501538",
+    "source": "Organisation mondiale de la Santé (OMS)",
+    "auteur": "OMS",
+    "rubrique": "maintenance-biomedicale",
+    "statut": "publie"
+  }
+]
