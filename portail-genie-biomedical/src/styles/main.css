@@ -562,3 +562,28 @@ table, pre { max-width: 100%; overflow-x: auto; display: block; }
 .about-domains { display: grid; gap: var(--s6); }
 @media (min-width: 700px) { .about-domains { grid-template-columns: 1fr 1fr; gap: var(--s6) var(--s8); } }
 .about-domains h3 { margin-bottom: var(--s3); }
+
+/* ---------- Espacements resserrés (moins de vide entre les blocs) ---------- */
+.section { padding-block: clamp(1.75rem, 4vw, 3rem); }
+.section-head { margin-bottom: var(--s4); padding-bottom: var(--s2); }
+.head-row { margin-bottom: var(--s4); }
+.page-header { padding-block: var(--s5) var(--s5); }
+.page-header .crumbs ol { margin-bottom: var(--s3); }
+.page-body { padding-block: var(--s5) var(--s6); }
+.search-band { padding-block: clamp(1.5rem, 4vw, 2.5rem); }
+.contrib-band { padding-block: clamp(1.5rem, 4vw, 2.5rem); }
+.about-intro-grid, .about-two-col, .about-reading, .about-future, .about-biomedical-head { gap: var(--s5); }
+@media (min-width: 900px) {
+  .about-intro-grid, .about-two-col, .about-future { gap: var(--s6); }
+}
+@media (min-width: 760px) { .about-biomedical-head { gap: var(--s6); } }
+.about-poles li { min-height: 0; }
+.legal-page { padding-block: var(--s5) var(--s6); }
+.legal-page h2 { margin-top: var(--s5); padding-top: var(--s3); }
+.legal-page h2:first-of-type { margin-top: var(--s4); }
+.empty { padding: var(--s5); }
+.site-footer { padding-top: var(--s5); }
+.footer-id { padding-bottom: var(--s4); }
+.footer-grid { padding-block: var(--s4); gap: var(--s5); }
+.footer-partners { padding-bottom: var(--s3); }
+p { margin-bottom: var(--s3); }
