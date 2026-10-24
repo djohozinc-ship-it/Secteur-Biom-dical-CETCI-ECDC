@@ -23,6 +23,16 @@ const poles = [
   'Qualité, Normes et Coordination',
 ];
 
+const domaines = [
+  { t: 'Sciences biomédicales', items: ['Physiologie humaine et animale', 'Recherche sur les pathologies et les traitements', 'Études biomédicales et analyses cliniques'] },
+  { t: 'Ingénierie biomédicale', items: ['Conception de dispositifs médicaux', 'Maintenance et optimisation des équipements hospitaliers', 'Robotique médicale', 'Instrumentation biomédicale'] },
+  { t: 'Imagerie et technologies médicales', items: ['Équipements d’imagerie médicale', 'Technologies de diagnostic', 'Nucléaire médical'] },
+  { t: 'Santé numérique et bio-informatique', items: ['Systèmes de e-santé', 'Gestion et sécurisation des données médicales', 'Solutions numériques de suivi sanitaire'] },
+  { t: 'Dispositifs et soins vétérinaires', items: ['Conception d’équipements vétérinaires', 'Suivi physiologique animal', 'Solutions pour l’élevage et la santé animale'] },
+];
+
+const valeurs = ['Rigueur scientifique', 'Éthique médicale', 'Discipline professionnelle', 'Innovation responsable', 'Excellence technique'];
+
 const skills = [
   'Travail en équipe',
   'Gestion de projet',
@@ -83,7 +93,10 @@ export default function About() {
                 Le secteur biomédical est l’un de ces dix secteurs. Il réunit <strong>sept étudiants</strong>, notamment de l’EPAC et de la FSS, et il est dirigé par <strong>Cédric DJOHOZIN</strong>, chef du secteur depuis sa création. Les étudiants en maintenance biomédicale y côtoient des étudiants en sciences de la santé : les uns connaissent les machines, les autres les besoins des patients et des soignants.
               </p>
               <p>
-                Le secteur développe ses compétences en maintenance biomédicale et travaille sur des projets : équipements médicaux, électronique, instrumentation, automatisation, systèmes embarqués, technologies d’assistance. Chaque réalisation part d’un besoin de santé réel, avec une attention au coût, à la facilité d’utilisation, à la maintenance et à la disponibilité des composants.
+                Sa mission est de développer les compétences scientifiques et techniques de ses membres dans le domaine biomédical, de concevoir des dispositifs et des solutions de santé, de promouvoir l’innovation en santé humaine et animale, de contribuer à la digitalisation des structures de santé et à la recherche appliquée aux problèmes de santé locaux.
+              </p>
+              <p>
+                Chaque réalisation part d’un besoin de santé réel, avec une attention au coût, à la facilité d’utilisation, à la maintenance et à la disponibilité des composants.
               </p>
               <p className="notice">
                 Le secteur ne vend pas d’équipements médicaux et n’est pas un organisme public. Ses prototypes sont des travaux d’apprentissage et de recherche : aucun n’est un dispositif médical certifié.
@@ -103,7 +116,18 @@ export default function About() {
           </ol>
         </Section>
 
-        <Section title="Ce que les membres y apprennent" tone="paper" id="competences">
+        <Section title="Domaines de compétence" tone="paper" id="domaines">
+          <div className="about-domains">
+            {domaines.map((d) => (
+              <div key={d.t}>
+                <h3>{d.t}</h3>
+                <ul className="theme-list">{d.items.map((i) => <li key={i}>{i}</li>)}</ul>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Ce que les membres y apprennent" id="competences">
           <div className="about-two-col">
             <div className="prose">
               <p>
@@ -123,7 +147,7 @@ export default function About() {
           </div>
         </Section>
 
-        <Section title="Une distinction au sein de la communauté" id="distinction">
+        <Section title="Une distinction au sein de la communauté" tone="paper" id="distinction">
           <div className="prose">
             <p>
               Lors du festival communautaire <strong>« 1 mot, 1 idée »</strong> du CETCI/ECDC, le secteur biomédical a été désigné <strong>secteur champion à deux reprises</strong>. Ces deux victoires sont inscrites au Hall of Fame du festival.
@@ -131,15 +155,16 @@ export default function About() {
           </div>
         </Section>
 
-        <Section title="Notre vision" tone="paper" id="vision">
+        <Section title="Notre vision" id="vision">
           <div className="about-future">
             <div className="prose">
               <p>
                 Les besoins de santé du Bénin ne sont pas toujours ceux pour lesquels les équipements importés ont été conçus : coût, pièces détachées, infrastructures, conditions d’utilisation. Le secteur veut apprendre à concevoir des solutions pensées dès le départ pour être accessibles et faciles à maintenir sur place.
               </p>
               <p>
-                Le chemin est progressif : se former, expérimenter, concevoir, prototyper, améliorer.
+                À long terme, le secteur ambitionne de devenir un pôle de référence en ingénierie biomédicale et en santé numérique, et un incubateur de solutions biomédicales adaptées aux réalités africaines. Le chemin est progressif : se former, expérimenter, concevoir, prototyper, améliorer.
               </p>
+              <p><strong>Nos valeurs :</strong> {valeurs.join(', ').toLowerCase()}.</p>
               <blockquote>
                 Ne pas seulement importer les technologies dont nous avons besoin, mais développer progressivement la capacité de concevoir celles qui répondent à nos propres réalités.
               </blockquote>
