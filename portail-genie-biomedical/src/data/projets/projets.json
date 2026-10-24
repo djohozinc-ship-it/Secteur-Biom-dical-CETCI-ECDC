@@ -205,7 +205,12 @@
       "KiCad",
       "Proteus"
     ],
-    "images": [],
+    "images": [
+      "images/projets/groupe-electrogene-carte-principale.jpg",
+      "images/projets/groupe-electrogene-carte-adaptation.jpg",
+      "images/projets/groupe-electrogene-tableau-de-bord.jpg",
+      "images/projets/groupe-electrogene-schema-carte.jpg"
+    ],
     "rubrique": "ingenierie-hospitaliere",
     "links": [],
     "dateMiseAJour": "2026-10-24",
