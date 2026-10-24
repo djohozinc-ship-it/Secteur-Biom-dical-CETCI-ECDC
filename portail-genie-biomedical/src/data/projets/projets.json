@@ -116,7 +116,7 @@
     "id": "maelya-biomed",
     "name": "MAELYA BIOMED : application d’aide à la maintenance de premier niveau",
     "category": "Maintenance biomédicale · Application web et mobile",
-    "status": "Projet de fin de formation (Licence professionnelle, EPAC, 2025-2026)",
+    "status": "Projet de fin de formation (Licence professionnelle, EPAC), soutenu le 22 juillet 2026",
     "description": "Application accessible depuis un téléphone qui guide les utilisateurs de dispositifs médicaux dans les opérations de base d’entretien et de vérification, et les aide face aux dysfonctionnements simples. Les informations techniques ont été rassemblées pour trois dispositifs, dont l’aspirateur chirurgical.",
     "problem": "Les opérations de maintenance de premier niveau sont souvent perçues comme réservées au professionnel biomédical, alors que les utilisateurs en sont des acteurs essentiels. Comment renforcer leurs connaissances et leurs pratiques d’utilisation et d’entretien des dispositifs médicaux ?",
     "objectives": [
