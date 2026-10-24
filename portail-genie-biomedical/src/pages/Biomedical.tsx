@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { articles, projets, ressources, rubriques } from '../utils/content';
-import { Badge, DemoBadge, DocRow, EmptyState, PageHeader } from '../components/ui';
+import { Badge, DemoBadge, DocRow, PageHeader } from '../components/ui';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { NotFound } from './Misc';
 
@@ -59,16 +59,20 @@ export function BiomedicalDetail() {
             <ul className="theme-list">{r.themes.map((t) => <li key={t}>{t}</li>)}</ul>
             <p className="muted">Présentation générale. Des contenus plus détaillés seront ajoutés au fil du temps.</p>
           </section>
+          {res.length > 0 && (
           <section id="ressources" aria-labelledby="t-res">
             <h2 id="t-res">Ressources associées</h2>
             {res.length ? <ul className="plain">{res.map((x) => <li key={x.id}><strong>{x.title}</strong> <Badge tone="dark">{x.typeDocument}</Badge>{x.demo && <> <DemoBadge /></>}<br /><span className="muted">{x.description}</span></li>)}</ul>
-              : <EmptyState title="Ressources à venir">Pas encore de document pour ce domaine.</EmptyState>}
+              : null}
           </section>
+          )}
+          {arts.length > 0 && (
           <section id="articles" aria-labelledby="t-art">
             <h2 id="t-art">Articles associés</h2>
             {arts.length ? <div className="doclist">{arts.map((a) => <DocRow key={a.slug} to={`/actualites/${a.slug}`} date={a.date} tag={a.category} title={a.title} summary={a.summary} demo={a.demo} />)}</div>
-              : <EmptyState title="Articles à venir">Pas encore d'article pour ce domaine.</EmptyState>}
+              : null}
           </section>
+          )}
           {prj.length > 0 && (
             <section id="projets" aria-labelledby="t-prj">
               <h2 id="t-prj">Projets liés</h2>
