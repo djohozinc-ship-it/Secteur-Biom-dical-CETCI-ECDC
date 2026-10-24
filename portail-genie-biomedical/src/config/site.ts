@@ -56,7 +56,7 @@ export const site = {
   siteUrl: 'https://djohozinc-ship-it.github.io/Secteur-Biom-dical-CETCI-ECDC/',
 
   // --- Coordonnées ---
-  contact: { email: '', telephone: '', adresse: '' },
+  contact: { email: 'secteurbiomedicalcetciecdc@gmail.com', telephone: '', adresse: '' },
   externalFormUrl: '', // formulaire externe gratuit (facultatif)
   whatsapp: '', // ex. 22900000000 (indicatif + numéro, sans +)
   social: { facebook: '', linkedin: '', x: '', youtube: '' } as Record<string, string>,
