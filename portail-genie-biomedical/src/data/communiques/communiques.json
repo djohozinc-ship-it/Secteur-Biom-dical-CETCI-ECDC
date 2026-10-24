@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "ouverture-du-site",
+    "title": "Ouverture du site du Secteur Biomédical",
+    "date": "2026-10-25",
+    "dateMiseAJour": "2026-10-25",
+    "summary": "Le site présente le secteur, ses membres et ses projets.",
+    "content": "Le Secteur Biomédical du CETCI/ECDC, groupe d'étudiants d'une organisation privée et indépendante, ouvre son site. Vous y trouverez ses membres, ses projets et ses actualités. Pour toute question ou proposition de collaboration, écrivez-nous depuis la page Contact.",
+    "category": "Vie du secteur",
+    "source": "Secteur Biomédical du CETCI/ECDC",
+    "statut": "publie"
+  }
+]
