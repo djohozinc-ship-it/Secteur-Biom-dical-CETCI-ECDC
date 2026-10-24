@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "nasa-space-apps-2026",
+    "title": "NASA Space Apps Challenge 2026",
+    "type": "Concours",
+    "description": "Hackathon international de la NASA ouvert aux équipes de six personnes au plus. Les équipes choisissent un défi proposé par la NASA et présentent leur projet les 14 et 15 novembre 2026. La participation est possible en présentiel dans un événement local ou en ligne.",
+    "organisme": "NASA",
+    "source": "NASA Space Apps Challenge",
+    "url": "https://www.spaceappschallenge.org/2026/",
+    "datePublication": "2026-10-25",
+    "dateLimite": "2026-11-15",
+    "statut": "publie"
+  }
+]
