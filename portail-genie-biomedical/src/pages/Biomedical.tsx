@@ -88,8 +88,8 @@ export function BiomedicalDetail() {
           <p className="side-title">Sur cette page</p>
           <ul className="plain">
             <li><a href="#themes">Thèmes abordés</a></li>
-            <li><a href="#ressources">Ressources associées</a></li>
-            <li><a href="#articles">Articles associés</a></li>
+            {res.length > 0 && <li><a href="#ressources">Ressources associées</a></li>}
+            {arts.length > 0 && <li><a href="#articles">Articles associés</a></li>}
             {prj.length > 0 && <li><a href="#projets">Projets liés</a></li>}
           </ul>
           <p className="side-title">Dans « {r.groupe} »</p>
