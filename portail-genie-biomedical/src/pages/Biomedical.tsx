@@ -1,7 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { articles, projets, ressources, rubriques } from '../utils/content';
 import { Badge, DemoBadge, DocRow, EmptyState, PageHeader } from '../components/ui';
-import { Glyph } from '../components/illustrations';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { NotFound } from './Misc';
 
@@ -10,7 +9,6 @@ const groupIntro: Record<string, string> = {
   'Services et équipements': "Les équipements propres à chaque service de soins et de diagnostic.",
   Technologies: "Les technologies émergentes qui transforment les outils de santé.",
 };
-const groupGlyph: Record<string, string> = { Fondamentaux: 'wrench', 'Services et équipements': 'monitor', Technologies: 'chip' };
 
 export function BiomedicalIndex() {
   usePageMeta('Génie biomédical : les grands domaines', 'Les grands domaines du génie biomédical présentés par le Secteur Biomédical du CETCI/ECDC : maintenance, ingénierie hospitalière, dispositifs médicaux, imagerie, métrologie.');
@@ -22,7 +20,6 @@ export function BiomedicalIndex() {
         {groupes.map((g) => (
           <section key={g} className="domain-block" aria-labelledby={`g-${g}`}>
             <div className="domain-block-head">
-              <Glyph name={groupGlyph[g] ?? 'doc'} />
               <div><h2 id={`g-${g}`}>{g}</h2><p>{groupIntro[g]}</p></div>
             </div>
             <ol className="domain-index">

@@ -587,3 +587,12 @@ table, pre { max-width: 100%; overflow-x: auto; display: block; }
 .footer-grid { padding-block: var(--s4); gap: var(--s5); }
 .footer-partners { padding-bottom: var(--s3); }
 p { margin-bottom: var(--s3); }
+
+/* ---------- Style institutionnel sobre : aucun décor, aucun effet ---------- */
+*, *::before, *::after { border-radius: 0 !important; box-shadow: none !important; }
+.panel { box-shadow: none !important; }
+.reveal { opacity: 1; transform: none; transition: none; }
+.domain-block-head { display: block; }
+.placeholder { display: block; }
+.mark3 { display: none; }
+.member-profile-badge-icon, .member-profile-info-icon { border-radius: 50% !important; }

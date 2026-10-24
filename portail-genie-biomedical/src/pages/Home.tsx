@@ -3,10 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { site } from '../config/site';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { articles, communiques, formations, isArchived, opportunites, projets, ressources, rubriques } from '../utils/content';
-import { Badge, DemoBadge, DocRow, Figure, Mark3, Placeholder } from '../components/ui';
+import { Badge, DemoBadge, DocRow, Figure, Placeholder } from '../components/ui';
 import HeroSlider from '../components/HeroSlider';
 import type { HeroSlide } from '../types';
-import { Glyph, domainGlyph } from '../components/illustrations';
 import { contributionModes, opportunityTypes, resourceCategories } from '../utils/taxonomy';
 import { asset, dayMonth, daysUntil, formatDate } from '../utils/format';
 
@@ -49,7 +48,7 @@ export default function Home() {
         <nav className="quick-strip" aria-label="Accès rapides">
           <ul className="container">
             {quick.map((q2) => (
-              <li key={q2.to}><Link to={q2.to}><Glyph name={q2.icon} /><span>{q2.label}</span><Glyph name="arrow" size={18} /></Link></li>
+              <li key={q2.to}><Link to={q2.to}><span>{q2.label}</span></Link></li>
             ))}
           </ul>
         </nav>
@@ -59,7 +58,7 @@ export default function Home() {
       <section className="section intro" aria-labelledby="intro-title" data-reveal>
         <div className="container intro-grid">
           <div className="intro-lead">
-            <p className="kicker"><Mark3 /> Groupe d'étudiants{site.organisme ? ` · ${site.organisme}` : ''}</p>
+            <p className="kicker">Groupe d'étudiants{site.organisme ? ` · ${site.organisme}` : ''}</p>
             <h1 id="intro-title">Le secteur biomédical du CETCI/ECDC</h1>
             <p className="lead">{site.description}</p>
             <p className="statement">Le génie biomédical réunit les compétences qui permettent de choisir, installer, utiliser et maintenir en sécurité les équipements de santé.</p>
@@ -93,7 +92,7 @@ export default function Home() {
                 <h3><span className="num" aria-hidden="true">0{gi + 1}</span>{g}</h3>
                 <ul>
                   {rubriques.filter((r) => r.groupe === g).map((r) => (
-                    <li key={r.slug}><Link to={`/genie-biomedical/${r.slug}`}><Glyph name={domainGlyph[r.slug] ?? 'doc'} size={20} /><span>{r.title}</span></Link></li>
+                    <li key={r.slug}><Link to={`/genie-biomedical/${r.slug}`}><span>{r.title}</span></Link></li>
                   ))}
                 </ul>
               </div>
@@ -130,7 +129,7 @@ export default function Home() {
               </div>
             </div>
           ) : (
-            <Placeholder glyph={<Glyph name="doc" size={30} />} title="La première actualité sera publiée ici">
+            <Placeholder title="La première actualité sera publiée ici">
               Les actualités du secteur seront publiées ici.
             </Placeholder>
           )}
@@ -254,7 +253,7 @@ export default function Home() {
             <p className="eyebrow">Autour du secteur</p>
             <h2>Opportunités</h2>
             <ul className="arrow-list">
-              {opportunityTypes.map((t) => <li key={t.label}><Link to={`/opportunites?type=${encodeURIComponent(t.label)}`}><span><strong>{t.label}</strong><small>{t.desc}</small></span><Glyph name="arrow" size={18} /></Link></li>)}
+              {opportunityTypes.map((t) => <li key={t.label}><Link to={`/opportunites?type=${encodeURIComponent(t.label)}`}><span><strong>{t.label}</strong><small>{t.desc}</small></span></Link></li>)}
             </ul>
           </div>
         </div>

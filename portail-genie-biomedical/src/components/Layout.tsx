@@ -2,8 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { site } from '../config/site';
 import { rubriques } from '../utils/content';
-import { Logo, Mark3 } from './ui';
-import { Glyph } from './illustrations';
+import { Logo } from './ui';
 import { asset } from '../utils/format';
 import { useReveal } from '../hooks/useReveal';
 import { resourceCategories } from '../utils/taxonomy';
@@ -66,7 +65,7 @@ function Header() {
       <div className="topbar">
         <div className="container topbar-row">
           {site.annonce.texte ? (
-            <span className="announce"><Glyph name="megaphone" size={16} />{site.annonce.to ? <Link to={site.annonce.to}>{site.annonce.texte}</Link> : site.annonce.texte}</span>
+            <span className="announce">{site.annonce.to ? <Link to={site.annonce.to}>{site.annonce.texte}</Link> : site.annonce.texte}</span>
           ) : <span>{site.statutMention}</span>}
           <Link to="/contact">Contact</Link>
         </div>
@@ -136,7 +135,7 @@ function Footer() {
           {site.organismeLogo ? <img className="footer-logo" src={asset(site.organismeLogo)} alt={`Logo ${site.organisme}`} /> : <Logo inverse />}
           <div>
             <p className="footer-name">{site.officialName || site.name}</p>
-            {site.organisme && <p className="footer-org"><Mark3 /> Porté par {site.organisme}</p>}
+            {site.organisme && <p className="footer-org">Porté par {site.organisme}</p>}
             {site.organismeNom && <p className="footer-orgfull">{site.organismeNom}</p>}
           </div>
         </div>
