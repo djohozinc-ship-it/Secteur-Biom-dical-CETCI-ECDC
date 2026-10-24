@@ -215,5 +215,40 @@
     "links": [],
     "dateMiseAJour": "2026-10-24",
     "statut": "publie"
+  },
+  {
+    "id": "maelya-biomed",
+    "name": "MAELYA BIOMED : application d’aide à la maintenance de premier niveau",
+    "category": "Maintenance biomédicale · Application web et mobile",
+    "status": "Projet de fin de formation (Licence professionnelle, EPAC, 2025-2026)",
+    "description": "Application accessible depuis un téléphone qui guide les utilisateurs de dispositifs médicaux dans les opérations de base d’entretien et de vérification, et les aide face aux dysfonctionnements simples. Les informations techniques ont été rassemblées pour trois dispositifs, dont l’aspirateur chirurgical.",
+    "problem": "Les opérations de maintenance de premier niveau sont souvent perçues comme réservées au professionnel biomédical, alors que les utilisateurs en sont des acteurs essentiels. Comment renforcer leurs connaissances et leurs pratiques d’utilisation et d’entretien des dispositifs médicaux ?",
+    "objectives": [
+      "Exploiter les documents techniques des dispositifs médicaux étudiés",
+      "Concevoir un protocole standardisé de maintenance de premier niveau",
+      "Guider l’utilisateur pas à pas dans les opérations de maintenance et le diagnostic sommaire",
+      "Mettre en place une base de données pour stocker et suivre les interventions"
+    ],
+    "team": [
+      "HESSOUH Divine",
+      "SAHO Fanny"
+    ],
+    "technologies": [
+      "Vue.js 3",
+      "Laravel 11",
+      "Tailwind CSS",
+      "SQLite",
+      "Canva"
+    ],
+    "images": [
+      "images/projets/maelya-biomed-accueil.jpg",
+      "images/projets/maelya-biomed-utilisation.jpg",
+      "images/projets/maelya-biomed-maintenance.jpg",
+      "images/projets/maelya-biomed-diagnostic.jpg"
+    ],
+    "rubrique": "technologies-numeriques-sante",
+    "links": [],
+    "dateMiseAJour": "2026-10-24",
+    "statut": "publie"
   }
 ]
