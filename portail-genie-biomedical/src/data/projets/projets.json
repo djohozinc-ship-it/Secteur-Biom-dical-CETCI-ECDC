@@ -172,7 +172,11 @@
       "Transformée de Fourier (FFT)"
     ],
     "images": [
-      "images/projets/emg-neuropathie.jpg"
+      "images/projets/emg-neuropathie.jpg",
+      "images/projets/emg-signal-neuropathique.jpg",
+      "images/projets/emg-signal-normal.jpg",
+      "images/projets/emg-spectre-filtre.jpg",
+      "images/projets/emg-spectre-patient.jpg"
     ],
     "rubrique": "technologies-numeriques-sante",
     "links": [],
