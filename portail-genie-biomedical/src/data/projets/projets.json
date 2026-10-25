@@ -148,6 +148,38 @@
     "statut": "publie"
   },
   {
+    "id": "emg-neuropathie-peripherique",
+    "name": "Analyse de signaux EMG pour repérer une neuropathie périphérique",
+    "category": "Traitement du signal biomédical · MATLAB",
+    "status": "Travail de 3e année, cours d'acquisition et traitement des signaux biomédicaux (EPAC, 2025-2026)",
+    "description": "Étude comparative de signaux d'électromyographie (EMG) d'un patient sain et d'un patient atteint de neuropathie : filtrage passe-bande 20-450 Hz sous MATLAB, puis analyse spectrale par transformée de Fourier.",
+    "problem": "Comment le traitement du signal permet-il de distinguer un tracé EMG normal d'un tracé neuropathique, et d'en repérer les anomalies ?",
+    "objectives": [
+      "Présenter les bases de l'EMG et des neuropathies périphériques",
+      "Appliquer un filtre passe-bande de Butterworth au signal EMG",
+      "Calculer et comparer les spectres de fréquence d'un tracé normal et d'un tracé pathologique",
+      "Identifier les limites de l'étude et les perspectives (détection automatique, intelligence artificielle)"
+    ],
+    "team": [
+      "BOKO Landry",
+      "DJOHOZIN Cédric",
+      "FAYEMI Herberte",
+      "HESSOUH Divine"
+    ],
+    "technologies": [
+      "MATLAB",
+      "Filtre de Butterworth",
+      "Transformée de Fourier (FFT)"
+    ],
+    "images": [
+      "images/projets/emg-neuropathie.jpg"
+    ],
+    "rubrique": "technologies-numeriques-sante",
+    "links": [],
+    "dateMiseAJour": "2026-10-25",
+    "statut": "publie"
+  },
+  {
     "id": "dicom-anonymizer",
     "name": "DICOM Anonymizer",
     "category": "Imagerie médicale · Données DICOM · Python",
