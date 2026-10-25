@@ -1,19 +1,29 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
-import Members from './pages/Members';
-import { BiomedicalIndex, BiomedicalDetail } from './pages/Biomedical';
-import { NewsList, NewsDetail } from './pages/News';
-import { CommuniqueList, CommuniqueDetail } from './pages/Communiques';
-import Resources from './pages/Resources';
-import { ProjectList, ProjectDetail } from './pages/Projects';
-import Formations from './pages/Formations';
-import Opportunities from './pages/Opportunities';
-import Directory from './pages/Directory';
-import Contact from './pages/Contact';
-import SearchPage from './pages/SearchPage';
-import { Legal, Privacy, Terms, IntellectualProperty, NotFound } from './pages/Misc';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Members = lazy(() => import('./pages/Members'));
+const BiomedicalIndex = lazy(() => import('./pages/Biomedical').then((m) => ({ default: m.BiomedicalIndex })));
+const BiomedicalDetail = lazy(() => import('./pages/Biomedical').then((m) => ({ default: m.BiomedicalDetail })));
+const NewsList = lazy(() => import('./pages/News').then((m) => ({ default: m.NewsList })));
+const NewsDetail = lazy(() => import('./pages/News').then((m) => ({ default: m.NewsDetail })));
+const CommuniqueList = lazy(() => import('./pages/Communiques').then((m) => ({ default: m.CommuniqueList })));
+const CommuniqueDetail = lazy(() => import('./pages/Communiques').then((m) => ({ default: m.CommuniqueDetail })));
+const Resources = lazy(() => import('./pages/Resources'));
+const ProjectList = lazy(() => import('./pages/Projects').then((m) => ({ default: m.ProjectList })));
+const ProjectDetail = lazy(() => import('./pages/Projects').then((m) => ({ default: m.ProjectDetail })));
+const Formations = lazy(() => import('./pages/Formations'));
+const Opportunities = lazy(() => import('./pages/Opportunities'));
+const Directory = lazy(() => import('./pages/Directory'));
+const Contact = lazy(() => import('./pages/Contact'));
+const SearchPage = lazy(() => import('./pages/SearchPage'));
+const Legal = lazy(() => import('./pages/Misc').then((m) => ({ default: m.Legal })));
+const Privacy = lazy(() => import('./pages/Misc').then((m) => ({ default: m.Privacy })));
+const Terms = lazy(() => import('./pages/Misc').then((m) => ({ default: m.Terms })));
+const IntellectualProperty = lazy(() => import('./pages/Misc').then((m) => ({ default: m.IntellectualProperty })));
+const NotFound = lazy(() => import('./pages/Misc').then((m) => ({ default: m.NotFound })));
 
 export default function App() {
   return (

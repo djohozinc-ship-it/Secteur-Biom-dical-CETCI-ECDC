@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { Suspense, useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { site } from '../config/site';
 import { rubriques } from '../utils/content';
@@ -208,7 +208,7 @@ export default function Layout() {
       <a className="skip" href="#contenu" onClick={(e) => { e.preventDefault(); document.getElementById('contenu')?.focus(); }}>Aller au contenu</a>
       {site.showDemo && <div className="demo-banner" role="note">Mode démonstration : les contenus marqués « Démonstration » sont fictifs.</div>}
       <Header />
-      <main id="contenu" tabIndex={-1}><Outlet /></main>
+      <main id="contenu" tabIndex={-1}><Suspense fallback={null}><Outlet /></Suspense></main>
       <Footer />
     </>
   );
