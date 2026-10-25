@@ -1,6 +1,7 @@
 // Catégories proposées pour classer les contenus. Ce sont des libellés, pas des données.
 export const resourceCategories: { label: string; desc: string }[] = [
   { label: 'Cours', desc: 'Cours et supports de formation en génie biomédical.' },
+  { label: 'Vidéos de découverte', desc: 'Courtes vidéos où chaque membre présente son sujet à un public débutant.' },
   { label: 'Fiches techniques', desc: "Description d'un équipement : caractéristiques, consignes." },
   { label: 'Guides', desc: 'Méthodes pas à pas pour une activité précise.' },
   { label: 'Tutoriels', desc: 'Apprentissage guidé, du plus simple au plus avancé.' },
