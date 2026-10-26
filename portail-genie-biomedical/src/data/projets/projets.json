@@ -113,6 +113,44 @@
     "statut": "publie"
   },
   {
+    "id": "iv-safe-perfusion",
+    "name": "IV-SAFE : surveillance, alerte et contrôle des poches de perfusion",
+    "category": "Électronique médicale · IoT · Systèmes embarqués",
+    "status": "Projet de fin de formation (Licence professionnelle, EPAC), soutenu le 22 juillet 2026",
+    "description": "Dispositif qui pèse en continu une poche de perfusion pour calculer le volume restant et le temps avant la fin, déclenche une alerte sonore, visuelle et à distance au niveau critique, puis interrompt l’écoulement. Les données sont envoyées par Wi-Fi vers la plateforme Blynk (application mobile et tableau de bord web).",
+    "problem": "Dans les hôpitaux, le personnel soignant est souvent débordé et une poche de perfusion peut se vider sans être remarquée, avec des risques d’embolie gazeuse, de reflux sanguin, de déshydratation ou de surdosage. Comment surveiller les poches en continu et intervenir à temps ?",
+    "objectives": [
+      "Mesurer en temps réel la masse de la poche pour déterminer le volume restant",
+      "Calculer le niveau de perfusion et le temps résiduel avant la fin de la poche",
+      "Alerter par un buzzer, un affichage et une notification à distance au niveau critique",
+      "Interrompre automatiquement l’écoulement au seuil critique ou en cas d’anomalie",
+      "Centraliser le suivi sur une application mobile et un tableau de bord web"
+    ],
+    "team": [
+      "BOKO Landry Zidane",
+      "SEKPON Yaou Antoine"
+    ],
+    "technologies": [
+      "ESP32",
+      "Cellule de charge",
+      "Servomoteur",
+      "Buzzer et écran LCD",
+      "Wi-Fi",
+      "Blynk IoT"
+    ],
+    "images": [
+      "images/projets/iv-safe-schema-synoptique.jpg",
+      "images/projets/iv-safe-modele-3d.jpg",
+      "images/projets/iv-safe-tableau-de-bord.jpg",
+      "images/projets/iv-safe-simulation-ok.jpg",
+      "images/projets/iv-safe-simulation-alerte.jpg"
+    ],
+    "rubrique": "dispositifs-medicaux",
+    "links": [],
+    "dateMiseAJour": "2026-10-26",
+    "statut": "publie"
+  },
+  {
     "id": "maelya-biomed",
     "name": "MAELYA BIOMED : application d’aide à la maintenance de premier niveau",
     "category": "Maintenance biomédicale · Application web et mobile",
