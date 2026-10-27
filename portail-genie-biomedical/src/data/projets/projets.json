@@ -151,6 +151,40 @@
     "statut": "publie"
   },
   {
+    "id": "surveillance-anomalie-cardiaque",
+    "name": "Système de surveillance d’anomalie cardiaque avec alerte par SMS",
+    "category": "Électronique médicale · Systèmes embarqués",
+    "status": "Prototype simulé (Proteus) et routé (KiCad)",
+    "description": "Un capteur de pouls mesure le rythme cardiaque (BPM) et l’envoie à un Arduino qui l’analyse et l’affiche sur un écran LCD 16x2. En cas de rythme anormal, un module GSM envoie un SMS d’alerte aux proches.",
+    "problem": "Comment alerter rapidement l’entourage d’une personne dont le rythme cardiaque devient anormal, même sans connexion Internet ?",
+    "objectives": [
+      "Mesurer le rythme cardiaque avec un Pulse Sensor",
+      "Classer le rythme : normal (60 à 100 BPM), tachycardie (plus de 100 BPM), bradycardie (moins de 60 BPM)",
+      "Afficher le BPM sur un écran LCD 16x2",
+      "Envoyer un SMS d’alerte par GSM en cas d’anomalie : le GSM fonctionne sans Internet et est plus fiable que le Wi-Fi pour cet usage"
+    ],
+    "team": [
+      "BOKO Landry Zidane",
+      "HOUNMENOU Jesugo Joël"
+    ],
+    "technologies": [
+      "Arduino",
+      "Pulse Sensor",
+      "Module GSM",
+      "Écran LCD 16x2",
+      "Proteus",
+      "KiCad"
+    ],
+    "images": [
+      "images/projets/surveillance-cardiaque-proteus.jpg",
+      "images/projets/surveillance-cardiaque-kicad.jpg"
+    ],
+    "rubrique": "technologies-numeriques-sante",
+    "links": [],
+    "dateMiseAJour": "2026-10-27",
+    "statut": "publie"
+  },
+  {
     "id": "maelya-biomed",
     "name": "MAELYA BIOMED : application d’aide à la maintenance de premier niveau",
     "category": "Maintenance biomédicale · Application web et mobile",
@@ -323,6 +357,36 @@
       }
     ],
     "dateMiseAJour": "2026-10-24",
+    "statut": "publie"
+  },
+  {
+    "id": "alimentation-stabilisee-12v",
+    "name": "Alimentation stabilisée 12 V",
+    "category": "Électronique de puissance",
+    "status": "Montage réalisé",
+    "description": "Un transformateur abaisse la tension du secteur. Elle est ensuite redressée, filtrée par un condensateur, puis stabilisée à 12 V par un régulateur de type 7812. Le montage est réalisé sur veroboard avec une LED témoin.",
+    "problem": "Comment alimenter des montages électroniques en 12 V continu à partir du secteur ?",
+    "objectives": [
+      "Abaisser la tension du secteur avec un transformateur",
+      "Redresser et filtrer la tension",
+      "Stabiliser la sortie à 12 V avec un régulateur 7812",
+      "Contrôler la tension de sortie au multimètre (12,02 V mesurés)"
+    ],
+    "team": [
+      "BOKO Landry Zidane"
+    ],
+    "technologies": [
+      "Transformateur",
+      "Redressement et filtrage",
+      "Régulateur 7812",
+      "Veroboard"
+    ],
+    "images": [
+      "images/projets/alimentation-12v.jpg"
+    ],
+    "rubrique": "dispositifs-medicaux",
+    "links": [],
+    "dateMiseAJour": "2026-10-27",
     "statut": "publie"
   }
 ]
