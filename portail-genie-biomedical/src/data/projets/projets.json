@@ -1,30 +1,37 @@
 [
   {
     "id": "sacruro",
-    "name": "SACRURO",
+    "name": "SACRURO : récupération et valorisation des rejets d’osmoseur",
     "category": "Génie biomédical · IoT · Gestion de l’eau",
-    "status": "Mémoire de Licence réalisé en binôme : conception et prototype de supervision",
-    "description": "Système automatique connecté de récupération et de valorisation des rejets d’osmoseur. Il récupère l’eau rejetée par l’osmoseur de l’unité de dialyse du CHD-Zou pour la réutiliser dans des usages non potables.",
-    "problem": "L’osmoseur d’une unité d’hémodialyse rejette chaque jour une grande quantité d’eau, perdue alors qu’elle pourrait servir. Comment la récupérer, la surveiller et la distribuer de façon contrôlée, dans les contraintes d’un environnement hospitalier ?",
+    "status": "Projet de fin de formation (Licence professionnelle, EPAC), soutenu le 22 juillet 2026",
+    "description": "Système automatique connecté de récupération et de valorisation des rejets d’osmoseur, conçu pour l’unité d’hémodialyse du Centre Hospitalier Départemental du Zou. Un système hydraulique récupère l’eau rejetée, une carte électronique à base d’ESP32 automatise pompes et électrovannes avec un mode de secours (bypass), et une application mobile assure la supervision.",
+    "problem": "À l’unité d’hémodialyse du CHD-Zou, les rejets de l’osmoseur représentent une perte d’environ 585 L/h, remplissent rapidement les puisards et coûtent cher. Comment récupérer cette eau, la surveiller et la distribuer pour des usages adaptés ?",
     "objectives": [
-      "Récupérer le concentrat rejeté par l’osmoseur",
-      "Surveiller les paramètres de l’eau récupérée",
-      "Commander les pompes et les électrovannes, avec un mode local si la communication est coupée",
-      "Superviser le système depuis une application mobile"
+      "Étudier la qualité de l’eau rejetée : mesure sur site du TDS (39 ppm) et analyses physico-chimiques en laboratoire",
+      "Concevoir un système hydraulique de récupération et de distribution",
+      "Automatiser pompes et électrovannes avec un ESP32, avec un bypass qui assure la continuité de service en l’absence de rejet",
+      "Superviser le système depuis une application mobile React Native, grâce à une communication MQTT et HTTP",
+      "Évaluer la viabilité économique : coût initial de 3 142 200 FCFA, économie annuelle estimée à 1 231 608 FCFA, retour sur investissement d’environ 2 ans 9 mois"
     ],
     "team": [
-      "Cédric DJOHOZIN (en binôme)"
+      "DJOHOZIN Cédric",
+      "SOSSOUNON Médessè Géraldine"
     ],
     "technologies": [
       "ESP32",
-      "MQTT",
+      "MQTT et HTTP",
       "React Native",
       "KiCad",
       "ADS1115",
       "MCP23017"
     ],
     "images": [
-      "images/projets/sacruro.jpg"
+      "images/projets/sacruro.jpg",
+      "images/projets/sacruro-application-mobile.jpg",
+      "images/projets/sacruro-schema-hydraulique.jpg",
+      "images/projets/sacruro-schema-synoptique.jpg",
+      "images/projets/sacruro-schema-kicad.jpg",
+      "images/projets/sacruro-architecture-mqtt.jpg"
     ],
     "rubrique": "dialyse",
     "links": [
@@ -33,7 +40,7 @@
         "url": "https://djohozinc-ship-it.github.io/Cedric-biomedical-portfolio/#/project/sacruro"
       }
     ],
-    "dateMiseAJour": "2026-10-24",
+    "dateMiseAJour": "2026-10-28",
     "statut": "publie"
   },
   {
