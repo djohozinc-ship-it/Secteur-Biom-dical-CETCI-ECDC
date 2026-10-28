@@ -69,7 +69,7 @@ export function Legal() {
           santé ou d’un ingénieur biomédical qualifié.
         </p>
         <p className="notice">
-          Les projets présentés sont des prototypes ou des travaux d’apprentissage. Aucun n’a fait l’objet d’une
+          Les projets présentés sont des travaux d’étudiants : mémoires de fin de formation de cycle licence ou prototypes. Aucun n’a fait l’objet d’une
           homologation, d’une certification ou d’une autorisation pour un usage clinique.
         </p>
 

@@ -51,7 +51,7 @@ export function ProjectDetail() {
       <PageHeader title={p.name} intro={p.description} crumbs={[{ label: 'Projets', to: '/projets' }, { label: p.name }]} />
       <div className="container page-body reading">
         <article className="reading-main">
-          <p className="notice">Ce projet est un prototype ou un travail d'apprentissage. Ce n'est pas un dispositif médical certifié.</p>
+          <p className="notice">{/fin de formation/i.test(p.status) ? 'Ce projet est un travail de mémoire de fin de formation (cycle licence). Ce n’est pas un dispositif médical certifié.' : 'Ce projet est un prototype. Ce n’est pas un dispositif médical certifié.'}</p>
           {p.images?.map((src) => <img key={src} className="article-img" src={asset(src)} alt={`Illustration du projet ${p.name}`} loading="lazy" />)}
           <h2>Problème traité</h2><p>{p.problem}</p>
           <h2>Objectifs</h2><ul>{p.objectives.map((o) => <li key={o}>{o}</li>)}</ul>

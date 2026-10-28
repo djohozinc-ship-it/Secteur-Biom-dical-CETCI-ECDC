@@ -99,7 +99,7 @@ export default function About() {
                 Chaque réalisation part d’un besoin de santé réel, avec une attention au coût, à la facilité d’utilisation, à la maintenance et à la disponibilité des composants.
               </p>
               <p className="notice">
-                Le secteur ne vend pas d’équipements médicaux et n’est pas un organisme public. Ses prototypes sont des travaux d’apprentissage et de recherche : aucun n’est un dispositif médical certifié.
+                Le secteur ne vend pas d’équipements médicaux et n’est pas un organisme public. Ses réalisations sont des travaux d’étudiants, notamment des mémoires de fin de formation de cycle licence, et des prototypes : aucune n’est un dispositif médical certifié.
               </p>
             </div>
           </div>

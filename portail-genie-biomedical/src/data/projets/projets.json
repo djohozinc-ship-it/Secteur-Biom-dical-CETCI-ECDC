@@ -3,7 +3,7 @@
     "id": "sacruro",
     "name": "SACRURO : récupération et valorisation des rejets d’osmoseur",
     "category": "Génie biomédical · IoT · Gestion de l’eau",
-    "status": "Projet de fin de formation (Licence professionnelle, EPAC), soutenu le 22 juillet 2026",
+    "status": "Mémoire de fin de formation (cycle licence, EPAC), soutenu le 22 juillet 2026",
     "description": "Système automatique connecté de récupération et de valorisation des rejets d’osmoseur, conçu pour l’unité d’hémodialyse du Centre Hospitalier Départemental du Zou. Un système hydraulique récupère l’eau rejetée, une carte électronique à base d’ESP32 automatise pompes et électrovannes avec un mode de secours (bypass), et une application mobile assure la supervision.",
     "problem": "À l’unité d’hémodialyse du CHD-Zou, les rejets de l’osmoseur représentent une perte d’environ 585 L/h, remplissent rapidement les puisards et coûtent cher. Comment récupérer cette eau, la surveiller et la distribuer pour des usages adaptés ?",
     "objectives": [
@@ -86,7 +86,7 @@
     "id": "supervision-groupe-electrogene",
     "name": "Supervision IoT du groupe électrogène de l’Hôpital Saint Martin de Papané",
     "category": "Ingénierie hospitalière · IoT · Systèmes embarqués",
-    "status": "Projet de fin de formation (Licence professionnelle), soutenu le 22 juillet 2026",
+    "status": "Mémoire de fin de formation (cycle licence, EPAC), soutenu le 22 juillet 2026",
     "description": "Système de supervision en temps réel du groupe électrogène d’un hôpital : des capteurs relevés par un ESP32 envoient leurs mesures par GSM/GPRS vers une plateforme web qui affiche les valeurs et signale les anomalies.",
     "problem": "Le groupe électrogène de l’hôpital posait des problèmes de surchauffe du moteur, de surconsommation de carburant et d’utilisation excessive. Comment le surveiller en continu pour intervenir à temps ?",
     "objectives": [
@@ -123,7 +123,7 @@
     "id": "iv-safe-perfusion",
     "name": "IV-SAFE : surveillance, alerte et contrôle des poches de perfusion",
     "category": "Électronique médicale · IoT · Systèmes embarqués",
-    "status": "Projet de fin de formation (Licence professionnelle, EPAC), soutenu le 22 juillet 2026",
+    "status": "Mémoire de fin de formation (cycle licence, EPAC), soutenu le 22 juillet 2026",
     "description": "Dispositif qui pèse en continu une poche de perfusion pour calculer le volume restant et le temps avant la fin, déclenche une alerte sonore, visuelle et à distance au niveau critique, puis interrompt l’écoulement. Les données sont envoyées par Wi-Fi vers la plateforme Blynk (application mobile et tableau de bord web).",
     "problem": "Dans les hôpitaux, le personnel soignant est souvent débordé et une poche de perfusion peut se vider sans être remarquée, avec des risques d’embolie gazeuse, de reflux sanguin, de déshydratation ou de surdosage. Comment surveiller les poches en continu et intervenir à temps ?",
     "objectives": [
@@ -195,7 +195,7 @@
     "id": "gestion-eau-dialyse-chudba",
     "name": "Gestion automatisée de l’eau de l’unité de dialyse du CHUD-B/A",
     "category": "Ingénierie hospitalière · Électronique · Systèmes embarqués",
-    "status": "Projet de fin de formation (Licence professionnelle, EPAC), soutenu le 22 juillet 2026",
+    "status": "Mémoire de fin de formation (cycle licence, EPAC), soutenu le 22 juillet 2026",
     "description": "Système qui surveille et contrôle le niveau d’eau des réservoirs alimentant la salle de traitement d’eau de l’unité de dialyse. Des capteurs ultrasoniques étanches mesurent le niveau, un ESP32 commande les pompes d’alimentation selon des seuils prédéfinis et le niveau s’affiche sur un écran LCD. Une alerte à trois niveaux (voyants, buzzer, GSM) signale les anomalies.",
     "problem": "Au Centre Hospitalier Universitaire Départemental du Borgou et de l’Alibori, le réservoir principal de 10 000 litres déborde fréquemment, faute d’arrêt automatique et d’alerte, ce qui menace la continuité des séances de dialyse. Comment prévenir les débordements et anticiper les pénuries d’eau ?",
     "objectives": [
@@ -233,7 +233,7 @@
     "id": "maelya-biomed",
     "name": "MAELYA BIOMED : application d’aide à la maintenance de premier niveau",
     "category": "Maintenance biomédicale · Application web et mobile",
-    "status": "Projet de fin de formation (Licence professionnelle, EPAC), soutenu le 22 juillet 2026",
+    "status": "Mémoire de fin de formation (cycle licence, EPAC), soutenu le 22 juillet 2026",
     "description": "Application accessible depuis un téléphone qui guide les utilisateurs de dispositifs médicaux dans les opérations de base d’entretien et de vérification, et les aide face aux dysfonctionnements simples. Les informations techniques ont été rassemblées pour trois dispositifs, dont l’aspirateur chirurgical.",
     "problem": "Les opérations de maintenance de premier niveau sont souvent perçues comme réservées au professionnel biomédical, alors que les utilisateurs en sont des acteurs essentiels. Comment renforcer leurs connaissances et leurs pratiques d’utilisation et d’entretien des dispositifs médicaux ?",
     "objectives": [
