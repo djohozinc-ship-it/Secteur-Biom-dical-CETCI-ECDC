@@ -1,0 +1,1 @@
+import{r as n}from"./index-Bm5i5TIh.js";function r(t,e){const[a,s]=n.useState(1),c=Math.max(1,Math.ceil(t.length/e));return n.useEffect(()=>s(1),[t.length]),{page:a,setPage:s,pages:c,slice:t.slice((a-1)*e,a*e)}}export{r as u};

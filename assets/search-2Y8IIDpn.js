@@ -1,0 +1,1 @@
+import{K as t}from"./index-Bm5i5TIh.js";function m(n,s,c){const r=t(n).split(/\s+/).filter(Boolean);if(r.length===0)return 1;const i=t(s),l=t(c);let e=0;for(const o of r)if(i.includes(o))e+=3;else if(l.includes(o))e+=1;else return 0;return e}export{m};
