@@ -185,6 +185,44 @@
     "statut": "publie"
   },
   {
+    "id": "gestion-eau-dialyse-chudba",
+    "name": "Gestion automatisée de l’eau de l’unité de dialyse du CHUD-B/A",
+    "category": "Ingénierie hospitalière · Électronique · Systèmes embarqués",
+    "status": "Projet de fin de formation (Licence professionnelle, EPAC), soutenu le 22 juillet 2026",
+    "description": "Système qui surveille et contrôle le niveau d’eau des réservoirs alimentant la salle de traitement d’eau de l’unité de dialyse. Des capteurs ultrasoniques étanches mesurent le niveau, un ESP32 commande les pompes d’alimentation selon des seuils prédéfinis et le niveau s’affiche sur un écran LCD. Une alerte à trois niveaux (voyants, buzzer, GSM) signale les anomalies.",
+    "problem": "Au Centre Hospitalier Universitaire Départemental du Borgou et de l’Alibori, le réservoir principal de 10 000 litres déborde fréquemment, faute d’arrêt automatique et d’alerte, ce qui menace la continuité des séances de dialyse. Comment prévenir les débordements et anticiper les pénuries d’eau ?",
+    "objectives": [
+      "Mesurer en continu le niveau d’eau des réservoirs",
+      "Commander automatiquement les pompes selon des seuils prédéfinis",
+      "Afficher le niveau et l’état des pompes sur un écran LCD",
+      "Alerter à trois niveaux : voyants, buzzer et message GSM",
+      "Limiter les interventions humaines sur le circuit d’eau"
+    ],
+    "team": [
+      "LAWISSA Dossou Smiss",
+      "AÏLO Sèssito Nina Précieuse"
+    ],
+    "technologies": [
+      "ESP32",
+      "Capteurs ultrasoniques JSN-SR04T",
+      "Module relais",
+      "Module GSM SIM800C",
+      "Écran LCD",
+      "KiCad"
+    ],
+    "images": [
+      "images/projets/eau-dialyse-salle-traitement-eau.jpg",
+      "images/projets/eau-dialyse-schema-synoptique.jpg",
+      "images/projets/eau-dialyse-schema-kicad.jpg",
+      "images/projets/eau-dialyse-circuit-imprime.jpg",
+      "images/projets/eau-dialyse-affichage-lcd.jpg"
+    ],
+    "rubrique": "dialyse",
+    "links": [],
+    "dateMiseAJour": "2026-10-28",
+    "statut": "publie"
+  },
+  {
     "id": "maelya-biomed",
     "name": "MAELYA BIOMED : application d’aide à la maintenance de premier niveau",
     "category": "Maintenance biomédicale · Application web et mobile",
