@@ -2,13 +2,13 @@
 title: MAELYA BIOMED : une application pour apprendre la maintenance de premier niveau
 date: 2026-07-22
 category: Projets
-summary: Divine HESSOUH et Fanny SAHO ont conçu une application mobile qui guide les utilisateurs dans l'entretien des dispositifs médicaux.
+summary: Divine HESSOUH et F. S. ont conçu une application mobile qui guide les utilisateurs dans l'entretien des dispositifs médicaux.
 rubrique: technologies-numeriques-sante
 image: images/projets/maelya-biomed-accueil.jpg
 imageAlt: Page d'accueil de l'application MAELYA BIOMED
 statut: publie
 ---
-**Divine HESSOUH**, chargée des normes et du droit biomédical au sein du secteur, a conçu avec **Fanny SAHO** l'application **MAELYA BIOMED**, dans le cadre de leur mémoire de fin de formation (cycle licence) à l'EPAC, soutenu le 22 juillet 2026.
+**Divine HESSOUH**, chargée des normes et du droit biomédical au sein du secteur, a conçu avec **F. S.** l'application **MAELYA BIOMED**, dans le cadre de leur mémoire de fin de formation (cycle licence) à l'EPAC, soutenu le 22 juillet 2026.
 
 Les opérations de maintenance de premier niveau sont souvent perçues comme réservées au professionnel biomédical, alors que les utilisateurs des équipements y jouent un rôle essentiel. L'application, accessible depuis un téléphone, les guide dans les opérations de base d'entretien et de vérification, et les aide face aux dysfonctionnements simples. Les informations techniques ont été rassemblées pour trois dispositifs médicaux, dont l'aspirateur chirurgical.
 
