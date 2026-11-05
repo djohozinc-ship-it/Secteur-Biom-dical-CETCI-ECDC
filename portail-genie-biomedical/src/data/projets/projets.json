@@ -265,6 +265,43 @@
     "statut": "publie"
   },
   {
+    "id": "gmao-chatbot-sakete-ifangni",
+    "name": "GMAO avec chatbot pour la maintenance des équipements biomédicaux",
+    "category": "Maintenance biomédicale · Application web",
+    "status": "Mémoire de fin de formation (cycle licence, EPAC), soutenu le 22 juillet 2026",
+    "description": "Application web de gestion de maintenance assistée par ordinateur (GMAO) conçue pour le Service des Équipements et de la Maintenance de l’Hôpital de Zone de Sakété-Ifangni. Elle intègre un chatbot de signalement de pannes par QR code, un chatbot d’aide au diagnostic et un tableau de bord de suivi des interventions, des stocks et des rapports de performance.",
+    "problem": "À l’Hôpital de Zone de Sakété-Ifangni, le service de maintenance ne disposait d’aucun outil informatisé de gestion : la traçabilité des interventions, le signalement des pannes et la planification des maintenances préventives étaient limités. Comment améliorer la réactivité et le suivi de la maintenance biomédicale, dans les contraintes d’un hôpital béninois ?",
+    "objectives": [
+      "Signaler une panne en scannant le QR code d’un équipement et en discutant avec un chatbot",
+      "Aider au diagnostic grâce à un chatbot d’aide au diagnostic",
+      "Suivre l’inventaire, les maintenances préventives et correctives, les stocks de pièces et les documents techniques",
+      "Planifier les gardes et produire des rapports de performance (disponibilité des équipements)"
+    ],
+    "team": [
+      "HOUNMENOU Jesugo Joël",
+      "LAWANI Mardiyath Folachadé"
+    ],
+    "technologies": [
+      "Node.js",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "JavaScript",
+      "QR code"
+    ],
+    "images": [
+      "images/projets/gmao-chatbot-tableau-de-bord.jpg",
+      "images/projets/gmao-chatbot-chatbot-signalement.jpg",
+      "images/projets/gmao-chatbot-chatbot-diagnostic.jpg",
+      "images/projets/gmao-chatbot-inventaire.jpg",
+      "images/projets/gmao-chatbot-architecture.jpg"
+    ],
+    "rubrique": "gestion-du-parc-biomedical",
+    "links": [],
+    "dateMiseAJour": "2026-11-05",
+    "statut": "publie"
+  },
+  {
     "id": "emg-neuropathie-peripherique",
     "name": "Analyse de signaux EMG pour repérer une neuropathie périphérique",
     "category": "Traitement du signal biomédical · MATLAB",
